@@ -1,0 +1,159 @@
+% !TeX program = xelatex
+\documentclass[11pt, a4paper]{article} 
+
+% XeLaTeX font handling
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\setmainfont{EB Garamond} % main text
+\newfontfamily\sffont{Helvetica Neue} % sans for name
+
+% LANGUAGE + GEOMETRY
+\usepackage[british]{babel}  
+\usepackage[left=0mm, right=0mm, top=0mm, bottom=0mm]{geometry}
+
+% MICROTYPE
+\usepackage[stretch=25, shrink=25, tracking=true]{microtype}  
+
+% GRAPHICS & COLORS
+\usepackage{graphicx}        
+\usepackage{xcolor}          
+
+% SYMBOLS
+\usepackage{marvosym}        
+
+% LISTS
+\usepackage{enumitem}        
+\setlist{parsep=0pt, topsep=0pt, partopsep=1pt, itemsep=1pt, leftmargin=6mm}
+
+% COLORS
+\definecolor{cvblue}{HTML}{304263}
+\definecolor{softwhite}{HTML}{FAFAFA}
+
+% CUSTOM COMMANDS
+\newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
+    \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2ex}\hspace*{-1mm}% align with sidebar text
+    \textsc{\large\color{cvblue}#1}\par%
+    \vspace*{-1.8ex}{\color{cvblue}\hrulefill}\par}
+
+% LINKS
+\usepackage[colorlinks=true, urlcolor=softwhite, linkcolor=softwhite]{hyperref}
+
+\begin{document}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ==== WRAPPER ====
+\noindent
+% Sidebar flush to ALL edges
+\begin{minipage}[t]{0.40\textwidth} % slightly wider sidebar
+\colorbox{cvblue!90}{
+\begin{minipage}[t][\textheight][t]{0.68\textwidth} % inner padding
+\raggedright
+\color{softwhite}
+
+% PHOTO with top padding
+\vspace*{6mm}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
+\end{center}
+
+% ORDERED SECTIONS
+\headleft{Contact details}
+\small
+\MVAt\ {\small juan.cano.selles@gmail.com} \\[0.4ex]
+\Mobilefone\ +49\,163\,150\,9581 \\[0.5ex]
+\Mundus\ \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.1ex]
+\Letter\ Braunschweig, Germany
+\normalsize
+
+\headleft{Personal Information}
+Age: \textbf{34} \\[0.5ex]
+
+\headleft{Skills}
+\begin{itemize}[leftmargin=*, itemsep=0.5ex]
+\item Cloud: AWS, Azure, Kubernetes, Docker, CI/CD
+\item Agile/SAFe, Scrum, backlog management, coaching teams
+\item Data: Power BI, KPIs, workflow automation (AI/Copilot)
+\item Tools: Jira, Confluence, collaboration platforms
+\end{itemize} 
+
+\headleft{Languages}
+\textbf{Spanish} (native) \\[0.5ex]
+\textbf{English} (proficient) \\[0.5ex]
+\textbf{German} (advanced) \\[0.5ex]
+\textbf{French} (beginner)
+
+\end{minipage}}
+\end{minipage}%
+\hspace{0.5mm} % tighter spacing vs sidebar
+\begin{minipage}[t]{0.59\textwidth}
+\setlength{\parskip}{1ex}
+\setlength{\rightskip}{4mm} % right-side breathing room
+
+% ==== NAME HEADER (aligned with photo top) ====
+\vspace*{8mm} % keeps alignment with photo top
+{\fontsize{28}{30}\sffont\bfseries
+\textcolor{cvblue}{JUAN} \textcolor{black}{CANO-}%
+\textcolor{cvblue}{SELLES}}\par
+\vspace*{1ex} % tighter gap before Profile
+
+% Profile
+\headright{Profile}
+Senior Program Manager with 5 years of experience delivering enterprise-scale cloud programs and 10 years of engineering experience in regulated industries. Skilled in AWS, Azure, Kubernetes, Agile/SAFe, and executive communication. Proven ability to manage large portfolios, lead cross-functional teams, and deliver measurable business outcomes.
+
+\headright{Professional Experience}
+
+\noindent\textsc{CARIAD SE} --- Senior Program Manager \hfill Mar 2024 -- Sep 2025
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Directed a complex transformation program in Volkswagen Automotive Cloud across all VW Group brands
+\item Managed 12 teams, 6 organizational units, and an 8-figure budget
+\item Implemented AWS Migration Acceleration Program and Copilot tools to automate project management tasks
+\end{itemize}
+
+\noindent\textsc{CARIAD SE} --- Program Manager \hfill Nov 2020 -- Mar 2024
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Delivered License \& Service Activation platform for millions of vehicles
+\item Integrated global regulatory requirements
+\item Reduced operational costs ~70\% via data-driven change management and architectural redesign
+\item Designed BI dashboards for product performance and adoption metrics
+\end{itemize}
+
+\noindent\textsc{SEAT S.A.} --- Technical Project Lead \hfill Mar 2019 -- Nov 2020
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Managed technical integration of Online Connectivity Unit (OCU) in vehicles enabling eCall and remote unlock
+\item Coordinated crash, vibration, and EMC testing
+\item Delivered software releases, technical blueprints, and mechanical designs
+\end{itemize}
+
+\noindent\textsc{AKKA TECHNOLOGIES} --- Project Consultant \hfill Dec 2017 -- Mar 2019
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Supported integration of connected vehicle components
+\item Ensured validation compliance and cross-functional deliverables
+\end{itemize}
+
+\noindent\textsc{AKKA TECHNOLOGIES} --- Technology Consultant \hfill Oct 2015 -- Dec 2017
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Developed IoT solutions including firmware (Python/C/C++) and web (HTML/CSS/AngularJS/JQuery)
+\item Managed QA and CI/CD processes
+\end{itemize}
+
+\headright{Education}
+
+\noindent\textsc{Master in Engineering - Telecommunication} \\
+\textit{Universidad Miguel Hernandez, Alicante, ES} \\
+Sep 2008 -- Jun 2015
+
+\headright{Internships \& Scholarships}
+
+\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
+\item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
+\item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
+\item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
+\end{itemize}
+
+\end{minipage}
+
+\end{document}
