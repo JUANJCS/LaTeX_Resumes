@@ -45,8 +45,8 @@
 % Corrected job block environment
 \newenvironment{job}[3]{%
   \vspace{\BetweenJobsGap}% ensure gap belongs to the end of previous job
-  \noindent\textsc{#1} \textemdash\ #2\hfill %#3\\[-\TitleBulletGap]%
-  \begin{itemize}[leftmargin=1.6em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
+  \noindent\textsc{#1} \textemdash\ #2\hfill #3\\[-\TitleBulletGap]%
+  \begin{itemize}[leftmargin=1.4em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
 }{%
   \end{itemize}%
 }
@@ -55,10 +55,11 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\setlength{\topskip}{0pt} % kill automatic top gap
 \raggedbottom
 
-% ==== TWO COLUMNS ====
-\noindent
+% ==== WRAP IN MINIPAGE TO AVOID BLANK PAGE ====
+\noindent\begin{minipage}{\textwidth}
 % --- LEFT COLUMN full-height background ---
 \colorbox{cvblue!90}{%
   \parbox[t][\paperheight][t]{\SideBarW}{%
@@ -160,6 +161,7 @@
     \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
     \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
   \end{itemize}
+\end{minipage}
 \end{minipage}
 
 \end{document}
