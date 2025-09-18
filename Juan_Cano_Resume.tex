@@ -1,43 +1,55 @@
 % !TeX program = xelatex
-\documentclass[11pt, a4paper]{article} 
+\documentclass[11pt, a4paper]{article}
 
-% XeLaTeX font handling
+% FONTS
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-\setmainfont{EB Garamond} % main text
-\newfontfamily\sffont{Helvetica Neue} % sans for name
+\setmainfont{EB Garamond}
+\newfontfamily\sffont{Helvetica Neue}
 
-% LANGUAGE + GEOMETRY
-\usepackage[british]{babel}  
-\usepackage[left=0mm, right=0mm, top=0mm, bottom=0mm]{geometry}
+% LAYOUT
+\usepackage[british]{babel}
+\usepackage[left=0mm,right=8mm,top=0mm,bottom=0mm]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
-% MICROTYPE
-\usepackage[stretch=25, shrink=25, tracking=true]{microtype}  
-
-% GRAPHICS & COLORS
-\usepackage{graphicx}        
-\usepackage{xcolor}          
-
-% SYMBOLS
-\usepackage{marvosym}        
-
-% LISTS
-\usepackage{enumitem}        
-\setlist{parsep=0pt, topsep=0pt, partopsep=1pt, itemsep=1pt, leftmargin=6mm}
+% SYMBOLS & LISTS
+\usepackage{marvosym}
+\usepackage{enumitem}
+\setlist{parsep=0pt, partopsep=1pt, itemsep=0.6ex, topsep=0.4ex}
 
 % COLORS
 \definecolor{cvblue}{HTML}{304263}
-\definecolor{softwhite}{HTML}{FAFAFA}
+\definecolor{softwhite}{HTML}{FDFDFD}
 
-% CUSTOM COMMANDS
+% HEADERS
 \newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
-    \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.7ex}}
-\newcommand{\headright}[1]{\vspace*{2ex}\hspace*{-1mm}% align with sidebar text
-    \textsc{\large\color{cvblue}#1}\par%
-    \vspace*{-1.8ex}{\color{cvblue}\hrulefill}\par}
+  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2ex}\textsc{\large\color{cvblue}#1}\par%
+  \vspace*{-1.4ex}{\color{cvblue}\hrulefill}\par}
 
 % LINKS
 \usepackage[colorlinks=true, urlcolor=softwhite, linkcolor=softwhite]{hyperref}
+
+% ---- SIDEBAR WIDTH ----
+\newlength{\SideBarW}
+\setlength{\SideBarW}{0.30\paperwidth}
+
+% ---- RIGHT-COLUMN SPACING CONTROLS ----
+\newlength{\TitleBulletGap}     % small gap between job title line and bullets
+\setlength{\TitleBulletGap}{0.25ex}
+\newlength{\BetweenJobsGap}     % bigger gap between jobs
+\setlength{\BetweenJobsGap}{1.5ex}
+
+% Corrected job block environment
+\newenvironment{job}[3]{%
+  \vspace{\BetweenJobsGap}% ensure gap belongs to the end of previous job
+  \noindent\textsc{#1} \textemdash\ #2\hfill %#3\\[-\TitleBulletGap]%
+  \begin{itemize}[leftmargin=1.6em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
+}{%
+  \end{itemize}%
+}
 
 \begin{document}
 \pagestyle{empty}
@@ -45,115 +57,109 @@
 \setlength{\parskip}{0pt}
 \raggedbottom
 
-% ==== WRAPPER ====
+% ==== TWO COLUMNS ====
 \noindent
-% Sidebar flush to ALL edges
-\begin{minipage}[t]{0.40\textwidth} % slightly wider sidebar
-\colorbox{cvblue!90}{
-\begin{minipage}[t][\textheight][t]{0.68\textwidth} % inner padding
-\raggedright
-\color{softwhite}
+% --- LEFT COLUMN full-height background ---
+\colorbox{cvblue!90}{%
+  \parbox[t][\paperheight][t]{\SideBarW}{%
+    \hspace*{4mm}%
+    \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
+      \color{softwhite}
+      \vspace*{6mm} % top padding for photo
+      \begin{center}
+        \includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
+      \end{center}
 
-% PHOTO with top padding
-\vspace*{6mm}
-\begin{center}
-\includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
-\end{center}
+      \headleft{Contact details}
+      \small
+      \MVAt\ {\small juan.cano.selles@gmail.com} \\[0.4ex]
+      \Mobilefone\ +49\,163\,150\,9581 \\[0.5ex]
+      \Mundus\ \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.1ex]
+      \Letter\ Braunschweig, Germany
+      \normalsize
 
-% ORDERED SECTIONS
-\headleft{Contact details}
-\small
-\MVAt\ {\small juan.cano.selles@gmail.com} \\[0.4ex]
-\Mobilefone\ +49\,163\,150\,9581 \\[0.5ex]
-\Mundus\ \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.1ex]
-\Letter\ Braunschweig, Germany
-\normalsize
+      \headleft{Personal Information}
+      Age: \textbf{34} \\[0.5ex]
+      Nationality: \textbf{Spanish} \\[0.5ex]
+      Date of Birth: \textbf{1990-XX-XX} \\[0.5ex]
+      Marital Status: \textbf{Single}
 
-\headleft{Personal Information}
-Age: \textbf{34} \\[0.5ex]
+      \headleft{Skills}
+      \begin{itemize}[leftmargin=*, itemsep=0.5ex]
+        \item Cloud: AWS, Azure, Kubernetes, Docker, CI/CD
+        \item Agile/SAFe, Scrum, backlog management, coaching teams
+        \item Data: Power BI, KPIs, workflow automation (AI/Copilot)
+        \item Tools: Jira, Confluence, collaboration platforms
+      \end{itemize}
 
-\headleft{Skills}
-\begin{itemize}[leftmargin=*, itemsep=0.5ex]
-\item Cloud: AWS, Azure, Kubernetes, Docker, CI/CD
-\item Agile/SAFe, Scrum, backlog management, coaching teams
-\item Data: Power BI, KPIs, workflow automation (AI/Copilot)
-\item Tools: Jira, Confluence, collaboration platforms
-\end{itemize} 
+      \headleft{Languages}
+      \textbf{Spanish} (native) \\[0.5ex]
+      \textbf{English} (proficient) \\[0.5ex]
+      \textbf{German} (advanced) \\[0.5ex]
+      \textbf{French} (beginner)
+    \end{minipage}
+  }% closes parbox
+}%
+\hspace{3mm}%
+% --- RIGHT COLUMN ---
+\begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-3mm\relax}
+  \setlength{\parskip}{0.8ex}
+  \setlength{\leftskip}{4mm}
+  \setlength{\rightskip}{6mm}
 
-\headleft{Languages}
-\textbf{Spanish} (native) \\[0.5ex]
-\textbf{English} (proficient) \\[0.5ex]
-\textbf{German} (advanced) \\[0.5ex]
-\textbf{French} (beginner)
+  % ==== NAME HEADER ====
+  \vspace*{6mm}
+  {\fontsize{28}{30}\sffont\bfseries\MakeUppercase{\textcolor{cvblue}{Juan Cano-Selles}}}\par
+  \vspace*{1.0ex}
 
-\end{minipage}}
-\end{minipage}%
-\hspace{0.5mm} % tighter spacing vs sidebar
-\begin{minipage}[t]{0.59\textwidth}
-\setlength{\parskip}{1ex}
-\setlength{\rightskip}{4mm} % right-side breathing room
+  % ==== PROFILE ====
+  \headright{Profile}
+  Experienced Senior Program Manager and Product Owner with over 10 years in the automotive IT industry. Skilled in cloud solutions, AI-driven workflows, and cross-functional team leadership. Passionate about driving transformation, scalability, and innovation in complex organizations.
 
-% ==== NAME HEADER (aligned with photo top) ====
-\vspace*{8mm} % keeps alignment with photo top
-{\fontsize{28}{30}\sffont\bfseries
-\textcolor{cvblue}{JUAN} \textcolor{black}{CANO-}%
-\textcolor{cvblue}{SELLES}}\par
-\vspace*{1ex} % tighter gap before Profile
+  % ==== EXPERIENCE ====
+  \headright{Professional Experience}
 
-% Profile
-\headright{Profile}
-Senior Program Manager with 5 years of experience delivering enterprise-scale cloud programs and 10 years of engineering experience in regulated industries. Skilled in AWS, Azure, Kubernetes, Agile/SAFe, and executive communication. Proven ability to manage large portfolios, lead cross-functional teams, and deliver measurable business outcomes.
+  \begin{job}{CARIAD SE}{Senior Program Manager}{Mar 2024 -- Sep 2025}
+    \item Directed a complex transformation program in Volkswagen Automotive Cloud
+    \item Managed 12 teams, 6 organizational units, and an 8-figure budget
+  \end{job}
 
-\headright{Professional Experience}
+  \begin{job}{CARIAD SE}{Program Manager}{Nov 2020 -- Mar 2024}
+    \item Delivered License \& Service Activation platform for millions of vehicles
+    \item Integrated global regulatory requirements
+    \item Reduced operational costs ~70\% via data-driven change management and architectural redesign
+    \item Designed BI dashboards for product performance and adoption metrics
+  \end{job}
 
-\noindent\textsc{CARIAD SE} --- Senior Program Manager \hfill Mar 2024 -- Sep 2025
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Directed a complex transformation program in Volkswagen Automotive Cloud across all VW Group brands
-\item Managed 12 teams, 6 organizational units, and an 8-figure budget
-\item Implemented AWS Migration Acceleration Program and Copilot tools to automate project management tasks
-\end{itemize}
+  \begin{job}{SEAT S.A.}{Technical Project Lead}{Mar 2019 -- Nov 2020}
+    \item Managed technical integration of Online Connectivity Unit (OCU) in vehicles enabling eCall and remote unlock
+    \item Coordinated crash, vibration, and EMC testing
+    \item Delivered software releases, technical blueprints, and mechanical designs
+  \end{job}
 
-\noindent\textsc{CARIAD SE} --- Program Manager \hfill Nov 2020 -- Mar 2024
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Delivered License \& Service Activation platform for millions of vehicles
-\item Integrated global regulatory requirements
-\item Reduced operational costs ~70\% via data-driven change management and architectural redesign
-\item Designed BI dashboards for product performance and adoption metrics
-\end{itemize}
+  \begin{job}{AKKA Technologies}{Project Consultant}{Dec 2017 -- Mar 2019}
+    \item Supported integration of connected vehicle components
+    \item Ensured validation compliance and cross-functional deliverables
+  \end{job}
 
-\noindent\textsc{SEAT S.A.} --- Technical Project Lead \hfill Mar 2019 -- Nov 2020
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Managed technical integration of Online Connectivity Unit (OCU) in vehicles enabling eCall and remote unlock
-\item Coordinated crash, vibration, and EMC testing
-\item Delivered software releases, technical blueprints, and mechanical designs
-\end{itemize}
+  \begin{job}{AKKA Technologies}{Technology Consultant}{Oct 2015 -- Dec 2017}
+    \item Developed IoT solutions including firmware (Python/C/C++) and web (HTML/CSS/AngularJS/JQuery)
+    \item Managed QA and CI/CD processes
+  \end{job}
 
-\noindent\textsc{AKKA TECHNOLOGIES} --- Project Consultant \hfill Dec 2017 -- Mar 2019
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Supported integration of connected vehicle components
-\item Ensured validation compliance and cross-functional deliverables
-\end{itemize}
+  % ==== EDUCATION ====
+  \headright{Education}
+  \noindent\textsc{Master in Engineering - Telecommunication} \\
+  \textit{Universidad Miguel Hernandez, Alicante, ES} \\
+  Sep 2008 -- Jun 2015
 
-\noindent\textsc{AKKA TECHNOLOGIES} --- Technology Consultant \hfill Oct 2015 -- Dec 2017
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Developed IoT solutions including firmware (Python/C/C++) and web (HTML/CSS/AngularJS/JQuery)
-\item Managed QA and CI/CD processes
-\end{itemize}
-
-\headright{Education}
-
-\noindent\textsc{Master in Engineering - Telecommunication} \\
-\textit{Universidad Miguel Hernandez, Alicante, ES} \\
-Sep 2008 -- Jun 2015
-
-\headright{Internships \& Scholarships}
-
-\begin{itemize}[leftmargin=*, label=--, itemsep=0.5ex]
-\item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
-\item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
-\item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
-\end{itemize}
-
+  % ==== INTERNSHIPS ====
+  \headright{Internships \& Scholarships}
+  \begin{itemize}[leftmargin=1.2em,label=--,labelsep=0.5em,itemsep=0.4ex,topsep=0.2ex]
+    \item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
+    \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
+    \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
+  \end{itemize}
 \end{minipage}
 
 \end{document}
