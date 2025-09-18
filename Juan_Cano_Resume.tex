@@ -1,0 +1,191 @@
+% !TeX program = xelatex
+\documentclass[11pt, a4paper]{article}
+
+% FONTS
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\setmainfont{EB Garamond}
+\newfontfamily\sffont{Helvetica Neue}
+
+% LAYOUT
+\usepackage[british]{babel}
+\usepackage[left=0mm,right=8mm,top=0mm,bottom=0mm]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% SYMBOLS & LISTS
+\usepackage{marvosym}
+\usepackage{enumitem}
+\setlist{parsep=0pt, partopsep=1pt, itemsep=0.6ex, topsep=0.4ex}
+
+% COLORS
+\definecolor{cvblue}{HTML}{304263}
+\definecolor{softwhite}{HTML}{FDFDFD}
+
+% HEADERS
+\newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
+  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2ex}\textsc{\large\color{cvblue}#1}\par%
+  \vspace*{-1.4ex}{\color{cvblue}\hrulefill}\par}
+
+% LINKS
+\usepackage[colorlinks=true, urlcolor=softwhite, linkcolor=softwhite]{hyperref}
+
+% ---- SIDEBAR WIDTH ----
+\newlength{\SideBarW}
+\setlength{\SideBarW}{0.30\paperwidth}
+
+% ---- SPACING CONTROLS ----
+\newlength{\BetweenJobsGap}
+\setlength{\BetweenJobsGap}{1.5ex}
+
+% ---- RIGHT MARGIN (reduced by 40%) ----
+\newlength{\RightColMargin}
+\setlength{\RightColMargin}{1mm}
+
+% --- JOB ENVIRONMENT ---
+\newenvironment{job}[4]{%
+  \vspace{\BetweenJobsGap}%
+  \noindent\textsc{#1} --- #2\hfill {\small #4}\\%
+  {\small\itshape #3}\par
+  \begin{list}{--}{%
+      \setlength{\leftmargin}{1.4em}%
+      \setlength{\labelsep}{0.5em}%
+      \setlength{\itemsep}{0.45ex}%
+      \setlength{\topsep}{0.2ex}%
+      \setlength{\rightmargin}{\RightColMargin}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+    }%
+}{%
+  \end{list}%
+}
+
+% --- FULL-HEIGHT LEFT BACKGROUND ---
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{%
+    \color{cvblue!90}\rule{\SideBarW}{\paperheight}%
+  }%
+}
+
+\begin{document}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\topskip}{0pt}
+\raggedbottom
+
+% ==== TWO COLUMNS ====
+\noindent
+% --- LEFT COLUMN ---
+\begin{minipage}[t]{\SideBarW}
+  \hspace*{4mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
+    \color{softwhite}
+    \vspace*{6mm}
+    \begin{center}
+      \includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
+    \end{center}
+
+    \headleft{Contact details}
+    \small
+    \MVAt\ {\small juan.cano.selles@gmail.com} \\[0.4ex]
+    \Mobilefone\ +49\,163\,150\,9581 \\[0.5ex]
+    \Mundus\ \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.1ex]
+    \Letter\ Braunschweig, Germany
+    \normalsize
+
+    \headleft{Personal Information}
+    Age: \textbf{34} \\[0.5ex]
+    Nationality: \textbf{Spanish} \\[0.5ex]
+    Date of Birth: \textbf{1990-XX-XX} \\[0.5ex]
+    Marital Status: \textbf{Single}
+
+    \headleft{Skills}
+    \begin{itemize}[leftmargin=*, itemsep=0.5ex]
+      \item Cloud: AWS, Azure, Kubernetes, Docker, CI/CD
+      \item Agile/SAFe, Scrum, backlog management, coaching teams
+      \item Data: Power BI, KPIs, workflow automation (AI/Copilot)
+      \item Tools: Jira, Confluence, collaboration platforms
+    \end{itemize}
+
+    \headleft{Languages}
+    \textbf{Spanish} (native) \\[0.5ex]
+    \textbf{English} (proficient) \\[0.5ex]
+    \textbf{German} (advanced) \\[0.5ex]
+    \textbf{French} (beginner)
+  \end{minipage}
+\end{minipage}%
+\hspace{3mm}%
+% --- RIGHT COLUMN ---
+\begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-3mm\relax}
+  \setlength{\parskip}{0.8ex}
+  \setlength{\leftskip}{4mm}
+  \setlength{\rightskip}{\RightColMargin}
+
+  % ==== NAME HEADER ====
+  \vspace*{6mm}
+  {\fontsize{28}{30}\sffont\bfseries\MakeUppercase{\textcolor{cvblue}{Juan Cano-Selles}}}\par
+  \vspace*{1.0ex}
+
+  % ==== PROFILE ====
+  \headright{Profile}
+  Experienced Senior Program Manager and Product Owner with over 10 years in the automotive IT industry. Skilled in cloud solutions, AI-driven workflows, and cross-functional team leadership. Passionate about driving transformation, scalability, and innovation in complex organizations.
+
+  % ==== EXPERIENCE ====
+  \headright{Professional Experience}
+
+  \begin{job}{CARIAD SE}{Senior Program Manager}{Braunschweig, DE}{Mar 2024 -- Sep 2025}
+    \item Directed a complex transformation program in Volkswagen Automotive Cloud
+    \item Managed 12 teams, 6 organizational units, and an 8-figure budget
+  \end{job}
+
+  \begin{job}{CARIAD SE}{Program Manager}{Braunschweig, DE}{Nov 2020 -- Mar 2024}
+    \item Delivered License \& Service Activation platform for millions of vehicles
+    \item Integrated global regulatory requirements
+    \item Reduced operational costs ~70\% via data-driven change management and architectural redesign
+    \item Designed BI dashboards for product performance and adoption metrics
+  \end{job}
+
+  \begin{job}{SEAT S.A.}{Technical Project Lead}{Barcelona, ES}{Mar 2019 -- Nov 2020}
+    \item Managed technical integration of Online Connectivity Unit (OCU) in vehicles enabling eCall and remote unlock
+    \item Coordinated crash, vibration, and EMC testing
+    \item Delivered software releases, technical blueprints, and mechanical designs
+  \end{job}
+
+  \begin{job}{AKKA Technologies}{Project Consultant}{Barcelona, ES}{Dec 2017 -- Mar 2019}
+    \item Supported integration of connected vehicle components
+    \item Ensured validation compliance and cross-functional deliverables
+  \end{job}
+
+  \begin{job}{AKKA Technologies}{Technology Consultant}{Barcelona, ES}{Oct 2015 -- Dec 2017}
+    \item Developed IoT solutions including firmware (Python/C/C++) and web (HTML/CSS/AngularJS/JQuery)
+    \item Managed QA and CI/CD processes
+  \end{job}
+
+  % ==== EDUCATION ====
+  \headright{Education}
+  \noindent\textsc{Master in Engineering - Telecommunication} \\
+  \textit{Universidad Miguel Hernandez, Alicante, ES} \\
+  Sep 2008 -- Jun 2015
+
+  % ==== INTERNSHIPS ====
+  \headright{Internships \& Scholarships}
+  \begin{list}{--}{%
+      \setlength{\leftmargin}{1.4em}%
+      \setlength{\labelsep}{0.5em}%
+      \setlength{\itemsep}{0.45ex}%
+      \setlength{\topsep}{0.2ex}%
+      \setlength{\rightmargin}{\RightColMargin}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+    }
+    \item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
+    \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
+    \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
+  \end{list}
+\end{minipage}
+
+\end{document}
