@@ -41,14 +41,26 @@
 \newlength{\BetweenJobsGap}
 \setlength{\BetweenJobsGap}{1.5ex}
 
-% --- JOB ENVIRONMENT: company, title + dates on one line; location below ---
+% ---- RIGHT MARGIN (reduced by 40%) ----
+\newlength{\RightColMargin}
+\setlength{\RightColMargin}{1mm}
+
+% --- JOB ENVIRONMENT ---
 \newenvironment{job}[4]{%
   \vspace{\BetweenJobsGap}%
   \noindent\textsc{#1} --- #2\hfill {\small #4}\\%
   {\small\itshape #3}\par
-  \begin{itemize}[leftmargin=1.4em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
+  \begin{list}{--}{%
+      \setlength{\leftmargin}{1.4em}%
+      \setlength{\labelsep}{0.5em}%
+      \setlength{\itemsep}{0.45ex}%
+      \setlength{\topsep}{0.2ex}%
+      \setlength{\rightmargin}{\RightColMargin}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+    }%
 }{%
-  \end{itemize}%
+  \end{list}%
 }
 
 % --- FULL-HEIGHT LEFT BACKGROUND ---
@@ -111,7 +123,7 @@
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-3mm\relax}
   \setlength{\parskip}{0.8ex}
   \setlength{\leftskip}{4mm}
-  \setlength{\rightskip}{6mm}
+  \setlength{\rightskip}{\RightColMargin}
 
   % ==== NAME HEADER ====
   \vspace*{6mm}
@@ -161,11 +173,19 @@
 
   % ==== INTERNSHIPS ====
   \headright{Internships \& Scholarships}
-  \begin{itemize}[leftmargin=1.4em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
+  \begin{list}{--}{%
+      \setlength{\leftmargin}{1.4em}%
+      \setlength{\labelsep}{0.5em}%
+      \setlength{\itemsep}{0.45ex}%
+      \setlength{\topsep}{0.2ex}%
+      \setlength{\rightmargin}{\RightColMargin}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+    }
     \item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
     \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
     \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
-  \end{itemize}
+  \end{list}
 \end{minipage}
 
 \end{document}
