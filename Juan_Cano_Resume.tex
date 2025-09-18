@@ -37,14 +37,14 @@
 \setlength{\SideBarW}{0.30\paperwidth}
 
 % ---- RIGHT-COLUMN SPACING CONTROLS ----
-\newlength{\TitleBulletGap}     % small gap between job title line and bullets
+\newlength{\TitleBulletGap}
 \setlength{\TitleBulletGap}{0.25ex}
-\newlength{\BetweenJobsGap}     % bigger gap between jobs
+\newlength{\BetweenJobsGap}
 \setlength{\BetweenJobsGap}{1.5ex}
 
 % Corrected job block environment
 \newenvironment{job}[3]{%
-  \vspace{\BetweenJobsGap}% ensure gap belongs to the end of previous job
+  \vspace{\BetweenJobsGap}%
   \noindent\textsc{#1} \textemdash\ #2\hfill
   \begin{itemize}[leftmargin=1.4em,label=--,labelsep=0.5em,itemsep=0.45ex,topsep=0.2ex]
 }{%
@@ -58,11 +58,11 @@
 \setlength{\topskip}{0pt} % kill automatic top gap
 \raggedbottom
 
-% ==== WRAP IN MINIPAGE TO AVOID BLANK PAGE ====
-\noindent\begin{minipage}{\textwidth}
+% ==== TWO COLUMNS ====
+\noindent
 % --- LEFT COLUMN full-height background ---
 \colorbox{cvblue!90}{%
-  \parbox[t][\paperheight][t]{\SideBarW}{%
+  \parbox[t]{\SideBarW}{%   <-- FIX: removed [\paperheight]
     \hspace*{4mm}%
     \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
       \color{softwhite}
@@ -161,7 +161,6 @@
     \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
     \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
   \end{itemize}
-\end{minipage}
 \end{minipage}
 
 \end{document}
