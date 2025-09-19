@@ -1,11 +1,12 @@
 % !TeX program = xelatex
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article} % bumped to 12pt for readability
 
 % FONTS
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-\setmainfont{EB Garamond}
-\newfontfamily\sffont{Helvetica Neue}
+\setmainfont{Helvetica Neue Light} % body font
+\newfontfamily\sffont{Helvetica Neue} % headings
+\newfontfamily\secfont{Verdana} % section headers
 
 % LAYOUT
 \usepackage[british]{babel}
@@ -21,34 +22,39 @@
 \definecolor{softwhite}{HTML}{FDFDFD}
 \definecolor{darkgray}{gray}{0.25}
 
-% HEADERS
-\newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
-  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.7ex}}
-\newcommand{\headright}[1]{\vspace{1.6ex}\textsc{\large\color{cvblue}#1}\par%
-  \vspace*{-0.6ex}{\color{cvblue}\hrulefill}\par\vspace*{0.4ex}}
+% HEADERS (left column)
+\newcommand{\headleft}[1]{%
+  \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
+  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.8ex}
+}
 
-% BULLET STYLE (use round dots instead of dashes)
-\setlist[itemize]{left=1.2em, label=\textbullet, itemsep=0.3ex, topsep=0.2ex}
+% Right column section headers (ultra tight)
+\newcommand{\headright}[1]{%
+  \vspace{0.6ex}% minimal space before section
+  {\sffont\bfseries\large\addfontfeatures{LetterSpace=2.0}\textcolor{cvblue}{\MakeUppercase{#1}}}\\[-1ex]%
+  {\color{cvblue}\rule{\dimexpr\linewidth\relax}{0.6pt}}\\[-0.4ex]%
+}
 
 % ---- SIDEBAR WIDTH ----
 \newlength{\SideBarW}
 \setlength{\SideBarW}{0.30\paperwidth}
 
+% Unified bullet style (Profile + Jobs)
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{left=1.4em, label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}}, 
+  itemsep=0.5ex, topsep=0.2ex, rightmargin=6mm, parsep=0pt}
+
 % --- JOB ENVIRONMENT ---
+\newlength{\BetweenJobsGap}
+\setlength{\BetweenJobsGap}{2.0ex}
+
 \newenvironment{job}[4]{%
-  \vspace{1.0ex}%
-  \noindent\textbf{#2} {\color{darkgray}--- #1}\hfill {\small #3}\\%
-  {\small\itshape #4}\par
-\begin{list}{\textbullet}{%
-      \setlength{\leftmargin}{1.4em}%
-      \setlength{\labelsep}{0.5em}%
-      \setlength{\itemsep}{0.2ex}%
-      \setlength{\topsep}{0.2ex}%
-      \setlength{\rightmargin}{6mm}%
-      \setlength{\listparindent}{0pt}%
-      \setlength{\parsep}{0pt}%
-    }%
-}{\end{list}}
+  \vspace{\BetweenJobsGap}%
+  {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#2}}}%
+  {\color{darkgray} — #1}\hfill {\small #3}\\%
+  {\small #4}\par
+  \begin{cvitemize}
+}{\end{cvitemize}}
 
 \begin{document}
 \pagestyle{empty}
@@ -73,7 +79,7 @@
       \end{center}
 
       % CONTACT
-      \headleft{Contact}
+      \headleft{CONTACT}
       \small
       \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \\[0.6ex]
       +49\,163\,150\,9581 \\[0.6ex]
@@ -81,18 +87,28 @@
       Braunschweig, DE
       \normalsize
 
-      \vspace*{3mm} % <-- added gap between Contact and Skills
+      \vspace*{3mm}
+
+      % EDUCATION
+      \headleft{EDUCATION}
+      \textbf{Master in Engineering} \\[0.2ex]
+      \textbf{Telecommunication} \\[0.8ex]
+      {\small EQF Level 7} \\[0.6ex]
+      {\small Miguel Hernández University} \\[0.6ex]
+      {\small Alicante, ES}
+
+      \vspace*{3mm}
 
       % SKILLS
-      \headleft{Skills}
+      \headleft{SKILLS}
       \textbf{Cloud \& DevOps:} AWS, Azure, Kubernetes, Docker, CI/CD \\[0.6ex]
       \textbf{Agile Leadership:} SAFe, Scrum, backlog management, team coaching \\[0.6ex]
       \textbf{Data \& Tools:} Power BI, KPIs, Jira, Confluence, AI workflows
 
-      \vspace*{3mm} % <-- added gap between Contact and Skills
+      \vspace*{3mm}
 
       % LANGUAGES
-      \headleft{Languages}
+      \headleft{LANGUAGES}
       Spanish (native) \\[0.4ex]
       English (proficient) \\[0.4ex]
       German (advanced) \\[0.4ex]
@@ -105,35 +121,32 @@
 % --- RIGHT COLUMN ---
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-4mm\relax}
   \raggedright
-  \setlength{\parskip}{0.5ex}
+  \setlength{\parskip}{0.6ex}
 
-  % ==== NAME HEADER ====
-  \vspace*{6mm}
-  {\sffont\bfseries\fontsize{50}{52}\addfontfeatures{LetterSpace=2.0}\selectfont \textcolor{darkgray}{Juan} \textcolor{cvblue}{Cano-Selles}}\par
-  \vspace{1.5ex} % extra gap for readability
-  {\sffont\fontsize{18}{20}\selectfont\bfseries\textcolor{cvblue}{Senior Product Owner} \textcolor{darkgray}{| Program Manager}}\par
+% ==== NAME HEADER (grey clean style with contrast + caps) ====
+\vspace*{14mm} % push down from top of page
+\begin{center}
+  {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}%
+  \hspace{1.2em}% extra space between first and last name
+  {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
+
+  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=24.0}\textcolor{darkgray}{\spaceskip=1.5em SENIOR PRODUCT OWNER}}\\[1ex]
+\end{center}
+
+\vspace{4mm}
 
   % ==== PROFILE ====
   \headright{Profile}
-  \vspace*{-1.0ex}
-  \begin{list}{\textbullet}{%
-      \setlength{\leftmargin}{1.4em}%
-      \setlength{\labelsep}{0.5em}%
-      \setlength{\itemsep}{0.2ex}%
-      \setlength{\topsep}{0.2ex}%
-      \setlength{\rightmargin}{6mm}%
-      \setlength{\listparindent}{0pt}%
-      \setlength{\parsep}{0pt}%
-    }
+  \vspace*{-0.4ex}
+  \begin{cvitemize}
     \item 10+ years in automotive IT, leading large-scale cloud transformation programs across Europe.
     \item Delivered multi-million-euro platforms for millions of connected vehicles, ensuring global compliance.
     \item Cut operating costs by 70\% via data-driven change management and architectural redesign.
     \item Skilled in scaling Agile organizations (12+ teams) and implementing AI-enabled workflows.
-  \end{list}
+  \end{cvitemize}
 
   % ==== EXPERIENCE ====
   \headright{Professional Experience}
-  \vspace*{-0.5ex}
 
   \begin{job}{CARIAD SE}{Senior Program Manager}{Mar 2024 -- Sep 2025}{Wolfsburg, DE}
     \item Directed Volkswagen Automotive Cloud transformation, aligning 6 organizational units and 12 Agile teams under a unified roadmap.
@@ -152,16 +165,10 @@
     \item Oversaw crash, vibration, and EMC testing, ensuring compliance with EU safety standards.
   \end{job}
 
-  \begin{job}{AKKA Technologies}{Consultant Roles}{Oct 2015 -- Mar 2019}{Barcelona, ES}
+  \begin{job}{AKKA Technologies}{Consultant Roles}{Oct 2015 -- Mar 2019}{Stuttgart \& Ingolstadt, DE}
     \item Project Consultant (2017--2019): Supported integration of connected vehicle components across OEM programs.
     \item Technology Consultant (2015--2017): Developed IoT solutions (Python/C/C++ firmware, HTML/CSS/AngularJS web) and managed QA/CI pipelines.
   \end{job}
-
-  % ==== EDUCATION ====
-  \headright{Education}
-  \vspace*{-0.5ex}
-  \textbf{Master in Engineering – Telecommunication (EQF Level 7)} \\
-  Miguel Hernández University, Alicante, ES
 
 \end{minipage}
 
