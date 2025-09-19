@@ -27,6 +27,9 @@
 \newcommand{\headright}[1]{\vspace{1.6ex}\textsc{\large\color{cvblue}#1}\par%
   \vspace*{-0.6ex}{\color{cvblue}\hrulefill}\par\vspace*{0.4ex}}
 
+% BULLET STYLE (use round dots instead of dashes)
+\setlist[itemize]{left=1.2em, label=\textbullet, itemsep=0.3ex, topsep=0.2ex}
+
 % ---- SIDEBAR WIDTH ----
 \newlength{\SideBarW}
 \setlength{\SideBarW}{0.30\paperwidth}
@@ -36,7 +39,7 @@
   \vspace{1.0ex}%
   \noindent\textbf{#2} {\color{darkgray}--- #1}\hfill {\small #3}\\%
   {\small\itshape #4}\par
-  \begin{list}{--}{%
+\begin{list}{\textbullet}{%
       \setlength{\leftmargin}{1.4em}%
       \setlength{\labelsep}{0.5em}%
       \setlength{\itemsep}{0.2ex}%
@@ -82,11 +85,11 @@
 
       % SKILLS
       \headleft{Skills}
-      \begin{itemize}[leftmargin=*,itemsep=0.4ex]
-        \item \textbf{Cloud \& DevOps:} AWS, Azure, Kubernetes, Docker, CI/CD
-        \item \textbf{Agile Leadership:} SAFe, Scrum, backlog management, team coaching
-        \item \textbf{Data \& Tools:} Power BI, KPIs, Jira, Confluence, AI workflows
-      \end{itemize}
+      \textbf{Cloud \& DevOps:} AWS, Azure, Kubernetes, Docker, CI/CD \\[0.6ex]
+      \textbf{Agile Leadership:} SAFe, Scrum, backlog management, team coaching \\[0.6ex]
+      \textbf{Data \& Tools:} Power BI, KPIs, Jira, Confluence, AI workflows
+
+      \vspace*{3mm} % <-- added gap between Contact and Skills
 
       % LANGUAGES
       \headleft{Languages}
@@ -112,13 +115,21 @@
 
   % ==== PROFILE ====
   \headright{Profile}
-  \vspace*{-1.0ex} % reduce gap between header and bullets
-  \begin{itemize}[left=1.2em,itemsep=0.15ex]
+  \vspace*{-1.0ex}
+  \begin{list}{\textbullet}{%
+      \setlength{\leftmargin}{1.4em}%
+      \setlength{\labelsep}{0.5em}%
+      \setlength{\itemsep}{0.2ex}%
+      \setlength{\topsep}{0.2ex}%
+      \setlength{\rightmargin}{6mm}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+    }
     \item 10+ years in automotive IT, leading large-scale cloud transformation programs across Europe.
     \item Delivered multi-million-euro platforms for millions of connected vehicles, ensuring global compliance.
     \item Cut operating costs by 70\% via data-driven change management and architectural redesign.
     \item Skilled in scaling Agile organizations (12+ teams) and implementing AI-enabled workflows.
-  \end{itemize}
+  \end{list}
 
   % ==== EXPERIENCE ====
   \headright{Professional Experience}
