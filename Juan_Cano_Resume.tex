@@ -9,11 +9,10 @@
 
 % LAYOUT
 \usepackage[british]{babel}
-\usepackage[left=0mm,right=8mm,top=0mm,bottom=0mm]{geometry}
+\usepackage[left=0mm,right=5mm,top=0mm,bottom=0mm]{geometry}
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{eso-pic}
 
 % SYMBOLS & LISTS
 \usepackage{marvosym}
@@ -23,6 +22,7 @@
 % COLORS
 \definecolor{cvblue}{HTML}{304263}
 \definecolor{softwhite}{HTML}{FDFDFD}
+\definecolor{darkgray}{gray}{0.25}
 
 % HEADERS
 \newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
@@ -37,19 +37,19 @@
 \newlength{\SideBarW}
 \setlength{\SideBarW}{0.30\paperwidth}
 
-% ---- SPACING CONTROLS ----
+% ---- RIGHT-COLUMN SPACING CONTROLS ----
+\newlength{\TitleBulletGap}
+\setlength{\TitleBulletGap}{0.25ex}
 \newlength{\BetweenJobsGap}
 \setlength{\BetweenJobsGap}{1.5ex}
-
-% ---- RIGHT MARGIN (reduced by 40%) ----
 \newlength{\RightColMargin}
-\setlength{\RightColMargin}{1mm}
+\setlength{\RightColMargin}{6mm}
 
 % --- JOB ENVIRONMENT ---
 \newenvironment{job}[4]{%
   \vspace{\BetweenJobsGap}%
-  \noindent\textsc{#1} --- #2\hfill {\small #4}\\%
-  {\small\itshape #3}\par
+  \noindent\textsc{\textcolor{cvblue}{#1}} {\color{darkgray}--- #2}\hfill {\small #3}\\%
+  {\small\itshape #4}\par
   \begin{list}{--}{%
       \setlength{\leftmargin}{1.4em}%
       \setlength{\labelsep}{0.5em}%
@@ -59,16 +59,7 @@
       \setlength{\listparindent}{0pt}%
       \setlength{\parsep}{0pt}%
     }%
-}{%
-  \end{list}%
-}
-
-% --- FULL-HEIGHT LEFT BACKGROUND ---
-\AddToShipoutPictureBG*{%
-  \AtPageLowerLeft{%
-    \color{cvblue!90}\rule{\SideBarW}{\paperheight}%
-  }%
-}
+}{\end{list}}
 
 \begin{document}
 \pagestyle{empty}
@@ -77,47 +68,43 @@
 \setlength{\topskip}{0pt}
 \raggedbottom
 
-% ==== TWO COLUMNS ====
-\noindent
-% --- LEFT COLUMN ---
-\begin{minipage}[t]{\SideBarW}
-  \hspace*{4mm}%
-  \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
-    \color{softwhite}
-    \vspace*{6mm}
-    \begin{center}
-      \includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
-    \end{center}
+% ==== WRAP EVERYTHING IN ONE MINIPAGE TO AVOID BLANK PAGE ====
+\noindent\begin{minipage}[t][\textheight][t]{\textwidth}
 
-    \headleft{Contact details}
-    \small
-    \MVAt\ {\small juan.cano.selles@gmail.com} \\[0.4ex]
-    \Mobilefone\ +49\,163\,150\,9581 \\[0.5ex]
-    \Mundus\ \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.1ex]
-    \Letter\ Braunschweig, Germany
-    \normalsize
+% --- LEFT COLUMN full-height background ---
+\colorbox{cvblue!90}{%
+  \parbox[t][\textheight][t]{\SideBarW}{%
+    \hspace*{4mm}%
+    \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
+      \color{softwhite}
+      \vspace*{6mm}
+      \begin{center}
+        \includegraphics[width=0.9\linewidth]{Resume_Juan_Cano.png}
+      \end{center}
 
-    \headleft{Personal Information}
-    Age: \textbf{34} \\[0.5ex]
-    Nationality: \textbf{Spanish} \\[0.5ex]
-    Date of Birth: \textbf{1990-XX-XX} \\[0.5ex]
-    Marital Status: \textbf{Single}
+      \headleft{Contact}
+      \small
+      juan.cano.selles@gmail.com \\[0.4ex]
+      +49\,163\,150\,9581 \\[0.4ex]
+      \href{https://www.linkedin.com/in/jcanoselles/}{linkedin.com/in/jcanoselles} \\[0.4ex]
+      Braunschweig, DE
+      \normalsize
 
-    \headleft{Skills}
-    \begin{itemize}[leftmargin=*, itemsep=0.5ex]
-      \item Cloud: AWS, Azure, Kubernetes, Docker, CI/CD
-      \item Agile/SAFe, Scrum, backlog management, coaching teams
-      \item Data: Power BI, KPIs, workflow automation (AI/Copilot)
-      \item Tools: Jira, Confluence, collaboration platforms
-    \end{itemize}
+      \headleft{Skills}
+      \begin{itemize}[leftmargin=*, itemsep=0.5ex]
+        \item \textbf{Cloud \& DevOps:} AWS, Azure, Kubernetes, Docker, CI/CD
+        \item \textbf{Agile Leadership:} SAFe, Scrum, backlog management, team coaching
+        \item \textbf{Data \& Tools:} Power BI, KPIs, Jira, Confluence, AI/Copilot
+      \end{itemize}
 
-    \headleft{Languages}
-    \textbf{Spanish} (native) \\[0.5ex]
-    \textbf{English} (proficient) \\[0.5ex]
-    \textbf{German} (advanced) \\[0.5ex]
-    \textbf{French} (beginner)
-  \end{minipage}
-\end{minipage}%
+      \headleft{Languages}
+      \textbf{Spanish} (native) \\[0.5ex]
+      \textbf{English} (proficient) \\[0.5ex]
+      \textbf{German} (advanced) \\[0.5ex]
+      \textbf{French} (beginner)
+    \end{minipage}
+  }% closes parbox
+}%
 \hspace{3mm}%
 % --- RIGHT COLUMN ---
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-3mm\relax}
@@ -127,8 +114,10 @@
 
   % ==== NAME HEADER ====
   \vspace*{6mm}
-  {\fontsize{28}{30}\sffont\bfseries\MakeUppercase{\textcolor{cvblue}{Juan Cano-Selles}}}\par
-  \vspace*{1.0ex}
+  {\fontsize{28}{30}\sffont\bfseries\textcolor{darkgray}{Juan} \textcolor{cvblue}{Cano-Selles}}\par
+  \vspace*{0.8ex}
+  {\fontsize{15}{17}\sffont\color{darkgray} Senior Product Owner / Program Manager (Cloud \& AI)}\par
+  \vspace*{2ex}
 
   % ==== PROFILE ====
   \headright{Profile}
@@ -137,55 +126,46 @@
   % ==== EXPERIENCE ====
   \headright{Professional Experience}
 
-  \begin{job}{CARIAD SE}{Senior Program Manager}{Braunschweig, DE}{Mar 2024 -- Sep 2025}
+  \begin{job}{CARIAD SE}{Senior Program Manager}{Mar 2024 -- Sep 2025}{Wolfsburg, DE}
     \item Directed a complex transformation program in Volkswagen Automotive Cloud
     \item Managed 12 teams, 6 organizational units, and an 8-figure budget
   \end{job}
 
-  \begin{job}{CARIAD SE}{Program Manager}{Braunschweig, DE}{Nov 2020 -- Mar 2024}
+  \begin{job}{CARIAD SE}{Program Manager}{Nov 2020 -- Mar 2024}{Wolfsburg, DE}
     \item Delivered License \& Service Activation platform for millions of vehicles
     \item Integrated global regulatory requirements
     \item Reduced operational costs ~70\% via data-driven change management and architectural redesign
     \item Designed BI dashboards for product performance and adoption metrics
   \end{job}
 
-  \begin{job}{SEAT S.A.}{Technical Project Lead}{Barcelona, ES}{Mar 2019 -- Nov 2020}
-    \item Managed technical integration of Online Connectivity Unit (OCU) in vehicles enabling eCall and remote unlock
+  \begin{job}{SEAT S.A.}{Technical Project Lead}{Mar 2019 -- Nov 2020}{Barcelona, ES}
+    \item Managed integration of Online Connectivity Unit (OCU) enabling eCall and remote unlock
     \item Coordinated crash, vibration, and EMC testing
     \item Delivered software releases, technical blueprints, and mechanical designs
   \end{job}
 
-  \begin{job}{AKKA Technologies}{Project Consultant}{Barcelona, ES}{Dec 2017 -- Mar 2019}
+  \begin{job}{AKKA Technologies}{Project Consultant}{Dec 2017 -- Mar 2019}{Ingolstadt, DE}
     \item Supported integration of connected vehicle components
     \item Ensured validation compliance and cross-functional deliverables
   \end{job}
 
-  \begin{job}{AKKA Technologies}{Technology Consultant}{Barcelona, ES}{Oct 2015 -- Dec 2017}
+  \begin{job}{AKKA Technologies}{Technology Consultant}{Oct 2015 -- Dec 2017}{Stuttgart, DE}
     \item Developed IoT solutions including firmware (Python/C/C++) and web (HTML/CSS/AngularJS/JQuery)
     \item Managed QA and CI/CD processes
   \end{job}
 
   % ==== EDUCATION ====
   \headright{Education}
-  \noindent\textsc{Master in Engineering - Telecommunication} \\
-  \textit{Universidad Miguel Hernandez, Alicante, ES} \\
-  Sep 2008 -- Jun 2015
+  \noindent\textsc{Master in Engineering – Telecommunication} {\small (EQF Level 7)} \\
+  \textit{Miguel Hernández University, Alicante, ES} \\[0.4ex]
+  \begin{itemize}[leftmargin=1.4em,label=--,labelsep=0.5em,itemsep=0.3ex,topsep=0.2ex]
+    \item Research Student, Nimbus Research Centre, Cork (IE) \hfill 2014--2015
+    \item Erasmus Student, Munster Technical Univ., Cork (IE) \hfill 2013--2014
+    \item Séneca Student, UPC, Barcelona (ES) \hfill 2011--2012
+  \end{itemize}
 
-  % ==== INTERNSHIPS ====
-  \headright{Internships \& Scholarships}
-  \begin{list}{--}{%
-      \setlength{\leftmargin}{1.4em}%
-      \setlength{\labelsep}{0.5em}%
-      \setlength{\itemsep}{0.45ex}%
-      \setlength{\topsep}{0.2ex}%
-      \setlength{\rightmargin}{\RightColMargin}%
-      \setlength{\listparindent}{0pt}%
-      \setlength{\parsep}{0pt}%
-    }
-    \item Research Student --- Nimbus Research Centre, Cork (IE) \hfill 2014--2015
-    \item Erasmus Student --- Munster Technical Univ., Cork (IE) \hfill 2013--2014
-    \item Séneca Student --- UPC, Barcelona (ES) \hfill 2011--2012
-  \end{list}
 \end{minipage}
+
+\end{minipage} % end wrapper
 
 \end{document}
