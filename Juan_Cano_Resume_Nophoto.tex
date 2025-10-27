@@ -2,7 +2,7 @@
 % Juan Cano-Selles — Universal Resume Template
 % Optimized spacing, readable layout, ATS-safe, XeLaTeX-stable
 %============================================================
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,12pt]{article}
 
 \usepackage[a4paper,margin=1.4cm]{geometry}
 \usepackage{enumitem}
@@ -21,7 +21,6 @@
 \else
   \usepackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  % Safe fallback chain (no missing-font errors)
   \IfFontExistsTF{Helvetica}{
     \setmainfont{Helvetica}
   }{
@@ -41,26 +40,21 @@
   }
 \fi
 
-% --- tighter global list spacing (content closer to rule)
 \setlist[itemize]{leftmargin=0.15in, topsep=1pt, itemsep=2pt}
-\linespread{1.04}
+\linespread{1.08}
 \urlstyle{same}
 \raggedright
 
-% --- section macro: minimal gaps around the rule
 \newcommand{\Section}[1]{%
-  \vspace{20pt}% keep space between sections
+  \vspace{20pt}%
   {\large\bfseries\scshape #1}\par
-  \noindent\color{gray}\rule{\linewidth}{0.25pt}\color{black}\vspace{1.5pt}% title→rule=0pt, rule→content=1.5pt
+  \noindent\color{gray}\rule{\linewidth}{0.25pt}\color{black}\vspace{1.5pt}%
 }
 
-% --- optional: compact role and bullet spacing for readability
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={},leftmargin=0in,topsep=2pt,itemsep=5pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[topsep=0pt,itemsep=2pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
-
-% ---------- Subheading macro ----------
 \newcommand{\resumeItem}[1]{\item\small{#1}}
 \newcommand{\resumeSubheading}[4]{%
   \item
@@ -74,7 +68,7 @@
 
 \begin{center}
   {\LARGE\bfseries Juan Cano-Selles}\\[3pt]
-  {\large Product Manager \,|\, Cloud \& AI Platform Solutions}\\[3pt]
+  {\large Product Manager \,|\, Cloud \& Platform Solutions}\\[3pt]
   \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
   \,|\, +49 163 150 9581
   \,|\, \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[-2pt]
@@ -84,18 +78,19 @@
 % ---------- PROFILE ----------
 \Section{Profile}
 \begin{itemize}[leftmargin=0.15in]
-  \resumeItem{Product Manager with 10+ years leading scalable cloud, data, and AI platforms in Europe, bridging engineering, UX, and business strategy.}
-  \resumeItem{Delivered multi-brand SaaS and messaging platforms from concept to launch, impacting millions of connected users.}
-  \resumeItem{Combines technical fluency (cloud architecture, data pipelines) with customer empathy and evidence-based decision-making.}
+  \resumeItem{Professional with 10 years of experience across engineering, hardware, and digital products.}
+  \resumeItem{Five years in product ownership and program management, leading connected and cloud-based platforms from definition to launch.}
+  \resumeItem{Works with engineering, UX, and data teams to deliver reliable features with clear user and partner value.}
+  \resumeItem{Aligned mid-term platform roadmap with engineering and business priorities within the automotive cloud transformation.}
 \end{itemize}
 
 % ---------- SKILLS ----------
 \Section{Product \& Technical Skills}
 \begin{itemize}[leftmargin=0.15in]
-  \resumeItem{\textbf{Product Management:} Roadmaps, OKRs, user research, A/B testing, experimentation, KPI-driven prioritization.}
-  \resumeItem{\textbf{Cloud Platforms:} GCP (Pub/Sub, Cloud Run, Dataflow), AWS, Azure, Kubernetes, Docker, CI/CD.}
-  \resumeItem{\textbf{Data \& AI:} BI dashboards, LLM integration, analytics instrumentation, data automation, experimentation metrics.}
-  \resumeItem{\textbf{Collaboration:} Agile/SAFe leadership, UX–Engineering–Data Science alignment, stakeholder engagement.}
+  \resumeItem{\textbf{Product Management:} Roadmaps, OKRs, backlog management, experimentation, release planning, KPI-based iteration.}
+  \resumeItem{\textbf{Platforms:} SaaS lifecycle management, API-based integrations, platform messaging and notification flows.}
+  \resumeItem{\textbf{Cloud \& Data:} AWS (Lambda, S3, CloudWatch), Microsoft Azure, CI/CD, analytics dashboards, observability.}
+  \resumeItem{\textbf{Collaboration:} Cross-functional work with Engineering, UX, and Data Science; alignment of technical architecture with product goals.}
 \end{itemize}
 
 % ---------- EXPERIENCE ----------
@@ -103,33 +98,33 @@
 \resumeSubHeadingListStart
 
 \resumeSubheading
-  {Senior Program Manager — Cloud Transformation}{Mar 2024 -- Sep 2025}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
+  {Program Manager — Cloud Transformation}{Mar 2024 -- Sep 2025}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
   \resumeItemListStart
-    \resumeItem{Defined and executed roadmap for Volkswagen Automotive Cloud, a platform enabling 12M+ connected users across EU brands.}
-    \resumeItem{Launched data-driven KPI analytics on AWS and GCP Dataflow, cutting executive decision latency by 30\% and improving uptime visibility.}
-    \resumeItem{Partnered with engineering, UX, and analytics to design experimentation dashboards supporting continuous delivery and release feedback loops.}
+    \resumeItem{Supported delivery of components within the Volkswagen Automotive Cloud across multiple brands; coordinated cross-team dependencies and timelines.}
+    \resumeItem{Worked with Engineering and UX to refine priorities, improve platform usability, and prepare launch readiness for reporting and monitoring tools.}
+    \resumeItem{Set up KPI definitions and reporting pipelines using AWS and Azure data services to track adoption and platform performance for stakeholders.}
   \resumeItemListEnd
 
 \resumeSubheading
-  {Program Manager — Connected Vehicle Platforms}{Nov 2020 -- Mar 2024}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
+  {Senior Product Owner — Connected Vehicle Platforms}{Nov 2020 -- Mar 2024}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
   \resumeItemListStart
-    \resumeItem{Owned end-to-end lifecycle of a multi-brand SaaS platform handling millions of daily activations; increased user activation throughput by 2×.}
-    \resumeItem{Collaborated with engineering and data science to implement automated A/B experimentation improving activation success by 12\%.}
-    \resumeItem{Defined product OKRs aligning roadmap to adoption and engagement outcomes; reduced operational overhead by 70\%.}
+    \resumeItem{Owned the License \& Service Activation platform handling high-volume activations across global markets.}
+    \resumeItem{Collaborated with Engineering and Design to improve activation flows, reliability, and partner integrations; included messaging and notification touchpoints across lifecycle events.}
+    \resumeItem{Introduced experimentation practices and engagement metrics to guide feature planning and assess adoption.}
   \resumeItemListEnd
 
 \resumeSubheading
   {Technical Project Lead — Connectivity Systems}{Mar 2019 -- Nov 2020}{Barcelona, Spain}{SEAT S.A.}
   \resumeItemListStart
-    \resumeItem{Drove end-to-end delivery of the Online Connectivity Unit (OCU) enabling remote services and eCall across EU markets.}
-    \resumeItem{Led validation and compliance for multi-brand integration and EU safety and data standards.}
+    \resumeItem{Led integration of the Online Connectivity Unit (OCU), enabling remote and safety services across EU markets.}
+    \resumeItem{Coordinated testing, validation, and compliance activities with software, hardware, and quality teams.}
   \resumeItemListEnd
 
 \resumeSubheading
   {Consultant Engineer — IoT \& QA Automation}{Oct 2015 -- Mar 2019}{Stuttgart \& Ingolstadt, Germany}{AKKA Technologies}
   \resumeItemListStart
-    \resumeItem{Developed IoT automation frameworks and CI pipelines improving release throughput by 25\%.}
-    \resumeItem{Supported cross-OEM connected-vehicle integrations with embedded analytics and QA automation.}
+    \resumeItem{Developed IoT test automation frameworks and CI pipelines to improve delivery speed and stability.}
+    \resumeItem{Supported multi-OEM integration of connected vehicle components and validation systems.}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
