@@ -1,14 +1,14 @@
 % !TeX program = xelatex
-\documentclass[12pt,a4paper]{article} % bumped to 12pt for readability
+\documentclass[12pt,a4paper]{article}
 
-% FONTS
+% ===== FONTS =====
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-\setmainfont{Helvetica Neue Light} % body font
-\newfontfamily\sffont{Helvetica Neue} % headings
-\newfontfamily\secfont{Verdana} % section headers
+\setmainfont{Helvetica Neue Light}
+\newfontfamily\sffont{Helvetica Neue}
+\newfontfamily\secfont{Verdana}
 
-% LAYOUT
+% ===== LAYOUT =====
 \usepackage[british]{babel}
 \usepackage[left=0mm,right=5mm,top=0mm,bottom=0mm]{geometry}
 \usepackage{microtype}
@@ -17,42 +17,38 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 
-% COLORS
+% ===== COLORS =====
 \definecolor{cvblue}{HTML}{304263}
 \definecolor{softwhite}{HTML}{FDFDFD}
 \definecolor{darkgray}{gray}{0.25}
 
-% HEADERS (left column)
+% ===== HEADERS =====
 \newcommand{\headleft}[1]{%
   \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
   \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.8ex}
 }
-
-% Right column section headers (ultra tight)
 \newcommand{\headright}[1]{%
-  \vspace{0.6ex}% minimal space before section
+  \vspace{0.6ex}%
   {\sffont\bfseries\large\addfontfeatures{LetterSpace=2.0}\textcolor{cvblue}{\MakeUppercase{#1}}}\\[-1ex]%
   {\color{cvblue}\rule{\dimexpr\linewidth\relax}{0.6pt}}\\[-0.4ex]%
 }
 
-% ---- SIDEBAR WIDTH ----
+% ===== LAYOUT CONSTANTS =====
 \newlength{\SideBarW}
 \setlength{\SideBarW}{0.30\paperwidth}
-
-% Unified bullet style (Profile + Jobs)
-\newlist{cvitemize}{itemize}{1}
-\setlist[cvitemize]{left=1.4em, label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}}, 
-  itemsep=0.5ex, topsep=0.2ex, rightmargin=6mm, parsep=0pt}
-
-% --- JOB ENVIRONMENT ---
 \newlength{\BetweenJobsGap}
-\setlength{\BetweenJobsGap}{2.0ex}
+\setlength{\BetweenJobsGap}{1.35ex}
 
-\newenvironment{job}[4]{%
+% ---- LIST STYLE ----
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{left=1.2em,label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}},
+  itemsep=0.28ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
+
+% ---- JOB ENV: 3 args -> {Role}{Dates}{Company — Location}
+\newenvironment{job}[3]{%
   \vspace{\BetweenJobsGap}%
-  {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#2}}}%
-  {\color{darkgray} — #1}\hfill {\small #3}\\%
-  {\small #4}\par
+  \noindent{\sffont\addfontfeatures{LetterSpace=1.3}\textcolor{cvblue}{\MakeUppercase{#1}}}\hfill {\small #2}\par
+  {\small #3}\par\vspace{0.2ex}%
   \begin{cvitemize}
 }{\end{cvitemize}}
 
@@ -63,11 +59,10 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-% ==== WRAP EVERYTHING IN ONE MINIPAGE (no blank page) ====
 \vspace*{-10mm}
 \noindent\begin{minipage}[t]{\textwidth}
 
-% --- LEFT COLUMN full-height background ---
+% ===== LEFT SIDEBAR =====
 \colorbox{cvblue!90}{%
   \parbox[t][\textheight][t]{\SideBarW}{%
     \hspace*{4mm}%
@@ -81,97 +76,111 @@
       % CONTACT
       \headleft{CONTACT}
       \small
-      \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \\[0.6ex]
-      +49\,163\,150\,9581 \\[0.6ex]
-      \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\[0.6ex]
-      Braunschweig, DE
+      \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.6ex]
+      +49 163 150 9581\\[0.6ex]
+      \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.6ex]
+      Braunschweig, DE — Zürich ready
       \normalsize
 
       \vspace*{3mm}
 
       % EDUCATION
       \headleft{EDUCATION}
-      \textbf{Master in Engineering} \\[0.2ex]
-      \textbf{Telecommunication} \\[0.8ex]
-      {\small EQF Level 7} \\[0.6ex]
-      {\small Miguel Hernández University} \\[0.6ex]
+      \textbf{Master in Engineering}\\[0.2ex]
+      \textbf{Telecommunication}\\[0.6ex]
+      {\small EQF Level 7}\\[0.4ex]
+      {\small Miguel Hernández University}\\[0.4ex]
       {\small Alicante, ES}
+
+      \vspace*{3mm}
+
+      % CERTIFICATIONS
+      \headleft{CERTIFICATIONS}
+      PMP — Project Management Professional (2025)\\[0.6ex]
+      SAFe Product Owner / Product Manager (2021)
 
       \vspace*{3mm}
 
       % SKILLS
       \headleft{SKILLS}
-      \textbf{Cloud \& DevOps:} AWS, Azure, Kubernetes, Docker, CI/CD \\[0.6ex]
-      \textbf{Agile Leadership:} SAFe, Scrum, backlog management, team coaching \\[0.6ex]
-      \textbf{Data \& Tools:} Power BI, KPIs, Jira, Confluence, AI workflows
+      \textbf{Service:} CR intake, SLA governance, release planning, RCA\\[0.4ex]
+      \textbf{Agile:} Scrum/SAFe, backlog prioritisation, cross-team sync\\[0.4ex]
+      \textbf{Cloud:} AWS, Azure, CI/CD, Power BI, Jira, Confluence\\[0.4ex]
+      \textbf{Ops:} Incident triage, change control, status dashboards
 
       \vspace*{3mm}
 
       % LANGUAGES
       \headleft{LANGUAGES}
-      Spanish (native) \\[0.4ex]
-      English (proficient) \\[0.4ex]
-      German (advanced) \\[0.4ex]
+      Spanish (native)\\[0.4ex]
+      English (professional)\\[0.4ex]
+      German (business fluent)\\[0.4ex]
       French (beginner)
 
     \end{minipage}
-  }% closes parbox
+  }%
 }%
 \hspace{4mm}%
-% --- RIGHT COLUMN ---
+% ===== RIGHT COLUMN =====
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-4mm\relax}
   \raggedright
-  \setlength{\parskip}{0.6ex}
+  \setlength{\parskip}{0.48ex}
 
-% ==== NAME HEADER (grey clean style with contrast + caps) ====
-\vspace*{14mm} % push down from top of page
+% ===== NAME HEADER =====
+\vspace*{14mm}
 \begin{center}
   {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}%
-  \hspace{1.2em}% extra space between first and last name
+  \hspace{1.2em}%
   {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
-
-  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=24.0}\textcolor{darkgray}{\spaceskip=1.5em SENIOR PRODUCT OWNER}}\\[1ex]
+  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=22.0}\textcolor{darkgray}{\spaceskip=1.5em PROGRAM MANAGER}}
 \end{center}
 
-\vspace{4mm}
+\vspace{3mm}
 
-  % ==== PROFILE ====
-  \headright{Profile}
-  \vspace*{-0.4ex}
-  \begin{cvitemize}
-    \item 10+ years in automotive IT, leading large-scale cloud transformation programs across Europe.
-    \item Delivered multi-million-euro platforms for millions of connected vehicles, ensuring global compliance.
-    \item Cut operating costs by 70\% via data-driven change management and architectural redesign.
-    \item Skilled in scaling Agile organizations (12+ teams) and implementing AI-enabled workflows.
-  \end{cvitemize}
+% ===== PROFILE =====
+\headright{Profile}
+\vspace*{-0.4ex}
+\begin{cvitemize}
+  \item PMP-certified program manager with 10 years in cloud delivery and service operations in regulated contexts.
+  \item Drives CR intake, shared backlog, SLA-led releases, and incident RCA across distributed Agile teams.
+  \item Proven cost optimisation and executive reporting; led programs with 7–8 figure scope and multi-brand impact.
+\end{cvitemize}
 
-  % ==== EXPERIENCE ====
-  \headright{Professional Experience}
+% ===== EXPERIENCE =====
+\vspace*{1.8ex}
+\headright{Professional Experience}
 
-  \begin{job}{CARIAD SE}{Senior Program Manager}{Mar 2024 -- Sep 2025}{Wolfsburg, DE}
-    \item Directed Volkswagen Automotive Cloud transformation, aligning 6 organizational units and 12 Agile teams under a unified roadmap.
-    \item Managed an 8-figure budget, ensuring delivery of cloud-native services within strategic cost and timeline objectives.
-    \item Established KPIs and dashboards, improving executive visibility and accelerating decision-making cycles.
-  \end{job}
+% ---- CARIAD — Senior Program Manager ----
+\begin{job}{Senior Program Manager}{Mar 2024 -- Sep 2025}{CARIAD SE — Wolfsburg, DE}
+  \item Directed a complex transformation program in Volkswagen Automotive Cloud for all VW Group brands and markets; reported to C-level.
+  \item Managed prioritisation, implementation, and funding across 12 teams and 6 org units; oversaw an 8-figure budget with supplier-to-board visibility.
+  \item Drove AWS Migration Acceleration Program and introduced Copilot automation to cut manual reporting and raise transparency.
+\end{job}
 
-  \begin{job}{CARIAD SE}{Program Manager}{Nov 2020 -- Mar 2024}{Wolfsburg, DE}
-    \item Delivered License \& Service Activation platform enabling millions of vehicles to meet global compliance requirements.
-    \item Reduced operational costs by \textasciitilde70\% through data-driven change management and architectural redesign.
-    \item Designed BI dashboards for product adoption and performance metrics used by executive stakeholders.
-  \end{job}
+% ---- CARIAD — Program Manager ----
+\begin{job}{Program Manager}{Nov 2020 -- Mar 2024}{CARIAD SE — Wolfsburg, DE}
+  \item Owned end-to-end delivery of the License \& Service Activation platform, scaling to millions of vehicles worldwide.
+  \item Integrated regional compliance into predictable releases and ACs; reduced operating costs by \textasciitilde70\% via data-driven change and architecture redesign.
+  \item Managed multi-team backlogs and incident triage; built BI dashboards for engagement, adoption, performance, and compliance.
+\end{job}
 
-  \begin{job}{SEAT S.A.}{Technical Project Lead}{Mar 2019 -- Nov 2020}{Barcelona, ES}
-    \item Led integration of Online Connectivity Unit (OCU), enabling eCall and remote unlock.
-    \item Oversaw crash, vibration, and EMC testing, ensuring compliance with EU safety standards.
-  \end{job}
+% ---- SEAT ----
+\begin{job}{Technical Project Lead}{Mar 2019 -- Nov 2020}{SEAT S.A. — Barcelona, ES}
+  \item Oversaw OCU integration enabling eCall and remote unlock; coordinated suppliers and internal cross-functions.
+  \item Managed crash/vibration/EMC validation for homologation and delivery of SW releases, technical blueprints, and mechanical designs.
+\end{job}
 
-  \begin{job}{AKKA Technologies}{Consultant Roles}{Oct 2015 -- Mar 2019}{Stuttgart \& Ingolstadt, DE}
-    \item Project Consultant (2017--2019): Supported integration of connected vehicle components across OEM programs.
-    \item Technology Consultant (2015--2017): Developed IoT solutions (Python/C/C++ firmware, HTML/CSS/AngularJS web) and managed QA/CI pipelines.
-  \end{job}
+% ---- AKKA (Project Consultant) ----
+\begin{job}{Project Consultant}{Dec 2017 -- Mar 2019}{AKKA Technologies — Barcelona, ES}
+  \item Provided technical project support for connected component integration, ensuring validation compliance and cross-functional deliverables.
+\end{job}
+
+% ---- AKKA (Technology Consultant) ----
+\begin{job}{Technology Consultant}{Oct 2015 -- Dec 2017}{AKKA Technologies — Barcelona, ES}
+  \item Supported IoT solutions: firmware (Python/C/C++), web (HTML/CSS/AngularJS/jQuery), QA and CI (Jenkins/Git).
+\end{job}
 
 \end{minipage}
-
 \end{minipage}
 
 \end{document}
