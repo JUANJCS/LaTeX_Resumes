@@ -17,7 +17,7 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 
-% ===== COLORS =====
+% ===== COLOURS =====
 \definecolor{cvblue}{HTML}{304263}
 \definecolor{softwhite}{HTML}{FDFDFD}
 \definecolor{darkgray}{gray}{0.25}
@@ -33,22 +33,21 @@
   {\color{cvblue}\rule{\dimexpr\linewidth\relax}{0.6pt}}\\[-0.4ex]%
 }
 
-% ===== LAYOUT CONSTANTS =====
+% ===== CONSTANTS =====
 \newlength{\SideBarW}
 \setlength{\SideBarW}{0.30\paperwidth}
 \newlength{\BetweenJobsGap}
-\setlength{\BetweenJobsGap}{1.35ex}
+\setlength{\BetweenJobsGap}{1.6ex}
 
-% ---- LIST STYLE ----
 \newlist{cvitemize}{itemize}{1}
 \setlist[cvitemize]{left=1.2em,label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}},
-  itemsep=0.28ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
+itemsep=0.3ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 
-% ---- JOB ENV: 3 args -> {Role}{Dates}{Company — Location}
-\newenvironment{job}[3]{%
+\newenvironment{job}[4]{%
   \vspace{\BetweenJobsGap}%
-  \noindent{\sffont\addfontfeatures{LetterSpace=1.3}\textcolor{cvblue}{\MakeUppercase{#1}}}\hfill {\small #2}\par
-  {\small #3}\par\vspace{0.2ex}%
+  {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#2}}}%
+  {\color{darkgray} — #1}\hfill {\small #3}\\%
+  {\small #4}\par
   \begin{cvitemize}
 }{\end{cvitemize}}
 
@@ -79,7 +78,7 @@
       \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.6ex]
       +49 163 150 9581\\[0.6ex]
       \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.6ex]
-      Braunschweig, DE — Zürich ready
+      Braunschweig, DE — Zürich ready to relocate
       \normalsize
 
       \vspace*{3mm}
@@ -103,10 +102,10 @@
 
       % SKILLS
       \headleft{SKILLS}
-      \textbf{Service:} CR intake, SLA governance, incident RCA, release planning\\[0.4ex]
-      \textbf{Agile:} Scrum/SAFe, shared backlog, Kanban ops, cross-team sync\\[0.4ex]
-      \textbf{Cloud:} AWS, Azure, CI/CD, Power BI, Jira, Confluence\\[0.4ex]
-      \textbf{Ops:} Code freeze/cut-offs, status dashboards, exec reporting
+      \textbf{Delivery:} CR intake, SLA control, incident triage, release planning\\[0.4ex]
+      \textbf{Agile:} Scrum/SAFe, backlog prior., stakeholder alignment\\[0.4ex]
+      \textbf{Cloud:} AWS, Azure, CI/CD, Jira, Confluence, BI dashboards\\[0.4ex]
+      \textbf{Ops:} RCA, change control, KPI dashboards, risk tracking
 
       \vspace*{3mm}
 
@@ -124,7 +123,7 @@
 % ===== RIGHT COLUMN =====
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-4mm\relax}
   \raggedright
-  \setlength{\parskip}{0.48ex}
+  \setlength{\parskip}{0.55ex}
 
 % ===== NAME HEADER =====
 \vspace*{14mm}
@@ -141,45 +140,33 @@
 \headright{Profile}
 \vspace*{-0.4ex}
 \begin{cvitemize}
-  \item PMP-certified program manager with 10 years in platform delivery and service operations for regulated products.
-  \item Client-facing delivery lead for multi-tenant platforms: CR intake, shared backlog, SLAs, incident triage, and releases.
-  \item Proven cost optimisation (~70\%) and executive reporting; led programmes with 7–8 figure scope across brands/regions.
+  \item PMP-certified programme manager with 10 years’ experience leading cloud and mobile platform delivery in regulated environments.
+  \item Skilled in managing client change requests, SLAs, and multi-tenant release cycles for global stakeholders.
+  \item Experienced in Agile scaling, backlog governance, and cross-functional coordination between Product, DevOps, and Service Delivery.
 \end{cvitemize}
 
 % ===== EXPERIENCE =====
-\vspace*{1.8ex}
+\vspace*{2.4ex}
 \headright{Professional Experience}
 
-% ---- CARIAD — Senior Program Manager ----
-\begin{job}{Senior Program Manager}{Mar 2024 -- Sep 2025}{CARIAD SE — Wolfsburg, DE}
-  \item Directed a complex transformation in Volkswagen Automotive Cloud for all VW Group brands/markets; reported to C-level.
-  \item Prioritised, implemented, and funded work across 12 teams and 6 org units; oversaw an 8-figure scope with supplier-to-board visibility.
-  \item Drove AWS Migration Acceleration Program and introduced Copilot automation to cut manual reporting and raise transparency.
-  \item Governed shared backlog, SLAs, and release calendar (cut-offs/code freeze) with standardised status dashboards.
+\begin{job}{CARIAD SE}{Senior Program Manager — Automotive Cloud}{Mar 2024 -- Sep 2025}{Wolfsburg, DE}
+  \item Directed a transformation programme in Volkswagen Automotive Cloud covering all Group brands and markets, reporting to C-level leadership.
+  \item Managed prioritisation and funding across 12 teams and 6 units with an eight-figure budget, ensuring end-to-end visibility and delivery compliance.
+  \item Introduced automated reporting tools (Copilot) and KPI dashboards to enhance transparency and SLA governance.
 \end{job}
 
-% ---- CARIAD — Program Manager ----
-\begin{job}{Program Manager}{Nov 2020 -- Mar 2024}{CARIAD SE — Wolfsburg, DE}
-  \item Owned end-to-end delivery of the License \& Service Activation platform, scaled to millions of vehicles worldwide.
-  \item Integrated regional compliance into predictable releases and acceptance criteria; reduced operating costs by \textasciitilde70\%.
-  \item Managed multi-team backlogs and incident triage; produced BI dashboards for adoption, performance, and SLA reporting.
-  \item Acted as single point of contact for delivery across Legal, Sales, Operations, Engineering, and external partners.
+\begin{job}{CARIAD SE}{Senior Product Owner — Service Activation}{Nov 2020 -- Mar 2024}{Wolfsburg, DE}
+  \item Owned delivery of the global Licence \& Service Activation platform for millions of vehicles in compliance-driven markets.
+  \item Standardised workflows (SLAs, templates, RACI, release procedures) improving defect resolution and client satisfaction.
+  \item Reduced operational costs by \textasciitilde70\% through data-driven optimisation and architecture redesign.
 \end{job}
 
-% ---- SEAT ----
-\begin{job}{Technical Project Lead}{Mar 2019 -- Nov 2020}{SEAT S.A. — Barcelona, ES}
-  \item Led OCU integration enabling connected features (eCall, remote unlock); coordinated suppliers and internal teams.
-  \item Managed validation for homologation (crash, vibration, EMC) and delivery of software/mechanical artefacts to gates.
+\begin{job}{SEAT S.A.}{Technical Project Lead — Connectivity}{Mar 2019 -- Nov 2020}{Barcelona, ES}
+  \item Led integration of connected services (eCall, remote unlock) and managed homologation, testing, and readiness gates.
 \end{job}
 
-% ---- AKKA (Project Consultant) ----
-\begin{job}{Project Consultant}{Dec 2017 -- Mar 2019}{AKKA Technologies — Barcelona, ES}
-  \item Supported integration of connected components; ensured validation compliance and cross-functional deliverables.
-\end{job}
-
-% ---- AKKA (Technology Consultant) ----
-\begin{job}{Technology Consultant}{Oct 2015 -- Dec 2017}{AKKA Technologies — Barcelona, ES}
-  \item Delivered IoT firmware (Python/C/C++), web (HTML/CSS/AngularJS/jQuery), and CI/QA pipelines (Jenkins/Git).
+\begin{job}{AKKA Technologies}{Consultant Engineer — IoT \& QA}{Oct 2015 -- Mar 2019}{Barcelona, ES}
+  \item Delivered firmware and web solutions for IoT projects and automated QA pipelines for automotive clients.
 \end{job}
 
 \end{minipage}
