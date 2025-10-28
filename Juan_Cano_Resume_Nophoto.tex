@@ -1,6 +1,6 @@
 %============================================================
-% Juan Cano-Selles — Avaloq-tailored Resume
-% ATS-safe, XeLaTeX-stable, optimized for Service Delivery / Program Manager roles
+% Juan Cano-Selles — IBM-tailored Resume (truth-aligned)
+% ATS-safe, XeLaTeX-stable, optimised for Service Delivery / Program Management
 %============================================================
 \documentclass[a4paper,12pt]{article}
 
@@ -21,20 +21,10 @@
 \else
   \usepackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \IfFontExistsTF{Helvetica}{
-    \setmainfont{Helvetica}
-  }{
-    \IfFontExistsTF{Arial}{
-      \setmainfont{Arial}
-    }{
-      \IfFontExistsTF{DejaVu Sans}{
-        \setmainfont{DejaVu Sans}
-      }{
-        \IfFontExistsTF{Noto Sans}{
-          \setmainfont{Noto Sans}
-        }{
-          \setmainfont{Latin Modern Sans}
-        }
+  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{
+    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{
+      \IfFontExistsTF{DejaVu Sans}{\setmainfont{DejaVu Sans}}{
+        \IfFontExistsTF{Noto Sans}{\setmainfont{Noto Sans}}{\setmainfont{Latin Modern Sans}}
       }
     }
   }
@@ -50,7 +40,6 @@
   {\large\bfseries\scshape #1}\par
   \noindent\color{gray}\rule{\linewidth}{0.25pt}\color{black}\vspace{1.5pt}%
 }
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={},leftmargin=0in,topsep=2pt,itemsep=5pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[topsep=0pt,itemsep=2pt]}
@@ -68,7 +57,7 @@
 
 \begin{center}
   {\LARGE\bfseries Juan Cano-Selles}\\[3pt]
-  {\large Program Manager / Senior Product Owner — Cloud \& Platform Delivery}\\[3pt]
+  {\large Program Manager — Cloud, Data \& Service Delivery}\\[3pt]
   \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
   \,|\, +49 163 150 9581
   \,|\, \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[-2pt]
@@ -78,19 +67,19 @@
 % ---------- PROFILE ----------
 \Section{Profile}
 \begin{itemize}[leftmargin=0.15in]
-  \resumeItem{Certified \textbf{PMP (2025)} and \textbf{SAFe Product Owner (2021)} with 10+ years in engineering, digital product, and cloud delivery.}
-  \resumeItem{Led end-to-end programs across Europe for multi-brand, multi-tenant cloud platforms in the automotive domain.}
-  \resumeItem{Expert in release management, incident prioritization, and stakeholder alignment across distributed Agile teams.}
-  \resumeItem{Combines customer-centric delivery with strong governance of KPIs, SLAs, and change management processes.}
+  \resumeItem{Certified \textbf{PMP (2025)} and \textbf{SAFe Product Owner (2021)} with 10+ years in engineering and technology delivery.}
+  \resumeItem{Led \textbf{cloud, data, and automation programmes} in Europe with focus on governance, quality, and timely execution.}
+  \resumeItem{Experienced in multi-vendor environments, KPI/SLA governance, and stakeholder management in operational contexts.}
+  \resumeItem{Technical grounding in hybrid-cloud platforms (AWS, Azure, Kubernetes) combined with service delivery leadership.}
 \end{itemize}
 
 % ---------- CORE COMPETENCIES ----------
 \Section{Core Competencies}
 \begin{itemize}[leftmargin=0.15in]
-  \resumeItem{\textbf{Program \& Service Delivery:} Change request intake, incident triage, backlog governance, SLA reporting, root-cause analysis.}
-  \resumeItem{\textbf{Release Management:} Planning and coordination of multi-client releases, regression testing cycles, and code-freeze windows.}
-  \resumeItem{\textbf{Agile Leadership:} Scrum/SAFe practices, PI planning, cross-team synchronization, transparent prioritization.}
-  \resumeItem{\textbf{Cloud \& Tooling:} AWS, Azure, CI/CD, Power BI dashboards, Jira, Confluence, and DevOps coordination.}
+  \resumeItem{\textbf{Service Delivery Management:} KPI tracking, SLA monitoring, incident/risk management, continuous improvement (ITIL practices familiarity).}
+  \resumeItem{\textbf{Programme Leadership:} Multi-project coordination, governance cadence, resource and financial oversight.}
+  \resumeItem{\textbf{Client \& Stakeholder Engagement:} Executive communication, roadmap alignment, escalation handling.}
+  \resumeItem{\textbf{Technology Domains:} Cloud delivery, data analytics enablement, process automation, CI/CD, DevOps, hybrid architectures.}
 \end{itemize}
 
 % ---------- EXPERIENCE ----------
@@ -100,33 +89,35 @@
 \resumeSubheading
   {Program Manager — Automotive Cloud Delivery}{Mar 2024 -- Sep 2025}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
   \resumeItemListStart
-    \resumeItem{Directed cross-brand delivery for Volkswagen’s Automotive Cloud, coordinating 12 Agile teams and 6 organizational units.}
-    \resumeItem{Governed release calendar and environment readiness; ensured transparent prioritization of incidents and change requests.}
-    \resumeItem{Implemented KPI dashboards and executive reporting for performance, adoption, and SLA compliance.}
-    \resumeItem{Acted as single point of contact for escalation and release alignment across Product, DevOps, and executive stakeholders.}
+    \resumeItem{Coordinated delivery for Volkswagen’s Automotive Cloud across 12 Agile teams and 6 organisational units.}
+    \resumeItem{Set up delivery governance for service operations: dashboards, SLA monitoring, risk registers, and status reviews.}
+    \resumeItem{Served as main delivery contact for senior stakeholders, aligning scope, priorities, and quality expectations.}
+    \resumeItem{Managed an 8-figure budget and supplier performance within a multi-vendor environment.}
+    \resumeItem{Aligned Cloud, DevOps, and Data teams to improve release readiness and resource allocation.}
+    \resumeItem{Supported transition to operations and continuous improvement across run activities.}
   \resumeItemListEnd
 
 \resumeSubheading
   {Senior Product Owner — License \& Service Activation}{Nov 2020 -- Mar 2024}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
   \resumeItemListStart
-    \resumeItem{Owned end-to-end platform lifecycle enabling activation of digital services across global markets.}
-    \resumeItem{Standardized delivery workflows, reducing defect resolution time by 30\% through shared backlog and SLA tracking.}
-    \resumeItem{Defined KPIs, acceptance criteria, and release procedures in coordination with engineering and QA teams.}
-    \resumeItem{Introduced structured feedback loops and adoption metrics to guide roadmap iterations.}
+    \resumeItem{Owned backlog and delivery for the platform enabling digital service activation across multiple markets.}
+    \resumeItem{Standardised delivery workflows, incident and change intake, and release procedures with engineering and QA.}
+    \resumeItem{Defined KPIs and acceptance criteria; introduced adoption and operational metrics to guide the roadmap.}
+    \resumeItem{Prepared leadership reviews with data-driven reporting and risk/issue status.}
   \resumeItemListEnd
 
 \resumeSubheading
   {Technical Project Lead — Connectivity Systems}{Mar 2019 -- Nov 2020}{Barcelona, Spain}{SEAT S.A.}
   \resumeItemListStart
-    \resumeItem{Led validation and integration of the Online Connectivity Unit (OCU), enabling remote and safety services across EU markets.}
-    \resumeItem{Coordinated multidisciplinary engineering teams and managed stakeholder communication across suppliers and regulators.}
+    \resumeItem{Led integration and validation of the Online Connectivity Unit (OCU) supporting remote and safety functions.}
+    \resumeItem{Coordinated suppliers and internal teams; ensured compliance with European quality and regulatory standards.}
   \resumeItemListEnd
 
 \resumeSubheading
-  {Consultant Engineer — IoT \& QA Automation}{Oct 2015 -- Mar 2019}{Stuttgart \& Ingolstadt, Germany}{AKKA Technologies}
+  {Consultant Engineer — IoT \& QA Automation}{Oct 2015 -- Mar 2019}{Barcelona, Spain}{AKKA Technologies}
   \resumeItemListStart
-    \resumeItem{Developed automated test and CI pipelines for connected systems, increasing delivery reliability and release speed.}
-    \resumeItem{Supported multiple OEM clients, balancing requirements and quality objectives in a multi-tenant setup.}
+    \resumeItem{Developed automated QA and CI/CD pipelines for connected systems to improve delivery reliability.}
+    \resumeItem{Worked with OEM clients on validation frameworks in multi-project environments.}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
