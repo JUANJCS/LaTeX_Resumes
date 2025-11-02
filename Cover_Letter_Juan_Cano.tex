@@ -1,0 +1,72 @@
+%============================================================
+% Juan Cano-Selles — GitLab Cover Letter (readable 12pt layout)
+%============================================================
+\documentclass[12pt,a4paper]{moderncv}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage[scale=0.80]{geometry} % a bit more space for 12pt text
+
+\moderncvstyle{classic}
+\moderncvcolor{black}
+
+% Fonts
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{\IfFontExistsTF{Arial}{\setmainfont{Arial}}{\setmainfont{Noto Sans}}}
+
+% Global spacing: keep default line height; paragraphs provide the rhythm
+\linespread{1.12}              % base line spacing
+\setlength{\parskip}{1.5em}    % bigger paragraph separation for readability
+
+\nopagenumbers{}
+\name{Juan}{Cano-Selles}       % metadata only
+
+% Disable moderncv auto title/footer (prevents duplicates/links)
+\makeatletter
+\renewcommand*{\makelettertitle}{}     
+\renewcommand*{\makeletterclosing}{}   
+\makeatother
+
+\begin{document}
+
+% -------- Right-aligned header --------
+\vspace*{-0.5em}
+\begin{flushright}
+{\large \textbf{Juan Cano-Selles}}\\
+Braunschweig, Germany\\
+\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\
++49 163 150 9581\\
+\href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
+\end{flushright}
+
+\vspace{1.0cm}
+
+\recipient{Hiring Team}{GitLab}
+\date{\today}
+\opening{Dear Hiring Team,}
+
+% -------- Body with slightly looser lines --------
+\begingroup
+\setlength{\baselineskip}{1.12\baselineskip} % increase line spacing only inside body
+\setlength{\parskip}{1.5em}     % <<-- this is the active one
+\parindent=0pt
+
+Over the past decade, I have led large, distributed engineering initiatives in cloud and DevOps environments, most recently at CARIAD SE, Volkswagen Group’s software and digital technology company. My focus was to help complex organizations deliver software with the same agility and transparency that define modern, open engineering cultures. That journey—introducing asynchronous collaboration, CI/CD discipline, and measurable delivery metrics into a regulated enterprise setting—is precisely why the Technical Program Manager role at GitLab is a strong fit.
+
+At CARIAD, I supported the transformation of multiple Agile product teams delivering a multi-tenant cloud platform used across several domains. We moved from fragmented, meeting-heavy coordination to documentation-first progress tracking and data-driven retrospectives. Those changes improved release predictability and reduced cycle times by roughly 30 percent, creating shared visibility between product and engineering functions.
+
+What draws me to GitLab is that this mindset is not a side project but the foundation of how the company operates. I’m motivated by the idea of scaling collaboration, not enforcing control—helping engineers focus on iteration, clarity, and measurable outcomes. My background in program leadership, combined with hands-on experience in DevOps workflows and async coordination across continents, fits naturally into GitLab’s remote-first structure and CREDIT values.
+
+I’m eager to help scale GitLab’s engineering programs as you continue integrating AI and DevSecOps across the platform, and I plan to relocate to Zürich in the near future.
+
+Thank you for considering my application.
+
+\vspace{0.7em}
+Best regards,
+
+\vspace{0.4em}
+\includegraphics[width=5.8cm]{Signature_Juan_Cano.png}
+
+\endgroup
+
+\end{document}
