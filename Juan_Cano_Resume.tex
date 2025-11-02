@@ -1,62 +1,46 @@
 % !TeX program = xelatex
 \documentclass[12pt,a4paper]{article}
 
-% ===== FONTS =====
 \usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \setmainfont{Helvetica Neue Light}
 \newfontfamily\sffont{Helvetica Neue}
-\newfontfamily\secfont{Verdana}
-
-% ===== LAYOUT =====
 \usepackage[british]{babel}
 \usepackage[left=0mm,right=5mm,top=0mm,bottom=0mm]{geometry}
-\usepackage{microtype}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{microtype,graphicx,xcolor,enumitem,hyperref,array}
+\hypersetup{hidelinks}
 
-% ===== COLOURS =====
 \definecolor{cvblue}{HTML}{304263}
 \definecolor{softwhite}{HTML}{FDFDFD}
 \definecolor{darkgray}{gray}{0.25}
 
-% ===== HEADERS =====
 \newcommand{\headleft}[1]{%
-  \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par%
-  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.8ex}
-}
+  \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par
+  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.8ex}}
 \newcommand{\headright}[1]{%
-  \vspace{0.6ex}%
-  {\sffont\bfseries\large\addfontfeatures{LetterSpace=2.0}\textcolor{cvblue}{\MakeUppercase{#1}}}\\[-1ex]%
-  {\color{cvblue}\rule{\dimexpr\linewidth\relax}{0.6pt}}\\[-0.4ex]%
-}
+  \vspace{0.6ex}{\sffont\bfseries\large\addfontfeatures{LetterSpace=2.0}\textcolor{cvblue}{\MakeUppercase{#1}}}\\[-1ex]
+  {\color{cvblue}\rule{\linewidth}{0.6pt}}\\[-0.4ex]}
 
-% ===== CONSTANTS =====
-\newlength{\SideBarW}
-\setlength{\SideBarW}{0.30\paperwidth}
-\newlength{\BetweenJobsGap}
-\setlength{\BetweenJobsGap}{1.6ex}
+\newlength{\SideBarW}\setlength{\SideBarW}{0.30\paperwidth}
+\newlength{\BetweenJobsGap}\setlength{\BetweenJobsGap}{2.7ex}
 
 \newlist{cvitemize}{itemize}{1}
 \setlist[cvitemize]{left=1.2em,label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}},
-itemsep=0.3ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
+itemsep=0.25ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 
-\newenvironment{job}[4]{%
+\newenvironment{job}[5]{%
   \vspace{\BetweenJobsGap}%
-  {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#2}}}%
-  {\color{darkgray} — #1}\hfill {\small #3}\\%
-  {\small #4}\par
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r}
+    {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#1}} — #2} & {\small #3}\\
+    {\small #4} & {\small #5}\\
+  \end{tabular*}
+  \vspace{-0.3ex}
   \begin{cvitemize}
 }{\end{cvitemize}}
 
 \begin{document}
-\pagestyle{empty}
-\sloppy
-\emergencystretch=2em
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
+\pagestyle{empty}\sloppy\emergencystretch=2em
+\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
 
 \vspace*{-10mm}
 \noindent\begin{minipage}[t]{\textwidth}
@@ -64,112 +48,97 @@ itemsep=0.3ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 % ===== LEFT SIDEBAR =====
 \colorbox{cvblue!90}{%
   \parbox[t][\textheight][t]{\SideBarW}{%
-    \hspace*{4mm}%
-    \begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
-      \color{softwhite}
-      \vspace*{6mm}
-      \begin{center}
-        \includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}
-      \end{center}
+    \hspace*{4mm}\begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
+      \sloppy
+      \setlength{\emergencystretch}{1em}
+      \color{softwhite}\vspace*{10mm} % increased from 8mm for better top breathing room
+      \begin{center}\includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}\end{center}
 
-      % CONTACT
       \headleft{CONTACT}
       \small
       \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.6ex]
       +49 163 150 9581\\[0.6ex]
       \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.6ex]
-      Braunschweig, DE — Zürich ready to relocate
-      \normalsize
+      Braunschweig — Zürich (relocation ready)
+      \normalsize\vspace*{3mm}
 
-      \vspace*{3mm}
-
-      % EDUCATION
       \headleft{EDUCATION}
       \textbf{Master in Engineering}\\[0.2ex]
-      \textbf{Telecommunication}\\[0.6ex]
-      {\small EQF Level 7}\\[0.4ex]
-      {\small Miguel Hernández University}\\[0.4ex]
-      {\small Alicante, ES}
+      {\small Miguel Hernández University, Alicante (2013)}
 
       \vspace*{3mm}
-
-      % CERTIFICATIONS
       \headleft{CERTIFICATIONS}
-      PMP — Project Management Professional (2025)\\[0.6ex]
-      SAFe Product Owner / Product Manager (2021)
+      PMP (2025)\\[0.6ex]
+      SAFe PO/PM (2021)
 
       \vspace*{3mm}
-
-      % SKILLS
       \headleft{SKILLS}
-      \textbf{Delivery:} CR intake, SLA control, incident triage, release planning\\[0.4ex]
-      \textbf{Agile:} Scrum/SAFe, backlog prior., stakeholder alignment\\[0.4ex]
-      \textbf{Cloud:} AWS, Azure, CI/CD, Jira, Confluence, BI dashboards\\[0.4ex]
-      \textbf{Ops:} RCA, change control, KPI dashboards, risk tracking
+      \textbf{Delivery:} project \& release management, V-cycle coordination\\[0.4ex]
+      \textbf{Systems:} integration, verification \& validation, traceability\\[0.4ex]
+      \textbf{Lifecycle:} requirements mgmt, change \& config control\\[0.4ex]
+      \textbf{Methods:} Agile, V-model, hybrid delivery, continuous improvement\\[0.4ex]
+      \textbf{Tools:} Jira, Confluence, GitHub, Codebeamer, CI/CD\\[0.4ex]
+      \textbf{Ops \& Quality:} RCA, KPI dashboards, risk tracking, ISO / ASPICE awareness
 
       \vspace*{3mm}
-
-      % LANGUAGES
       \headleft{LANGUAGES}
       Spanish (native)\\[0.4ex]
-      English (professional)\\[0.4ex]
-      German (business fluent)\\[0.4ex]
+      English (proficient)\\[0.4ex]
+      German (advanced)\\[0.4ex]
       French (beginner)
-
     \end{minipage}
   }%
 }%
 \hspace{4mm}%
 % ===== RIGHT COLUMN =====
 \begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-4mm\relax}
-  \raggedright
-  \setlength{\parskip}{0.55ex}
+\raggedright
 
 % ===== NAME HEADER =====
 \vspace*{14mm}
 \begin{center}
-  {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}%
-  \hspace{1.2em}%
+  {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}
+  \hspace{1.2em}
   {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
-  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=22.0}\textcolor{darkgray}{\spaceskip=1.5em PROGRAM MANAGER}}
+  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=22.0}\textcolor{darkgray}{\spaceskip=1.5em TECHNICAL PROGRAM MANAGER}}
 \end{center}
 
-\vspace{3mm}
-
-% ===== PROFILE =====
+\vspace{4mm}
 \headright{Profile}
 \vspace*{-0.4ex}
 \begin{cvitemize}
-  \item PMP-certified programme manager with 10 years’ experience leading cloud and mobile platform delivery in regulated environments.
-  \item Skilled in managing client change requests, SLAs, and multi-tenant release cycles for global stakeholders.
-  \item Experienced in Agile scaling, backlog governance, and cross-functional coordination between Product, DevOps, and Service Delivery.
+\item PMP-certified Technical Program Manager with 10 years of engineering experience, including 8 in automotive software, connectivity, and cloud systems.
+  \item Combined engineering and leadership background, coordinating multi-team programs and aligning hardware, software and backend integration.
+  \item Skilled in both V-model and Agile frameworks, blending predictive planning with iterative execution in hybrid delivery environments.
 \end{cvitemize}
 
-% ===== EXPERIENCE =====
-\vspace*{2.4ex}
+\vspace{4mm} % was 6mm; tightened for better vertical balance
 \headright{Professional Experience}
 
-\begin{job}{CARIAD SE}{Senior Program Manager — Automotive Cloud}{Mar 2024 -- Sep 2025}{Wolfsburg, DE}
-  \item Directed a transformation programme in Volkswagen Automotive Cloud covering all Group brands and markets, reporting to C-level leadership.
-  \item Managed prioritisation and funding across 12 teams and 6 units with an eight-figure budget, ensuring end-to-end visibility and delivery compliance.
-  \item Introduced automated reporting tools (Copilot) and KPI dashboards to enhance transparency and SLA governance.
+\begin{job}{Technical Program Lead}{Backend Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
+\item Led a backend consolidation initiative within Volkswagen Group, coordinating 12 Agile teams and cross-regional stakeholders to simplify cloud architecture.
+\item Managed technical dependencies and delivery alignment across multiple domains with an eight-figure budget.
+\item Defined integration strategy, architecture milestones, and release coordination to accelerate platform stability and reduce duplication.
 \end{job}
 
-\begin{job}{CARIAD SE}{Senior Product Owner — Service Activation}{Nov 2020 -- Mar 2024}{Wolfsburg, DE}
-  \item Owned delivery of the global Licence \& Service Activation platform for millions of vehicles in compliance-driven markets.
-  \item Standardised workflows (SLAs, templates, RACI, release procedures) improving defect resolution and client satisfaction.
-  \item Reduced operational costs by \textasciitilde70\% through data-driven optimisation and architecture redesign.
+\begin{job}{Senior Product Owner}{Vehicle Capability Management}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
+  \item Owned a backend service cluster defining each vehicle’s connectivity portfolio and backend configuration based on business rules and vehicle data.
+  \item Delivered stable services to millions of vehicles across EU, NAR and CHN regions.
+  \item Reduced operational costs by 70\% through architectural redesign and optimisation.
 \end{job}
 
-\begin{job}{SEAT S.A.}{Technical Project Lead — Connectivity}{Mar 2019 -- Nov 2020}{Barcelona, ES}
-  \item Led integration of connected services (eCall, remote unlock) and managed homologation, testing, and readiness gates.
+\begin{job}{Technical Project Lead}{Online Connectivity Unit}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
+  \item Managed ECU integration and SW/HW release in several Vehicle Projects (e.g., Leon, Tarraco, Arona).
+  \item Coordinated suppliers, validation and homologation partners to meet timing and quality targets.
+  \item Supported testing and issue resolution during the complete product lifecycle, from prototype to series development.
 \end{job}
 
-\begin{job}{AKKA Technologies}{Consultant Engineer — IoT \& QA}{Oct 2015 -- Mar 2019}{Barcelona, ES}
-  \item Delivered firmware and web solutions for IoT projects and automated QA pipelines for automotive clients.
+\begin{job}{Engineer / Consultant}{IoT \& Automotive Projects}{Oct 2015 -- Mar 2019}{AKKA Technologies}{Barcelona, ES}
+  \item Developed embedded firmware for parking and access systems and prototyped NFC wearable payments.
+  \item Supported SEAT programs as external consultant on software releases and ECU validation.
+  \item Built technical depth from device-level code to system-level integration.
 \end{job}
 
 \end{minipage}
 \end{minipage}
-
 \end{document}
