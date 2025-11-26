@@ -22,19 +22,20 @@
   {\color{cvblue}\rule{\linewidth}{0.6pt}}\\[-0.4ex]}
 
 \newlength{\SideBarW}\setlength{\SideBarW}{0.30\paperwidth}
-\newlength{\BetweenJobsGap}\setlength{\BetweenJobsGap}{2.7ex}
+\newlength{\BetweenJobsGap}\setlength{\BetweenJobsGap}{2.0ex}
 
 \newlist{cvitemize}{itemize}{1}
 \setlist[cvitemize]{left=1.2em,label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}},
-itemsep=0.25ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
+itemsep=0.22ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 
+% job: #1 Title, #2 Subtitle, #3 Dates, #4 Company, #5 Location
 \newenvironment{job}[5]{%
   \vspace{\BetweenJobsGap}%
   \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r}
     {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#1}} — #2} & {\small #3}\\
     {\small #4} & {\small #5}\\
   \end{tabular*}
-  \vspace{-0.3ex}
+  \vspace{-0.4ex}
   \begin{cvitemize}
 }{\end{cvitemize}}
 
@@ -57,33 +58,35 @@ itemsep=0.25ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 \exhyphenpenalty=10000
 
       \setlength{\emergencystretch}{1em}
-      \color{softwhite}\vspace*{10mm} % increased from 8mm for better top breathing room
+      \color{softwhite}\vspace*{9mm}
       \begin{center}\includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}\end{center}
 
       \headleft{CONTACT}
       \small
-      \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.6ex]
-      +49 163 150 9581\\[0.6ex]
-      \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.6ex]
-      Braunschweig — Zürich (relocation ready, available at short notice)
+      \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.5ex]
+      +49 163 150 9581\\[0.5ex]
+      \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.5ex]
+      Braunschweig — Zürich-ready
       \normalsize\vspace*{3mm}
 
       \headleft{EDUCATION}
       \textbf{Master in Engineering}\\[0.2ex]
-      {\small Miguel Hernández University, Alicante (2013)}
+      {\small Miguel Hernández University, Alicante (2015)}
 
       \vspace*{3mm}
       \headleft{CERTIFICATIONS}
-      PMP (2025)\\[0.6ex]
-      SAFe PO/PM (2021)
+      \textbf{PMP} (PMI, 2025)\\[0.5ex]
+      \textbf{SAFe PO/PM} (2021)
 
       \vspace*{3mm}
 \headleft{SKILLS}
-\textbf{Delivery:} project \& release mgmt, V-cycle \& Agile coordination\\[0.4ex]
-\textbf{Systems:} integration, verification \& validation\\[0.4ex]
-\textbf{Lifecycle:} requirements, change \& config control\\[0.4ex]
-\textbf{Tools:} Jira, Confluence, GitHub, CI/CD\\[0.4ex]
-\textbf{Quality:} RCA, KPIs, risk tracking, ASPICE awareness
+{\raggedright
+\textbf{DevOps Platforms:} CI/CD ecosystems, tooling strategy, reliability engineering\\[0.4ex]
+\textbf{Portfolio Governance:} service catalog ownership, investment steering\\[0.4ex]
+\textbf{Service Operations:} SLOs, incident governance, operational KPIs\\[0.4ex]
+\textbf{Cloud Architecture:} distributed backend services, integration patterns\\[0.4ex]
+\textbf{Delivery Enablement:} PO guidance, cross-team alignment\\[0.4ex]
+\par}
 
       \vspace*{3mm}
       \headleft{LANGUAGES}
@@ -100,48 +103,47 @@ itemsep=0.25ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 \raggedright
 
 % ===== NAME HEADER =====
-\vspace*{14mm}
+\vspace*{18mm}
 \begin{center}
   {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}
   \hspace{1.2em}
   {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
-  {\sffont\fontsize{16}{18}\addfontfeatures{LetterSpace=22.0}\textcolor{darkgray}{\spaceskip=1.5em TECHNICAL PROGRAM MANAGER}}
+  {\sffont\fontsize{15}{17}\addfontfeatures{LetterSpace=10.0}\textcolor{darkgray}{SENIOR PRODUCT OWNER \,|\, PROGRAM MANAGER}}
 \end{center}
 
-\vspace{4mm}
+\vspace{3mm}
 \headright{Profile}
 \vspace*{-0.4ex}
 \begin{cvitemize}
-\item PMP-certified Technical Program Manager with 10 years of engineering experience, including 8 in automotive software, connectivity, and cloud systems.
-  \item Combined engineering and leadership background, coordinating multi-team programs and aligning hardware, software and backend integration.
-  \item Skilled in both V-model and Agile frameworks, blending predictive planning with iterative execution in hybrid delivery environments.
+  \item Senior Product Owner / Program Manager with 10 years across cloud platforms and device-side systems, bringing cross-domain insight to service evolution and portfolio leadership.
+  \item Last 5 years focused on cloud backend platforms: lifecycle ownership, DevOps operating models, KPI steering and multi-team delivery across 10–12 Agile/DevOps teams.
+  \item Earlier experience in embedded/ECU and connected-services integration, enabling a strong end-to-end understanding of digital service architecture.
+  \item Experienced in shaping service portfolio strategy, defining governance models and coordinating product owners and DevOps teams across domains.
 \end{cvitemize}
 
-\vspace{4mm} % was 6mm; tightened for better vertical balance
+\vspace{3mm}
 \headright{Professional Experience}
 
-\begin{job}{Technical Program Lead}{Backend Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
-\item Led a backend consolidation initiative within Volkswagen Group, coordinating 12 Agile teams and cross-regional stakeholders to simplify cloud architecture.
-\item Managed technical dependencies and delivery alignment across multiple domains with an eight-figure budget.
-\item Defined integration strategy, architecture milestones, and release coordination to accelerate platform stability and reduce duplication.
+\begin{job}{Senior Program Manager}{Backend Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
+  \item Drove cloud backend consolidation across 12 Agile/DevOps teams, improving service stability, tooling coherence and cross-domain consistency.
+  \item Shaped portfolio strategy, integration milestones and governance frameworks in collaboration with architecture, engineering and business leadership.
+  \item Established KPI dashboards (SLOs, deployment performance, service maturity) for executive steering.
 \end{job}
 
-\begin{job}{Senior Product Owner}{Vehicle Capability Management}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
-  \item Owned a backend service cluster defining each vehicle’s connectivity portfolio and backend configuration based on business rules and vehicle data.
-  \item Delivered stable services to millions of vehicles across EU, NAR and CHN regions.
-  \item Reduced operational costs by 70\% through architectural redesign and optimisation.
+\begin{job}{Senior Product Owner}{Digital Portfolio Governance}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
+  \item Owned backend services defining connectivity portfolios for millions of vehicles across EU, NAR and CHN.
+  \item Owned service evolution and led roadmap alignment with architecture, compliance, DevOps and operations to ensure lifecycle stability.
+  \item Achieved 70\% cost reduction and increased resilience through platform simplification, standardisation and automation.
 \end{job}
 
-\begin{job}{Technical Project Lead}{Online Connectivity Unit}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
-  \item Managed ECU integration and SW/HW release in several Vehicle Projects (e.g., Leon, Tarraco, Arona).
-  \item Coordinated suppliers, validation and homologation partners to meet timing and quality targets.
-  \item Supported testing and issue resolution during the complete product lifecycle, from prototype to series development.
+\begin{job}{Technical Project Lead}{Connected Services Integration}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
+  \item Led delivery of connected services (eCall, remote functions), coordinating ECU, backend, suppliers and homologation partners.
+  \item Managed release content, cross-domain integration plans and readiness gates across HW/SW/backend.
+  \item Ensured robustness through structured validation, testing and defect resolution.
 \end{job}
 
-\begin{job}{Engineer / Consultant}{IoT \& Automotive Projects}{Oct 2015 -- Mar 2019}{AKKA Technologies}{Barcelona, ES}
-  \item Developed embedded firmware for parking and access systems and prototyped NFC wearable payments.
-  \item Supported SEAT programs as external consultant on software releases and ECU validation.
-  \item Built technical depth from device-level code to system-level integration.
+\begin{job}{Engineer / Consultant}{IoT \& Automotive Platforms}{Oct 2015 -- Mar 2019}{AKKA Technologies}{Barcelona, ES}
+  \item Contributed to IoT and automotive platforms through embedded development and OEM release support.
 \end{job}
 
 \end{minipage}
