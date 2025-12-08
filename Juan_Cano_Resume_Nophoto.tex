@@ -1,15 +1,11 @@
-%============================================================
-% Juan Cano-Selles — Avaloq-tailored Resume
-% ATS-safe, XeLaTeX-stable, optimized for Service Delivery / Program Manager roles
-%============================================================
-\documentclass[a4paper,12pt]{article}
+% GOOGLE / YOUTUBE SHOPPING TPM — TWO-PAGE VERSION (FACTUAL, ATS-SAFE)
+% Page 1: Experience-focused. Page 2: Education/Certs/Skills.
 
-\usepackage[a4paper,margin=1.4cm]{geometry}
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,margin=1.65cm]{geometry}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage[english]{babel}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{tabularx}
 \usepackage{iftex}
 
 % ---------- Fonts ----------
@@ -21,134 +17,124 @@
 \else
   \usepackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \IfFontExistsTF{Helvetica}{
-    \setmainfont{Helvetica}
-  }{
-    \IfFontExistsTF{Arial}{
-      \setmainfont{Arial}
-    }{
-      \IfFontExistsTF{DejaVu Sans}{
-        \setmainfont{DejaVu Sans}
-      }{
-        \IfFontExistsTF{Noto Sans}{
-          \setmainfont{Noto Sans}
-        }{
-          \setmainfont{Latin Modern Sans}
-        }
-      }
-    }
-  }
+  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
+    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{\setmainfont{Latin Modern Sans}}}
 \fi
 
-\setlist[itemize]{leftmargin=0.15in, topsep=1pt, itemsep=2pt}
-\linespread{1.08}
-\urlstyle{same}
+\setlist[itemize]{leftmargin=0.17in, itemsep=3pt, topsep=2pt}
+\linespread{1.1}
 \raggedright
 
+% ---------- Section Formatting ----------
 \newcommand{\Section}[1]{%
-  \vspace{18pt}%
-  {\large\bfseries\scshape #1}\par
-  \noindent\color{gray}\rule{\linewidth}{0.25pt}\color{black}\vspace{1.5pt}%
-}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={},leftmargin=0in,topsep=2pt,itemsep=5pt]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=0pt,itemsep=2pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
-\newcommand{\resumeItem}[1]{\item\small{#1}}
-\newcommand{\resumeSubheading}[4]{%
-  \item
+  \vspace{10pt}%
+  {\large\bfseries #1}%
+  \vspace{2pt}\par\noindent\hrule height 0.3pt%
   \vspace{4pt}%
-  \textbf{#1} \hfill {\small #2 \,|\, #3}\\[-1pt]
-  \textit{\small #4}\vspace{1pt}%
 }
 
 % ============================================================
 \begin{document}
 
-\begin{center}
-  {\LARGE\bfseries Juan Cano-Selles}\\[3pt]
-  {\large Program Manager / Senior Product Owner — Cloud \& Platform Delivery}\\[3pt]
-  \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
-  \,|\, +49 163 150 9581
-  \,|\, \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[-2pt]
-  Braunschweig, DE — open to relocate to Zürich, CH
-\end{center}
+% ============================================================
+% PAGE 1
+% ============================================================
+
+% ---------- HEADER ----------
+{\LARGE\bfseries Juan Cano-Selles}\\[-2pt]
+{\small Technical Program Manager — Cloud Platforms, Distributed Systems, Consumer Systems}\\[3pt]
+\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
+\,|\, +49 163 150 9581
+\,|\, \href{https://linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
+\,|\, Braunschweig, DE (open to Zürich)
 
 % ---------- PROFILE ----------
 \Section{Profile}
-\begin{itemize}[leftmargin=0.15in]
-  \resumeItem{Certified \textbf{PMP (2025)} and \textbf{SAFe Product Owner (2021)} with 10+ years in engineering, digital product, and cloud delivery.}
-  \resumeItem{Led end-to-end programs across Europe for multi-brand, multi-tenant cloud platforms in the automotive domain.}
-  \resumeItem{Expert in release management, incident prioritization, and stakeholder alignment across distributed Agile teams.}
-  \resumeItem{Combines customer-centric delivery with strong governance of KPIs, SLAs, and change management processes.}
+\begin{itemize}
+  \item TPM with \textbf{8+ years} delivering backend, platform, and cloud programs across 12+ engineering teams.
+  \item Skilled in ambiguity-heavy execution: dependency mapping, migration planning, risk frameworks, launch readiness.
+  \item Engineering-focused: API/interface alignment, microservices adoption, consolidation, cloud migration feasibility.
+  \item Delivered large-scale backend capabilities supporting \textbf{4M+ vehicles} across global brands.
 \end{itemize}
 
-% ---------- CORE COMPETENCIES ----------
-\Section{Core Competencies}
-\begin{itemize}[leftmargin=0.15in]
-  \resumeItem{\textbf{Program \& Service Delivery:} Change request intake, incident triage, backlog governance, SLA reporting, root-cause analysis.}
-  \resumeItem{\textbf{Release Management:} Planning and coordination of multi-client releases, regression testing cycles, and code-freeze windows.}
-  \resumeItem{\textbf{Agile Leadership:} Scrum/SAFe practices, PI planning, cross-team synchronization, transparent prioritization.}
-  \resumeItem{\textbf{Cloud \& Tooling:} AWS, Azure, CI/CD, Power BI dashboards, Jira, Confluence, and DevOps coordination.}
+% ---------- CORE QUALIFICATIONS ----------
+\Section{Core Technical \& Program Qualifications}
+\begin{itemize}
+  \item Distributed systems, microservices, API boundaries, CI/CD; AWS, Azure, Kubernetes, Docker.
+  \item Execution frameworks: OKRs, critical path, SLO visibility, structured governance.
+  \item Cross-org leadership across backend, infra, data, QA, security, operations.
+  \item Extensive experience in multi-cloud migration, system consolidation, and cross-team delivery alignment.
 \end{itemize}
 
 % ---------- EXPERIENCE ----------
 \Section{Professional Experience}
-\resumeSubHeadingListStart
 
-\resumeSubheading
-  {Program Manager — Automotive Cloud Delivery}{Mar 2024 -- Sep 2025}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
-  \resumeItemListStart
-    \resumeItem{Directed cross-brand delivery for Volkswagen’s Automotive Cloud, coordinating 12 Agile teams and 6 organizational units.}
-    \resumeItem{Governed release calendar and environment readiness; ensured transparent prioritization of incidents and change requests.}
-    \resumeItem{Implemented KPI dashboards and executive reporting for performance, adoption, and SLA compliance.}
-    \resumeItem{Acted as single point of contact for escalation and release alignment across Product, DevOps, and executive stakeholders.}
-  \resumeItemListEnd
+% --------- Backend Consolidation ---------
+\textbf{Senior Technical Program Manager — Backend Platform Consolidation}\\
+\textit{CARIAD SE (Volkswagen Group), Wolfsburg, Germany} \hfill {\small Mar 2024 -- Sep 2025}\\[-6pt]
+\begin{itemize}
+  \item Led unification of multiple backend platforms into a single cloud architecture, coordinating \textbf{12+ backend/infra/data/security} teams.
+  \item Directed the \textbf{AWS Migration Acceleration Program} with AWS Munich and VW Seattle (Azure), creating a unified multi-cloud migration strategy.
+  \item Established an execution framework (OKRs, checkpoints, governance cadence) improving predictability across org units.
+  \item Supported design reviews on API boundaries and backend integration strategy; mapped dependencies across \textbf{6} org units.
+  \item Managed an \textbf{8-figure vendor portfolio}, aligning cost objectives with consolidation roadmap.
+\end{itemize}
 
-\resumeSubheading
-  {Senior Product Owner — License \& Service Activation}{Nov 2020 -- Mar 2024}{Wolfsburg, Germany}{CARIAD SE (Volkswagen Group)}
-  \resumeItemListStart
-    \resumeItem{Owned end-to-end platform lifecycle enabling activation of digital services across global markets.}
-    \resumeItem{Standardized delivery workflows, reducing defect resolution time by 30\% through shared backlog and SLA tracking.}
-    \resumeItem{Defined KPIs, acceptance criteria, and release procedures in coordination with engineering and QA teams.}
-    \resumeItem{Introduced structured feedback loops and adoption metrics to guide roadmap iterations.}
-  \resumeItemListEnd
+% --------- Cloud Activation Platform ---------
+\textbf{Technical Program Manager — Cloud Activation Platform}\\
+\textit{CARIAD SE, Wolfsburg, Germany} \hfill {\small Nov 2020 -- Mar 2024}\\[-6pt]
+\begin{itemize}
+  \item Delivered the global \textbf{Cloud Activation Platform} enabling digital services across brands; key components included \textit{shop frontend}, \textit{license-lifecycle backend}, \textit{Portfolio Configurator}, \textit{Capability Evaluator}, and \textit{Permissions Manager}.
+  \item Ensured \textbf{99.9\% availability} (VW “Platinum” tier) as activation logic underpins legally required EU eCall service enablement.
+  \item Scaled platform from \textbf{10k to 4M} vehicles; coordinated backend, data, security, QA, and operations across regions.
+  \item Achieved \textbf{70\% OPEX reduction} through architectural simplification and automated validation workflows.
+  \item Reduced regression complexity by driving migration from monolithic backend to microservices architecture.
+  \item Improved execution via unified OKRs, KPI alignment, structured cross-team syncs, and cross-brand launch-readiness criteria.
+\end{itemize}
 
-\resumeSubheading
-  {Technical Project Lead — Connectivity Systems}{Mar 2019 -- Nov 2020}{Barcelona, Spain}{SEAT S.A.}
-  \resumeItemListStart
-    \resumeItem{Led validation and integration of the Online Connectivity Unit (OCU), enabling remote and safety services across EU markets.}
-    \resumeItem{Coordinated multidisciplinary engineering teams and managed stakeholder communication across suppliers and regulators.}
-  \resumeItemListEnd
+% --------- SEAT ---------
+\textbf{Engineering Program Lead — Connectivity Systems}\\
+\textit{SEAT S.A., Barcelona, Spain} \hfill {\small Mar 2019 -- Nov 2020}\\[-6pt]
+\begin{itemize}
+  \item Delivered the Online Connectivity Unit (OCU) across \textbf{20+ EU markets}, coordinating hardware, software, QA, security, and regulatory bodies.
+  \item Ensured compliance with EU \textbf{eCall safety requirements}, requiring post-crash survivability and operation without vehicle power.
+  \item Led homologation \& validation (crash, EMC, vibration), ensuring reliability, availability, and regulatory readiness.
+  \item Improved ECU update workflows (–50\% workshop time) and automated supplier sample control (–90\% manual effort).
+\end{itemize}
 
-\resumeSubheading
-  {Consultant Engineer — IoT \& QA Automation}{Oct 2015 -- Mar 2019}{Stuttgart \& Ingolstadt, Germany}{AKKA Technologies}
-  \resumeItemListStart
-    \resumeItem{Developed automated test and CI pipelines for connected systems, increasing delivery reliability and release speed.}
-    \resumeItem{Supported multiple OEM clients, balancing requirements and quality objectives in a multi-tenant setup.}
-  \resumeItemListEnd
+% --------- AKKA ---------
+\textbf{Systems Integration Engineer — IoT \& Automation}\\
+\textit{AKKA Technologies, Barcelona, Spain} \hfill {\small Oct 2015 -- Mar 2019}\\[-6pt]
+\begin{itemize}
+  \item Built CI pipelines and automated testing workflows increasing reliability for connected/IoT systems across OEM programs.
+  \item Coordinated software, QA, and systems engineering teams to deliver features under evolving requirements.
+\end{itemize}
 
-\resumeSubHeadingListEnd
+% \newpage
+
+% ============================================================
+% PAGE 2
+% ============================================================
 
 % ---------- EDUCATION ----------
 \Section{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Master in Engineering — Telecommunication (EQF Level 7)}{2013}{Alicante, Spain}{Miguel Hernández University}
-\resumeSubHeadingListEnd
+\textbf{Master in Engineering — Telecommunication (EQF Level 7)}\\
+Miguel Hernández University, Spain — 2013
 
 % ---------- CERTIFICATIONS ----------
 \Section{Certifications}
-\begin{itemize}[leftmargin=0.15in]
-  \resumeItem{Project Management Professional (PMP) — PMI, 2025}
-  \resumeItem{Certified SAFe Product Owner / Product Manager — Scaled Agile, 2021}
+\begin{itemize}
+  \item Project Management Professional (PMP), 2025
+  \item SAFe Product Owner / Product Manager, 2021
 \end{itemize}
 
-% ---------- LANGUAGES ----------
-\Section{Languages}
-\begin{itemize}[leftmargin=0.15in]
-  \resumeItem{Spanish (native), English (professional), German (business fluent), French (beginner)}
+% ---------- TECHNICAL SKILLS ----------
+\Section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Cloud:} AWS, Azure, Kubernetes, Docker
+  \item \textbf{Systems:} Microservices, APIs, distributed systems
+  \item \textbf{Execution:} OKRs, critical path, SLOs, risk frameworks
+  \item \textbf{Tooling:} CI/CD, Jira, Confluence, Power BI
 \end{itemize}
 
 \end{document}
