@@ -1,140 +1,157 @@
-% GOOGLE / YOUTUBE SHOPPING TPM — TWO-PAGE VERSION (FACTUAL, ATS-SAFE)
-% Page 1: Experience-focused. Page 2: Education/Certs/Skills.
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{article}
 
-\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\setmainfont{Helvetica Neue Light}
+\newfontfamily\sectionfont{Helvetica Neue Medium}
 
-\usepackage[a4paper,margin=1.65cm]{geometry}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{iftex}
+\usepackage[british]{babel}
+\usepackage[left=1.4cm,right=1.4cm,top=1.4cm,bottom=1.4cm]{geometry}
+\usepackage{microtype,xcolor,hyperref,enumitem}
 
-% ---------- Fonts ----------
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage[scaled]{helvet}
-  \renewcommand{\familydefault}{\sfdefault}
-\else
-  \usepackage{fontspec}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
-    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{\setmainfont{Latin Modern Sans}}}
-\fi
+\hypersetup{hidelinks}
 
-\setlist[itemize]{leftmargin=0.17in, itemsep=3pt, topsep=2pt}
-\linespread{1.1}
-\raggedright
+% ---------- Global layout ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.6em, topsep=0.8ex, itemsep=0.5ex, parsep=0pt}
 
-% ---------- Section Formatting ----------
-\newcommand{\Section}[1]{%
-  \vspace{10pt}%
-  {\large\bfseries #1}%
-  \vspace{2pt}\par\noindent\hrule height 0.3pt%
-  \vspace{4pt}%
+% ---------- Section formatting ----------
+\newcommand{\heading}[1]{%
+  \vspace{3ex}
+  {\sectionfont\large #1}\par
+  \vspace{0.6ex}
 }
 
-% ============================================================
+\newcommand{\sectiondivider}{%
+  \vspace{0.6ex}
+  \hrule height 0.6pt
+  \vspace{1.4ex}
+}
+
 \begin{document}
 
-% ============================================================
-% PAGE 1
-% ============================================================
+%==========================
+% HEADER
+%==========================
 
-% ---------- HEADER ----------
-{\LARGE\bfseries Juan Cano-Selles}\\[-2pt]
-{\small Technical Program Manager — Cloud Platforms, Distributed Systems, Consumer Systems}\\[3pt]
-\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
-\,|\, +49 163 150 9581
-\,|\, \href{https://linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
-\,|\, Braunschweig, DE (open to Zürich)
+{\Huge \textbf{Juan Cano-Selles}}\par
+\vspace{0.6ex}
+{\sectionfont Senior Program Manager — Cloud \& Transformation}\par
+\vspace{1.0ex}
 
-% ---------- PROFILE ----------
-\Section{Profile}
+Braunschweig, Germany\par
+\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} • +49 163 150 9581\par
+LinkedIn: \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
+
+%==========================
+% PROFILE
+%==========================
+
+\heading{Profile}
+\sectiondivider
+
+Senior transformation leader with 10+ years of experience scaling cloud platforms and operating models in large, regulated enterprises. Proven track record in shaping executive decisions and converting complex, multi-vendor technology programmes into measurable business outcomes, including cost reduction, service reliability, and faster time-to-market. Trusted advisor to senior stakeholders, combining delivery execution with strategic judgement across cloud modernisation, automation, and governance.
+
+%==========================
+% PROFESSIONAL EXPERIENCE
+%==========================
+
+\heading{Professional Experience}
+\sectiondivider
+
+\textbf{Senior Program Manager — CARIAD SE \hfill Mar 2024 – Sep 2025}\par
+Wolfsburg, Germany
 \begin{itemize}
-  \item TPM with \textbf{8+ years} delivering backend, platform, and cloud programs across 12+ engineering teams.
-  \item Skilled in ambiguity-heavy execution: dependency mapping, migration planning, risk frameworks, launch readiness.
-  \item Engineering-focused: API/interface alignment, microservices adoption, consolidation, cloud migration feasibility.
-  \item Delivered large-scale backend capabilities supporting \textbf{4M+ vehicles} across global brands.
+  \item Defined and steered the Volkswagen Automotive Cloud transformation agenda, aligning six business and engineering units behind a single roadmap for shared cloud services and platforms.
+  \item Owned an 8-figure portfolio in a multi-vendor environment, reframing priorities through portfolio governance, executive dashboards, and decision forums that reduced delivery risk and improved transparency.
+  \item Advised VP-level stakeholders on trade-offs across scalability, resilience, cost, and compliance, influencing platform scope and investment decisions in a highly regulated context.
+  \item De-risked large-scale automation initiatives by standardising workflows and ownership models, reducing manual operational effort and accelerating deployment cycles.
+  \item Shaped the target operating model for cloud-native operations across monitoring, cost management, and service ownership.
 \end{itemize}
 
-% ---------- CORE QUALIFICATIONS ----------
-\Section{Core Technical \& Program Qualifications}
+\vspace{1.4ex}
+
+\textbf{Program Manager — CARIAD SE \hfill Nov 2020 – Mar 2024}\par
+Wolfsburg, Germany
 \begin{itemize}
-  \item Distributed systems, microservices, API boundaries, CI/CD; AWS, Azure, Kubernetes, Docker.
-  \item Execution frameworks: OKRs, critical path, SLO visibility, structured governance.
-  \item Cross-org leadership across backend, infra, data, QA, security, operations.
-  \item Extensive experience in multi-cloud migration, system consolidation, and cross-team delivery alignment.
+  \item Delivered the global License \& Service Activation platform supporting millions of vehicles worldwide, establishing a scalable cloud-based service backbone.
+  \item Achieved approximately 70\% operational cost reduction by challenging legacy processes and driving automation and data-driven architectural redesign.
+  \item Structured programme roadmaps and governance to balance speed-to-market with regulatory, privacy, and cybersecurity constraints.
+  \item Introduced KPI frameworks and analytics dashboards that informed executive decisions across regions and senior management forums.
+  \item Orchestrated cross-functional teams spanning infrastructure, cybersecurity, data, and product to ensure end-to-end service readiness.
 \end{itemize}
 
-% ---------- EXPERIENCE ----------
-\Section{Professional Experience}
+\vspace{1.4ex}
 
-% --------- Backend Consolidation ---------
-\textbf{Senior Technical Program Manager — Backend Platform Consolidation}\\
-\textit{CARIAD SE (Volkswagen Group), Wolfsburg, Germany} \hfill {\small Mar 2024 -- Sep 2025}\\[-6pt]
+\textbf{Technical Project Lead — SEAT S.A. \hfill Mar 2019 – Nov 2020}\par
+Barcelona, Spain
 \begin{itemize}
-  \item Led unification of multiple backend platforms into a single cloud architecture, coordinating \textbf{12+ backend/infra/data/security} teams.
-  \item Directed the \textbf{AWS Migration Acceleration Program} with AWS Munich and VW Seattle (Azure), creating a unified multi-cloud migration strategy.
-  \item Established an execution framework (OKRs, checkpoints, governance cadence) improving predictability across org units.
-  \item Supported design reviews on API boundaries and backend integration strategy; mapped dependencies across \textbf{6} org units.
-  \item Managed an \textbf{8-figure vendor portfolio}, aligning cost objectives with consolidation roadmap.
+  \item Led delivery of the Online Connectivity Unit (OCU), enabling connected vehicle services such as eCall and remote access across EU markets.
+  \item Coordinated hardware, software, safety, and telecommunications teams, ensuring regulatory compliance through structured testing and certification.
+  \item Supported industrialisation and large-scale rollout by defining operational readiness and reporting frameworks.
 \end{itemize}
 
-% --------- Cloud Activation Platform ---------
-\textbf{Technical Program Manager — Cloud Activation Platform}\\
-\textit{CARIAD SE, Wolfsburg, Germany} \hfill {\small Nov 2020 -- Mar 2024}\\[-6pt]
+\vspace{1.4ex}
+
+\textbf{Consultant — AKKA Technologies \hfill Oct 2015 – Mar 2019}\par
+Barcelona, Spain
 \begin{itemize}
-  \item Delivered the global \textbf{Cloud Activation Platform} enabling digital services across brands; key components included \textit{shop frontend}, \textit{license-lifecycle backend}, \textit{Portfolio Configurator}, \textit{Capability Evaluator}, and \textit{Permissions Manager}.
-  \item Ensured \textbf{99.9\% availability} (VW “Platinum” tier) as activation logic underpins legally required EU eCall service enablement.
-  \item Scaled platform from \textbf{10k to 4M} vehicles; coordinated backend, data, security, QA, and operations across regions.
-  \item Achieved \textbf{70\% OPEX reduction} through architectural simplification and automated validation workflows.
-  \item Reduced regression complexity by driving migration from monolithic backend to microservices architecture.
-  \item Improved execution via unified OKRs, KPI alignment, structured cross-team syncs, and cross-brand launch-readiness criteria.
+  \item Supported OEM programmes integrating connected vehicle components in safety- and compliance-critical environments.
+  \item Delivered IoT and automation initiatives, including CI/CD-driven QA workflows, improving quality and release predictability.
 \end{itemize}
 
-% --------- SEAT ---------
-\textbf{Engineering Program Lead — Connectivity Systems}\\
-\textit{SEAT S.A., Barcelona, Spain} \hfill {\small Mar 2019 -- Nov 2020}\\[-6pt]
+%==========================
+% CORE CAPABILITIES
+%==========================
+
+\heading{Core Capabilities}
+\sectiondivider
+
 \begin{itemize}
-  \item Delivered the Online Connectivity Unit (OCU) across \textbf{20+ EU markets}, coordinating hardware, software, QA, security, and regulatory bodies.
-  \item Ensured compliance with EU \textbf{eCall safety requirements}, requiring post-crash survivability and operation without vehicle power.
-  \item Led homologation \& validation (crash, EMC, vibration), ensuring reliability, availability, and regulatory readiness.
-  \item Improved ECU update workflows (–50\% workshop time) and automated supplier sample control (–90\% manual effort).
+  \item \textbf{Enterprise Cloud Transformation:} Cloud platform scaling, migration roadmaps, modernisation strategies, FinOps, service operating models.
+  \item \textbf{Operating Model \& Governance:} Portfolio governance, executive steering, compliance-aware delivery, risk management in regulated environments.
+  \item \textbf{Automation \& Analytics:} Workflow automation, KPI frameworks, analytics dashboards supporting operational and executive decisions.
+  \item \textbf{Programme Leadership:} 12+ Agile teams, multi-vendor delivery, cross-functional coordination, executive reporting.
+  \item \textbf{Business–Technology Translation:} Advising senior stakeholders and translating strategic objectives into executable delivery models across industries.
 \end{itemize}
 
-% --------- AKKA ---------
-\textbf{Systems Integration Engineer — IoT \& Automation}\\
-\textit{AKKA Technologies, Barcelona, Spain} \hfill {\small Oct 2015 -- Mar 2019}\\[-6pt]
+%==========================
+% EDUCATION & CERTIFICATIONS
+%==========================
+
+\heading{Education \& Certifications}
+\sectiondivider
+
+\textbf{Master in Engineering, Telecommunications}\par
+Miguel Hernández University, Alicante (2013)
+
 \begin{itemize}
-  \item Built CI pipelines and automated testing workflows increasing reliability for connected/IoT systems across OEM programs.
-  \item Coordinated software, QA, and systems engineering teams to deliver features under evolving requirements.
+  \item PMP Certification (PMI), 2025
+  \item SAFe Product Owner / Product Manager (2021)
+  %\item AWS \& Azure practical experience (ongoing certification preparation)
 \end{itemize}
 
-% \newpage
+%==========================
+% SKILLS
+%==========================
 
-% ============================================================
-% PAGE 2
-% ============================================================
+\heading{Skills}
+\sectiondivider
 
-% ---------- EDUCATION ----------
-\Section{Education}
-\textbf{Master in Engineering — Telecommunication (EQF Level 7)}\\
-Miguel Hernández University, Spain — 2013
+\textbf{Cloud \& Platforms:} AWS, Azure, Kubernetes, Docker, CI/CD\par
+\textbf{Data \& Automation:} Analytics dashboards, workflow automation, KPI frameworks\par
+\textbf{Tools:} Power BI, Jira, Confluence\par
+\textbf{Leadership:} Portfolio governance, vendor management, senior stakeholder engagement
 
-% ---------- CERTIFICATIONS ----------
-\Section{Certifications}
-\begin{itemize}
-  \item Project Management Professional (PMP), 2025
-  \item SAFe Product Owner / Product Manager, 2021
-\end{itemize}
+%==========================
+% LANGUAGES
+%==========================
 
-% ---------- TECHNICAL SKILLS ----------
-\Section{Technical Skills}
-\begin{itemize}
-  \item \textbf{Cloud:} AWS, Azure, Kubernetes, Docker
-  \item \textbf{Systems:} Microservices, APIs, distributed systems
-  \item \textbf{Execution:} OKRs, critical path, SLOs, risk frameworks
-  \item \textbf{Tooling:} CI/CD, Jira, Confluence, Power BI
-\end{itemize}
+\heading{Languages}
+\sectiondivider
+
+Spanish (native) • English (proficient) • German (business fluent) • French (beginner)
 
 \end{document}
