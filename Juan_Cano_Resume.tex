@@ -10,9 +10,10 @@
 \usepackage{microtype,graphicx,xcolor,enumitem,hyperref,array}
 \hypersetup{hidelinks}
 
-\definecolor{cvblue}{HTML}{304263}
+% ===== COLOR PALETTE =====
+\definecolor{cvblue}{HTML}{2E3440}
 \definecolor{softwhite}{HTML}{FDFDFD}
-\definecolor{darkgray}{gray}{0.25}
+\definecolor{darkgray}{HTML}{3B4252}
 
 \newcommand{\headleft}[1]{%
   \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par
@@ -47,26 +48,27 @@ itemsep=0.22ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
 \noindent\begin{minipage}[t]{\textwidth}
 
 % ===== LEFT SIDEBAR =====
-\colorbox{cvblue!90}{%
+\colorbox{cvblue}{%
   \parbox[t][\textheight][t]{\SideBarW}{%
     \hspace*{4mm}\begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
       \sloppy
-
-\pretolerance=10000
-\tolerance=2000
-\hyphenpenalty=10000
-\exhyphenpenalty=10000
+      \pretolerance=10000
+      \tolerance=2000
+      \hyphenpenalty=10000
+      \exhyphenpenalty=10000
 
       \setlength{\emergencystretch}{1em}
       \color{softwhite}\vspace*{9mm}
-      \begin{center}\includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}\end{center}
+      \begin{center}
+        \includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}
+      \end{center}
 
       \headleft{CONTACT}
       \small
       \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.5ex]
       +49 163 150 9581\\[0.5ex]
       \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.5ex]
-      Braunschweig — Zürich-ready
+      Braunschweig — Switzerland ready
       \normalsize\vspace*{3mm}
 
       \headleft{EDUCATION}
@@ -79,14 +81,15 @@ itemsep=0.22ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
       \textbf{SAFe PO/PM} (2021)
 
       \vspace*{3mm}
-\headleft{SKILLS}
-{\raggedright
-\textbf{DevOps Platforms:} CI/CD ecosystems, tooling strategy, reliability engineering\\[0.4ex]
-\textbf{Portfolio Governance:} service catalog ownership, investment steering\\[0.4ex]
-\textbf{Service Operations:} SLOs, incident governance, operational KPIs\\[0.4ex]
-\textbf{Cloud Architecture:} distributed backend services, integration patterns\\[0.4ex]
-\textbf{Delivery Enablement:} PO guidance, cross-team alignment\\[0.4ex]
-\par}
+      \headleft{SKILLS}
+      {\raggedright
+      \textbf{Platform Product:} roadmaps, backlog refinement, user stories \& acceptance criteria\\[0.4ex]
+      \textbf{Cloud-Native:} Kubernetes, Docker, Linux/Unix, networking fundamentals\\[0.4ex]
+      \textbf{DevOps \& Ops:} CI/CD ecosystems, automation, SLOs, incident governance\\[0.4ex]
+      \textbf{IaC (concepts):} Terraform/Ansible; environment standardisation\\[0.4ex]
+      \textbf{Security Exposure:} external pentesting coordination, findings analysis, remediation tracking\\[0.4ex]
+      \textbf{Tools:} Jira, Confluence, Power BI\\
+      \par}
 
       \vspace*{3mm}
       \headleft{LANGUAGES}
@@ -108,42 +111,41 @@ itemsep=0.22ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
   {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}
   \hspace{1.2em}
   {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
-  {\sffont\fontsize{15}{17}\addfontfeatures{LetterSpace=10.0}\textcolor{darkgray}{SENIOR PRODUCT OWNER \,|\, PROGRAM MANAGER}}
+  {\sffont\fontsize{15}{17}\addfontfeatures{LetterSpace=10.0}\textcolor{darkgray}{TECHNICAL PRODUCT OWNER \,|\, PLATFORM PROGRAM MANAGER}}
 \end{center}
 
 \vspace{3mm}
 \headright{Profile}
 \vspace*{-0.4ex}
 \begin{cvitemize}
-  \item Senior Product Owner / Program Manager with 10 years across cloud platforms and device-side systems, bringing cross-domain insight to service evolution and portfolio leadership.
-  \item Last 5 years focused on cloud backend platforms: lifecycle ownership, DevOps operating models, KPI steering and multi-team delivery across 10–12 Agile/DevOps teams.
-  \item Earlier experience in embedded/ECU and connected-services integration, enabling a strong end-to-end understanding of digital service architecture.
-  \item Experienced in shaping service portfolio strategy, defining governance models and coordinating product owners and DevOps teams across domains.
+  \item Technical Product Owner / Program Manager with 10 years owning cloud platform roadmaps and operational outcomes in regulated environments.
+  \item Platform-focused leader across 10--12 Agile/DevOps teams, aligning stakeholders and translating complex requirements into actionable backlogs.
+  \item Data-driven delivery using KPIs and SLO-oriented signals to steer reliability, service maturity, and continuous improvement.
+  \item Security-aware product owner: commissioned external penetration tests and security assessments, analysed findings, and prioritised remediation with engineering teams.
 \end{cvitemize}
 
 \vspace{3mm}
 \headright{Professional Experience}
 
-\begin{job}{Senior Program Manager}{Backend Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
-  \item Drove cloud backend consolidation across 12 Agile/DevOps teams, improving service stability, tooling coherence and cross-domain consistency.
-  \item Shaped portfolio strategy, integration milestones and governance frameworks in collaboration with architecture, engineering and business leadership.
-  \item Established KPI dashboards (SLOs, deployment performance, service maturity) for executive steering.
+\begin{job}{Senior Program Manager}{Cloud Platform Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
+  \item Consolidated backend and platform capabilities across 12 Agile/DevOps teams, improving stability, tooling coherence, and cross-domain consistency.
+  \item Owned the delivery roadmap and governance cadence; managed dependencies, risks, and blockers with architecture and engineering leadership.
+  \item Drove operational readiness for production, including observability alignment and incident processes (SLO reporting, escalation paths).
 \end{job}
 
-\begin{job}{Senior Product Owner}{Digital Portfolio Governance}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
-  \item Owned backend services defining connectivity portfolios for millions of vehicles across EU, NAR and CHN.
-  \item Owned service evolution and led roadmap alignment with architecture, compliance, DevOps and operations to ensure lifecycle stability.
-  \item Achieved 70\% cost reduction and increased resilience through platform simplification, standardisation and automation.
+\begin{job}{Senior Product Owner}{Platform Services Governance}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
+  \item Owned backend services within a global connectivity portfolio serving millions of vehicles across EU, NAR and CHN.
+  \item Translated stakeholder needs into user stories and acceptance criteria; aligned delivery with architecture, compliance, DevOps, and operations.
+  \item Achieved 70\% cost reduction through platform simplification, standardisation, and automation.
 \end{job}
 
-\begin{job}{Technical Project Lead}{Connected Services Integration}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
-  \item Led delivery of connected services (eCall, remote functions), coordinating ECU, backend, suppliers and homologation partners.
-  \item Managed release content, cross-domain integration plans and readiness gates across HW/SW/backend.
-  \item Ensured robustness through structured validation, testing and defect resolution.
+\begin{job}{Technical Project Lead}{Connected Services}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
+  \item Delivered connected services (eCall, remote functions), coordinating ECU, backend, suppliers, and homologation partners.
+  \item Managed release readiness across HW/SW/backend; drove validation, testing, and defect resolution in compliance-driven contexts.
 \end{job}
 
 \begin{job}{Engineer / Consultant}{IoT \& Automotive Platforms}{Oct 2015 -- Mar 2019}{AKKA Technologies}{Barcelona, ES}
-  \item Contributed to IoT and automotive platforms through embedded development and OEM release support.
+  \item Contributed to IoT and automotive platforms through embedded development and OEM release support; improved quality via CI/QA automation.
 \end{job}
 
 \end{minipage}
