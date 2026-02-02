@@ -1,14 +1,14 @@
-% GOOGLE / YOUTUBE SHOPPING TPM — TWO-PAGE VERSION (FACTUAL, ATS-SAFE)
-% Page 1: Experience-focused. Page 2: Education/Certs/Skills.
+% CV — JUAN J. CANO-SELLES
+% Technical Lead | Cloud Platform Architecture & Connectivity
 
-\documentclass[a4paper,11pt]{article}
-
-\usepackage[a4paper,margin=1.65cm]{geometry}
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper,margin=0.5in]{geometry} 
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{bookmark} 
 \usepackage{iftex}
 
-% ---------- Fonts ----------
+% ---------- Fonts (Modern & Easy to Read) ----------
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
@@ -16,125 +16,96 @@
   \renewcommand{\familydefault}{\sfdefault}
 \else
   \usepackage{fontspec}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
-    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{\setmainfont{Latin Modern Sans}}}
+  \setmainfont{Helvetica}
 \fi
 
-\setlist[itemize]{leftmargin=0.17in, itemsep=3pt, topsep=2pt}
+% Executive Layout Spacing (Standardized for Skimming)
+\setlist[itemize]{leftmargin=0.2in, itemsep=3pt, topsep=2pt, parsep=2pt}
 \linespread{1.1}
-\raggedright
+\setlength{\parindent}{0pt}
 
-% ---------- Section Formatting ----------
 \newcommand{\Section}[1]{%
-  \vspace{10pt}%
-  {\large\bfseries #1}%
-  \vspace{2pt}\par\noindent\hrule height 0.3pt%
-  \vspace{4pt}%
+  \vspace{12pt}%
+  {\large\bfseries\uppercase{#1}}%
+  \vspace{2pt}\par\noindent\hrule height 0.6pt%
+  \vspace{6pt}%
 }
 
-% ============================================================
 \begin{document}
 
 % ============================================================
-% PAGE 1
+% HEADER
 % ============================================================
+\centerline{\Huge\bfseries JUAN J. CANO-SELLES}
+\vspace{6pt}
+\centerline{juan.cano.selles@gmail.com | +49 163 150 9581 | linkedin.com/in/jcanoselles}
+\centerline{\textbf{Spanish Citizen (EU/EFTA) | Relocating to Switzerland}}
 
-% ---------- HEADER ----------
-{\LARGE\bfseries Juan Cano-Selles}\\[-2pt]
-{\small Technical Program Manager — Cloud Platforms, Distributed Systems, Consumer Systems}\\[3pt]
-\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}
-\,|\, +49 163 150 9581
-\,|\, \href{https://linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
-\,|\, Braunschweig, DE (open to Zürich)
+% ============================================================
+% SUMMARY
+% ============================================================
+\Section{Summary}
+Technical Lead with 10 years in automotive connectivity and a recent focus on scaling global cloud platforms to 4M+ vehicles. I specialize in migrating legacy Java monoliths to event-driven architectures—not just for technical evolution, but to deliver the aggressive unit-cost efficiency required for sustainable, large-scale platform operations.
 
-% ---------- PROFILE ----------
-\Section{Profile}
+% ============================================================
+% SKILLS
+% ============================================================
+\Section{Skills}
+\textbf{Architecture:} Event-Driven Architecture (EDA), Cloud Orchestration, API Design, Notification Hubs (Pub/Sub), Microservices Decomposition, Data Caching \\
+\textbf{Operations:} FinOps, Unit-Cost Optimization, Infrastructure Tiering, DevEx Tooling, CI/CD, Git, Jira \\
+\textbf{Systems:} ECU Integration, EU eCall Regulatory Standards, GDPR Compliance, Technical Documentation
+
+% ============================================================
+% EXPERIENCE
+% ============================================================
+\Section{Work Experience}
+
+\textit{CARIAD SE (Volkswagen Group)} \hfill Wolfsburg, Germany \\
+\textit{Technical Program Manager (Senior Product Owner)} \hfill Nov 2020 -- Aug 2025
+
 \begin{itemize}
-  \item TPM with \textbf{8+ years} delivering backend, platform, and cloud programs across 12+ engineering teams.
-  \item Skilled in ambiguity-heavy execution: dependency mapping, migration planning, risk frameworks, launch readiness.
-  \item Engineering-focused: API/interface alignment, microservices adoption, consolidation, cloud migration feasibility.
-  \item Delivered large-scale backend capabilities supporting \textbf{4M+ vehicles} across global brands.
+\item Directed the Service Activation Cluster, managing the end-to-end roadmap and ensuring 99.9\% operational uptime for an Agile Release Train (ART) of five DevOps teams delivering digital product activation for a 4M+ vehicle fleet.
+\item Decomposed a legacy Java monolith into a five-team microservice architecture, scaling the organization from a single team while transitioning the platform from synchronous communication to asynchronous SNS/SQS and Kafka event streaming.
+\item Orchestrated the technical delivery of Functions on Demand (FoD) and custom B2B fleet infrastructure for partners like Avis and Sixt, enabling new digital revenue streams for the Volkswagen Group.
+\item Enforced a multi-year FinOps program achieving a 30\% unit-cost reduction on AWS through an architectural redesign that restricted database access patterns and optimized logging/reconciliation frequencies.
+\item Governed global regulatory and geopolitical constraints, including China’s RTM requirements, EU eCall standards, and the architectural separation of physical databases for VW Canada to meet North American sovereignty demands.
 \end{itemize}
 
-% ---------- CORE QUALIFICATIONS ----------
-\Section{Core Technical \& Program Qualifications}
+\vspace{8pt}
+\textit{SEAT S.A. (Volkswagen Group)} \hfill Barcelona, Spain \\
+\textit{Technical Project Lead (Connectivity Systems)} \hfill Mar 2019 -- Nov 2020
+
 \begin{itemize}
-  \item Distributed systems, microservices, API boundaries, CI/CD; AWS, Azure, Kubernetes, Docker.
-  \item Execution frameworks: OKRs, critical path, SLO visibility, structured governance.
-  \item Cross-org leadership across backend, infra, data, QA, security, operations.
-  \item Extensive experience in multi-cloud migration, system consolidation, and cross-team delivery alignment.
+\item Synchronized hardware and software release cycles for multiple generations of vehicle connectivity modules (OCU2 to OCU4), ensuring alignment with series production (SOP) milestones for three major vehicle lines.
+\item Steered the technical interface with Tier-1 suppliers (LG), maintaining the operational feedback loop to prioritize delivery of critical hardware revisions and development samples for firmware validation.
+\item Validated 100\% compliance for safety-critical EU eCall regulatory standards, personally supervising high-stakes crash-test preparations in collaboration with the chassis department to ensure data survivability.
+\item Resolved integration blockers at the Technical Development Centre (CTS) by engineering technical workarounds—including CAN-message mocking scripts and specialized power-cycle protocols—and training cross-functional teams on these diagnostic procedures.
 \end{itemize}
 
-% ---------- EXPERIENCE ----------
-\Section{Professional Experience}
+\vspace{8pt}
+\textit{AKKA Technologies (now Akkodis)} \hfill Barcelona, Spain \\
+\textit{Systems Integration Engineer} \hfill Oct 2015 -- Mar 2019
 
-% --------- Backend Consolidation ---------
-\textbf{Senior Technical Program Manager — Backend Platform Consolidation}\\
-\textit{CARIAD SE (Volkswagen Group), Wolfsburg, Germany} \hfill {\small Mar 2024 -- Sep 2025}\\[-6pt]
 \begin{itemize}
-  \item Led unification of multiple backend platforms into a single cloud architecture, coordinating \textbf{12+ backend/infra/data/security} teams.
-  \item Directed the \textbf{AWS Migration Acceleration Program} with AWS Munich and VW Seattle (Azure), creating a unified multi-cloud migration strategy.
-  \item Established an execution framework (OKRs, checkpoints, governance cadence) improving predictability across org units.
-  \item Supported design reviews on API boundaries and backend integration strategy; mapped dependencies across \textbf{6} org units.
-  \item Managed an \textbf{8-figure vendor portfolio}, aligning cost objectives with consolidation roadmap.
+\item Developed custom Linux peripheral drivers and high-concurrency web interfaces for IoT parking systems, engineering Python/Qt-based hardware emulators to accelerate validation of CCTalk and NFC protocols.
+\item Architected the full application logic for an NFC wearable prototype using a NXP-based RTOS, managing strict real-time constraints and power-optimization requirements within a high-velocity startup environment.
+\item Consulted as an external Integration Engineer for SEAT S.A., leading the software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity modules.
 \end{itemize}
 
-% --------- Cloud Activation Platform ---------
-\textbf{Technical Program Manager — Cloud Activation Platform}\\
-\textit{CARIAD SE, Wolfsburg, Germany} \hfill {\small Nov 2020 -- Mar 2024}\\[-6pt]
-\begin{itemize}
-  \item Delivered the global \textbf{Cloud Activation Platform} enabling digital services across brands; key components included \textit{shop frontend}, \textit{license-lifecycle backend}, \textit{Portfolio Configurator}, \textit{Capability Evaluator}, and \textit{Permissions Manager}.
-  \item Ensured \textbf{99.9\% availability} (VW “Platinum” tier) as activation logic underpins legally required EU eCall service enablement.
-  \item Scaled platform from \textbf{10k to 4M} vehicles; coordinated backend, data, security, QA, and operations across regions.
-  \item Achieved \textbf{70\% OPEX reduction} through architectural simplification and automated validation workflows.
-  \item Reduced regression complexity by driving migration from monolithic backend to microservices architecture.
-  \item Improved execution via unified OKRs, KPI alignment, structured cross-team syncs, and cross-brand launch-readiness criteria.
-\end{itemize}
-
-% --------- SEAT ---------
-\textbf{Engineering Program Lead — Connectivity Systems}\\
-\textit{SEAT S.A., Barcelona, Spain} \hfill {\small Mar 2019 -- Nov 2020}\\[-6pt]
-\begin{itemize}
-  \item Delivered the Online Connectivity Unit (OCU) across \textbf{20+ EU markets}, coordinating hardware, software, QA, security, and regulatory bodies.
-  \item Ensured compliance with EU \textbf{eCall safety requirements}, requiring post-crash survivability and operation without vehicle power.
-  \item Led homologation \& validation (crash, EMC, vibration), ensuring reliability, availability, and regulatory readiness.
-  \item Improved ECU update workflows (–50\% workshop time) and automated supplier sample control (–90\% manual effort).
-\end{itemize}
-
-% --------- AKKA ---------
-\textbf{Systems Integration Engineer — IoT \& Automation}\\
-\textit{AKKA Technologies, Barcelona, Spain} \hfill {\small Oct 2015 -- Mar 2019}\\[-6pt]
-\begin{itemize}
-  \item Built CI pipelines and automated testing workflows increasing reliability for connected/IoT systems across OEM programs.
-  \item Coordinated software, QA, and systems engineering teams to deliver features under evolving requirements.
-\end{itemize}
-
-% \newpage
+\newpage 
 
 % ============================================================
 % PAGE 2
 % ============================================================
 
-% ---------- EDUCATION ----------
+\Section{Languages \& Certifications}
+\textbf{Languages:} Spanish (Native), English (Fluent), German (Business Proficient) \\
+\textbf{Certifications:} Project Management Professional (PMP), SAFe Product Owner/Product Manager (PO/PM)
+
+\vspace{12pt}
+
 \Section{Education}
-\textbf{Master in Engineering — Telecommunication (EQF Level 7)}\\
-Miguel Hernández University, Spain — 2013
-
-% ---------- CERTIFICATIONS ----------
-\Section{Certifications}
-\begin{itemize}
-  \item Project Management Professional (PMP), 2025
-  \item SAFe Product Owner / Product Manager, 2021
-\end{itemize}
-
-% ---------- TECHNICAL SKILLS ----------
-\Section{Technical Skills}
-\begin{itemize}
-  \item \textbf{Cloud:} AWS, Azure, Kubernetes, Docker
-  \item \textbf{Systems:} Microservices, APIs, distributed systems
-  \item \textbf{Execution:} OKRs, critical path, SLOs, risk frameworks
-  \item \textbf{Tooling:} CI/CD, Jira, Confluence, Power BI
-\end{itemize}
+\textbf{Master's of Science in Telecommunications Engineering} \hfill 2015 \\
+Miguel Hernández University \hfill Alicante, Spain
 
 \end{document}
