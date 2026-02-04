@@ -1,5 +1,5 @@
 % CV — JUAN J. CANO-SELLES 
-% Technical Program Manager | Global Cloud Governance 
+% Technical Product Manager | Cloud Governance
 
 \documentclass[a4paper,10pt]{article} 
 \usepackage[a4paper,margin=0.4in]{geometry} 
@@ -7,7 +7,7 @@
 \usepackage[hidelinks]{hyperref} 
 \usepackage{bookmark} 
 \usepackage{iftex} 
-\usepackage[none]{hyphenat} % Disables all hyphenation
+\usepackage{microtype} 
 
 % ---------- Fonts ---------- 
 \ifPDFTeX 
@@ -21,15 +21,15 @@
 \fi 
 
 % Executive Layout Spacing 
-\setlist[itemize]{leftmargin=0.15in, itemsep=1pt, topsep=4pt, parsep=2pt, partopsep=0pt} 
+\setlist[itemize]{leftmargin=0.15in, itemsep=1pt, topsep=2pt, parsep=1pt, partopsep=0pt, before=\raggedright} 
 \linespread{1.05} 
 \setlength{\parindent}{0pt} 
 
 \newcommand{\Section}[1]{% 
-  \vspace{10pt}% 
+  \vspace{8pt}% 
   {\large\bfseries\uppercase{#1}}% 
-  \vspace{2pt}\par\noindent\hrule height 0.6pt% 
-  \vspace{6pt}% 
+  \vspace{1pt}\par\noindent\hrule height 0.6pt% 
+  \vspace{4pt}% 
 } 
 
 \pagestyle{empty} 
@@ -42,66 +42,64 @@
 \begin{center} 
     {\Huge\bfseries JUAN J. CANO-SELLES} \\ \vspace{5pt}
     
-    % Line 2: Legal Status & Location
-    \textbf{Spanish National (EU/EFTA) | Automatic Work Authorization | Relocating to Switzerland} \\ \vspace{3pt}
+    \textbf{Spanischer Staatsangehöriger (EU/EFTA) | Wohnsitzwechsel in die Schweiz kurzfristig möglich} \\ \vspace{3pt}
     
-    % Line 3: Contact Info (Shortened LinkedIn for space)
     +49 163 150 9581 | \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} | \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\ \vspace{3pt}
     
-    % Line 4: The "Value Prop" Line (Languages + Availability)
-    \textbf{English: C2 | German: B2 (Professional working proﬁciency) | Immediate Availability}
+    \textbf{Verfügbarkeit: Sofort}
 \end{center}
 
 % ============================================================ 
 % SUMMARY 
 % ============================================================ 
 \Section{Executive Profile} 
-\textbf{Technical Program Manager: Global Cloud Governance \& Transformation} \\ 
-10 years experience scaling global digital services, bridging 5 years of distributed cloud governance with 5 years of hardware leadership across the connectivity chain. 
+\textbf{Technical Product Manager | Cloud Infrastructure \& Governance} \\ 
+10 Jahre Erfahrung im Systems Engineering, davon 6 Jahre in technischer Führung und 5 Jahre spezialisiert auf Cloud Governance und Skalierung von Hochverfügbarkeits-Plattformen.
+
 \begin{itemize} 
-    \item \textbf{Cloud Scaling:} Decomposed legacy monoliths into event-driven architectures (Kafka, AWS) to deliver 99.9\% availability for a 4M+ vehicle fleet; expanded operations from a single team to a five-team Agile Release Train. 
-    \item \textbf{FinOps \& Governance:} Reduced cloud unit-costs by 30\% through architectural optimization while directing multi-team delivery and enforcing GDPR and global regulatory compliance (China RTM, eCall). 
-    \item \textbf{Systems Integration:} Managed the hardware-to-cloud bridge using technical experience in Electronic Control Unit integration, RTOS firmware development (C/C++), and high-availability API design. 
-\end{itemize} 
+    \item \textbf{Cloud Unit Economics:} Experte für die Übersetzung technischer Ressourcenverbräuche in betriebswirtschaftliche Metriken. Erfolgreiche Durchsetzung von FinOps-Strategien zur signifikanten Reduktion von Cloud-Unit-Costs durch Architekturoptimierung.
+    \item \textbf{Interdisziplinäre Steuerung:} Erfahren in der Orchestrierung komplexer Schnittstellen zwischen Infrastruktur-Architektur, Engineering und Software-Entwicklung. Fokus auf effiziente Delivery-Pipelines ohne administrativen Overhead.
+    \item \textbf{Technisches Fundament:} Engineering-Background in C/C++ und Linux-Systemintegration sichert fachliche Akzeptanz bei Senior Engineers und Kernel-Entwicklern für eine präzise Anforderungsanalyse.
+\end{itemize}
 
 % ============================================================ 
 % EXPERIENCE 
 % ============================================================ 
-\Section{Work Experience} 
+\Section{Berufserfahrung} 
 
-\textbf{CARIAD SE} $|$ \textbf{Technical Program Manager (Senior Product Owner)} \hfill \textit{Wolfsburg, Germany $|$ Nov 2020 -- Aug 2025} 
+\textbf{CARIAD SE} $|$ \textbf{Technical Program Manager (Senior Product Owner)} \hfill \textit{Wolfsburg, DE $|$ Nov 2020 -- Aug 2025} 
 \begin{itemize} 
-\item Directed the Service Activation Cluster, managing the end-to-end roadmap and ensuring 99.9\% operational uptime for an ART of five DevOps teams delivering digital services for a 4M+ vehicle fleet. 
-\item Led the transition to an event-driven architecture (Kafka, SNS/SQS), eliminating monolithic dependency bottlenecks to enable asynchronous scaling and platform-wide notification services.
-\item Deployed the technical infrastructure for Functions on Demand (FoD) and custom B2B fleet services for partners like Avis and Sixt, unlocking the commercial launch of pay-per-use digital features for the Volkswagen Group. 
-\item Enforced a multi-year FinOps program achieving a 30\% unit-cost reduction on AWS through architectural redesign of database access patterns and optimized logging/reconciliation frequencies. 
-\item Governed global regulatory constraints, including China’s RTM, EU eCall standards, and architectural separation of physical databases to meet North American sovereignty demands. 
+\item \textbf{Programmleitung:} Verantwortung für die End-to-End Delivery Roadmap und SLA-Einhaltung (99,9 \% Verfügbarkeit) eines Agile Release Train (5 DevOps-Teams) für eine Flotte von 4 Mio.+ Fahrzeugen.
+\item \textbf{Cloud-Architektur:} Steuerung der Migration zu einer Event-driven Architecture (Kafka, SNS/SQS); Auflösung monolithischer Abhängigkeiten zur Ermöglichung asynchroner Skalierung.
+\item \textbf{FinOps \& Kosteneffizienz:} Realisierung einer 30 \% Kostensenkung (AWS) durch architektonisches Redesign von Datenbank-Zugriffsmustern und Optimierung von Logging-Intervallen.
+\item \textbf{Produkt-Launch:} Technische Leitung für die Einführung von Functions on Demand (FoD) und B2B-Flottendiensten; Integration komplexer digitaler Features in die Konzern-Infrastruktur.
+\item \textbf{Governance \& Compliance:} Sicherstellung globaler regulatorischer Anforderungen (u. a. China RTM, EU eCall) und Umsetzung von Data-Residency-Vorgaben durch geografische Datentrennung.
 \end{itemize} 
 
-\vspace{8pt} 
-\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead (Connectivity Systems)} \hfill \textit{Barcelona, Spain $|$ Mar 2019 -- Nov 2020} 
+\vspace{6pt} 
+\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead (Connectivity Systems)} \hfill \textit{Barcelona, ES $|$ März 2019 -- Nov 2020} 
 \begin{itemize} 
-\item Synchronized hardware and software release cycles for connectivity modules (OCU2 to OCU4), ensuring alignment with series production (SOP) milestones for three major vehicle lines. 
-\item Steered the technical interface with Tier-1 suppliers (LG), prioritizing delivery of critical hardware revisions and development samples for firmware validation. 
-\item Validated 100\% compliance for safety-critical EU eCall regulatory standards, supervising high-stakes crash and homologation test preparations to ensure hardware and data survivability. 
-\item Resolved integration blockers at the Technical Development Centre (CTS) by engineering diagnostic protocols and CAN-message mocking scripts to train cross-functional validation teams. 
+\item \textbf{Release-Management:} Synchronisation von Hardware- und Software-Zyklen für Konnektivitäts-Steuergeräte (SOP-Sicherstellung für drei Fahrzeuglinien).
+\item \textbf{Lieferantensteuerung:} Technisches Management von Tier-1-Lieferanten (LG); Priorisierung von Hardware-Revisionen für die Firmware-Validierung.
+\item \textbf{Homologation:} Sicherstellung der Konformität für sicherheitskritische EU-eCall-Standards; Überwachung von Crashtests und Validierung der Datensicherheit.
+\item \textbf{Troubleshooting:} Lösung von Integrations-Blockern im Technical Development Centre durch Entwicklung eigener Diagnose-Skripte zur Unterstützung der Validierungsteams.
 \end{itemize} 
 
-\vspace{8pt} 
-\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, Spain $|$ Oct 2015 -- Mar 2019} 
+\vspace{6pt} 
+\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, ES $|$ Okt 2015 -- März 2019} 
 \begin{itemize} 
-    \item Architected application logic and firmware for NFC-based IoT wearables and parking systems, managing strict power optimization and real-time constraints for resource-limited battery-powered devices. 
-    \item Developed custom Linux drivers for low-level connectivity modules and engineered hardware emulators (Python/Qt) to accelerate protocol validation workflows. 
-    \item Consulted for SEAT S.A. (6 months), leading software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity units. 
+    \item \textbf{Embedded Systems:} Entwicklung von Applikationslogik und Firmware für IoT-Systeme unter strikten Energie- und Echtzeitanforderungen.
+    \item \textbf{Tooling:} Programmierung kundenspezifischer Linux-Treiber und Hardware-Emulatoren (Python/Qt) zur Automatisierung von Validierungs-Workflows.
+    \item \textbf{Consulting (SEAT S.A.):} Leitung der Software-Validierung und Hardware-in-the-Loop (HiL) Tests für Serien-Konnektivitätseinheiten.
 \end{itemize} 
 
-\Section{Languages \& Certifications} 
+\Section{Sprachen \& Zertifizierungen} 
 \begin{itemize} 
-\item \textbf{Languages:} Spanish (Native), English (Native Level - C2), German (Professional working proﬁciency - B2  Certified)
-\item \textbf{Certifications:} PMP (2025), SAFe PO/PM (2021) 
+\item \textbf{Sprachen:} Spanisch (Muttersprache), Englisch (C2), Deutsch (B2 - Professionelle Arbeitskenntnisse).
+\item \textbf{Zertifizierungen:} PMP (Project Management Professional, 2025), SAFe PO/PM (2021).
 \end{itemize}
 
-\Section{Education} 
-\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hernández University, Spain | 2015 
+\Section{Ausbildung} 
+\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hernández University, Spanien | 2015
 
 \end{document}
