@@ -1,0 +1,153 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\setmainfont{Helvetica Neue Light}
+\newfontfamily\sffont{Helvetica Neue}
+\usepackage[british]{babel}
+\usepackage[left=0mm,right=5mm,top=0mm,bottom=0mm]{geometry}
+\usepackage{microtype,graphicx,xcolor,enumitem,hyperref,array}
+\hypersetup{hidelinks}
+
+% ===== COLOR PALETTE =====
+\definecolor{cvblue}{HTML}{2E3440}
+\definecolor{softwhite}{HTML}{FDFDFD}
+\definecolor{darkgray}{HTML}{3B4252}
+
+\newcommand{\headleft}[1]{%
+  \vspace*{2ex}\textsc{\textbf{\color{softwhite}#1}}\par
+  \vspace*{-1.2ex}{\color{softwhite}\hrulefill}\par\vspace*{0.8ex}}
+\newcommand{\headright}[1]{%
+  \vspace{0.6ex}{\sffont\bfseries\large\addfontfeatures{LetterSpace=2.0}\textcolor{cvblue}{\MakeUppercase{#1}}}\\[-1ex]
+  {\color{cvblue}\rule{\linewidth}{0.6pt}}\\[-0.4ex]}
+
+\newlength{\SideBarW}\setlength{\SideBarW}{0.30\paperwidth}
+\newlength{\BetweenJobsGap}\setlength{\BetweenJobsGap}{2.0ex}
+
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{left=1.2em,label=\raisebox{0.25ex}{\scalebox{0.7}{$\bullet$}},
+itemsep=0.22ex,topsep=0.1ex,rightmargin=6mm,parsep=0pt}
+
+% job: #1 Title, #2 Subtitle, #3 Dates, #4 Company, #5 Location
+\newenvironment{job}[5]{%
+  \vspace{\BetweenJobsGap}%
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r}
+    {\sffont\addfontfeatures{LetterSpace=1.5}\textcolor{cvblue}{\MakeUppercase{#1}} — #2} & {\small #3}\\
+    {\small #4} & {\small #5}\\
+  \end{tabular*}
+  \vspace{-0.4ex}
+  \begin{cvitemize}
+}{\end{cvitemize}}
+
+\begin{document}
+\pagestyle{empty}\sloppy\emergencystretch=2em
+\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
+
+\vspace*{-10mm}
+\noindent\begin{minipage}[t]{\textwidth}
+
+% ===== LEFT SIDEBAR =====
+\colorbox{cvblue}{%
+  \parbox[t][\textheight][t]{\SideBarW}{%
+    \hspace*{4mm}\begin{minipage}[t]{\dimexpr\linewidth-8mm\relax}
+      \sloppy
+      \pretolerance=10000
+      \tolerance=2000
+      \hyphenpenalty=10000
+      \exhyphenpenalty=10000
+
+      \setlength{\emergencystretch}{1em}
+      \color{softwhite}\vspace*{9mm}
+      \begin{center}
+        \includegraphics[width=0.85\linewidth]{Resume_Juan_Cano.png}
+      \end{center}
+
+      \headleft{CONTACT}
+      \small
+      \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\[0.5ex]
+      +49 163 150 9581\\[0.5ex]
+      \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[0.5ex]
+      Braunschweig — Switzerland ready
+      \normalsize\vspace*{3mm}
+
+      \headleft{EDUCATION}
+      \textbf{Master in Engineering}\\[0.2ex]
+      {\small Miguel Hernández University, Alicante (2015)}
+
+      \vspace*{3mm}
+      \headleft{CERTIFICATIONS}
+      \textbf{PMP} (PMI, 2025)\\[0.5ex]
+      \textbf{SAFe PO/PM} (2021)
+
+      \vspace*{3mm}
+      \headleft{SKILLS}
+      {\raggedright
+      \textbf{Platform Product:} roadmaps, backlog refinement, user stories \& acceptance criteria\\[0.4ex]
+      \textbf{Cloud-Native:} Kubernetes, Docker, Linux/Unix, networking fundamentals\\[0.4ex]
+      \textbf{DevOps \& Ops:} CI/CD ecosystems, automation, SLOs, incident governance\\[0.4ex]
+      \textbf{IaC (concepts):} Terraform/Ansible; environment standardisation\\[0.4ex]
+      \textbf{Security Exposure:} external pentesting coordination, findings analysis, remediation tracking\\[0.4ex]
+      \textbf{Tools:} Jira, Confluence, Power BI\\
+      \par}
+
+      \vspace*{3mm}
+      \headleft{LANGUAGES}
+      Spanish (native)\\[0.4ex]
+      English (proficient)\\[0.4ex]
+      German (advanced)\\[0.4ex]
+      French (beginner)
+    \end{minipage}
+  }%
+}%
+\hspace{4mm}%
+% ===== RIGHT COLUMN =====
+\begin{minipage}[t]{\dimexpr\textwidth-\SideBarW-4mm\relax}
+\raggedright
+
+% ===== NAME HEADER =====
+\vspace*{18mm}
+\begin{center}
+  {\sffont\fontsize{40}{42}\addfontfeatures{LetterSpace=5}\textcolor{darkgray}{JUAN}}
+  \hspace{1.2em}
+  {\sffont\fontsize{40}{42}\bfseries\addfontfeatures{LetterSpace=5}\textcolor{cvblue}{CANO-SELLES}}\\[2ex]
+  {\sffont\fontsize{15}{17}\addfontfeatures{LetterSpace=10.0}\textcolor{darkgray}{TECHNICAL PRODUCT OWNER \,|\, PLATFORM PROGRAM MANAGER}}
+\end{center}
+
+\vspace{3mm}
+\headright{Profile}
+\vspace*{-0.4ex}
+\begin{cvitemize}
+  \item Technical Product Owner / Program Manager with 10 years owning cloud platform roadmaps and operational outcomes in regulated environments.
+  \item Platform-focused leader across 10--12 Agile/DevOps teams, aligning stakeholders and translating complex requirements into actionable backlogs.
+  \item Data-driven delivery using KPIs and SLO-oriented signals to steer reliability, service maturity, and continuous improvement.
+  \item Security-aware product owner: commissioned external penetration tests and security assessments, analysed findings, and prioritised remediation with engineering teams.
+\end{cvitemize}
+
+\vspace{3mm}
+\headright{Professional Experience}
+
+\begin{job}{Senior Program Manager}{Cloud Platform Consolidation}{Mar 2024 -- Sep 2025}{CARIAD SE}{Wolfsburg, DE}
+  \item Consolidated backend and platform capabilities across 12 Agile/DevOps teams, improving stability, tooling coherence, and cross-domain consistency.
+  \item Owned the delivery roadmap and governance cadence; managed dependencies, risks, and blockers with architecture and engineering leadership.
+  \item Drove operational readiness for production, including observability alignment and incident processes (SLO reporting, escalation paths).
+\end{job}
+
+\begin{job}{Senior Product Owner}{Platform Services Governance}{Nov 2020 -- Mar 2024}{CARIAD SE}{Wolfsburg, DE}
+  \item Owned backend services within a global connectivity portfolio serving millions of vehicles across EU, NAR and CHN.
+  \item Translated stakeholder needs into user stories and acceptance criteria; aligned delivery with architecture, compliance, DevOps, and operations.
+  \item Achieved 70\% cost reduction through platform simplification, standardisation, and automation.
+\end{job}
+
+\begin{job}{Technical Project Lead}{Connected Services}{Mar 2019 -- Nov 2020}{SEAT S.A.}{Barcelona, ES}
+  \item Delivered connected services (eCall, remote functions), coordinating ECU, backend, suppliers, and homologation partners.
+  \item Managed release readiness across HW/SW/backend; drove validation, testing, and defect resolution in compliance-driven contexts.
+\end{job}
+
+\begin{job}{Engineer / Consultant}{IoT \& Automotive Platforms}{Oct 2015 -- Mar 2019}{AKKA Technologies}{Barcelona, ES}
+  \item Contributed to IoT and automotive platforms through embedded development and OEM release support; improved quality via CI/QA automation.
+\end{job}
+
+\end{minipage}
+\end{minipage}
+\end{document}
