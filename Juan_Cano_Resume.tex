@@ -1,35 +1,27 @@
 % CV — JUAN J. CANO-SELLES 
-% Technical Program Manager | Global Cloud Governance 
+% Technical Program Manager | AI Data Strategy & Cloud Governance
 
 \documentclass[a4paper,10pt]{article} 
-\usepackage[a4paper,margin=0.4in]{geometry} 
+\usepackage[a4paper,margin=0.45in]{geometry} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{enumitem} 
 \usepackage[hidelinks]{hyperref} 
-\usepackage{bookmark} 
-\usepackage{iftex} 
-\usepackage[none]{hyphenat} % Disables all hyphenation
+\usepackage[english]{babel} 
+\usepackage{helvet} 
+\usepackage{graphicx} 
 
-% ---------- Fonts ---------- 
-\ifPDFTeX 
-  \usepackage[T1]{fontenc} 
-  \usepackage[utf8]{inputenc} 
-  \usepackage[scaled]{helvet} 
-  \renewcommand{\familydefault}{\sfdefault} 
-\else 
-  \usepackage{fontspec} 
-  \setmainfont{Helvetica} 
-\fi 
-
-% Executive Layout Spacing 
-\setlist[itemize]{leftmargin=0.15in, itemsep=1pt, topsep=4pt, parsep=2pt, partopsep=0pt} 
-\linespread{1.05} 
+% Layout & Spacing
+\renewcommand{\familydefault}{\sfdefault} 
+\setlist[itemize]{leftmargin=0.18in, itemsep=2pt, topsep=3pt, parsep=1pt, partopsep=0pt} 
+\linespread{1.1} 
 \setlength{\parindent}{0pt} 
 
 \newcommand{\Section}[1]{% 
-  \vspace{10pt}% 
+  \vspace{11pt}% 
   {\large\bfseries\uppercase{#1}}% 
   \vspace{2pt}\par\noindent\hrule height 0.6pt% 
-  \vspace{6pt}% 
+  \vspace{5pt}% 
 } 
 
 \pagestyle{empty} 
@@ -39,69 +31,70 @@
 % ============================================================ 
 % HEADER 
 % ============================================================ 
-\begin{center} 
-    {\Huge\bfseries JUAN J. CANO-SELLES} \\ \vspace{5pt}
-    
-    % Line 2: Legal Status & Location
-    \textbf{Spanish National (EU/EFTA) | Automatic Work Authorization | Relocating to Switzerland} \\ \vspace{3pt}
-    
-    % Line 3: Contact Info (Shortened LinkedIn for space)
-    +49 163 150 9581 | \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} | \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\ \vspace{3pt}
-    
-    % Line 4: The "Value Prop" Line (Languages + Availability)
-    \textbf{English: C2 | German: B2 (Professional working proﬁciency) | Immediate Availability}
-\end{center}
+\begin{minipage}[c]{0.72\textwidth}
+    {\Huge\bfseries JUAN J. CANO-SELLES} \\[0.5em]
+    {\large\textbf{Technical Program Manager | AI Data Strategy \& Cloud Governance}} \\[0.7em]
+    Braunschweig, DE \textbar{} \textbf{Targeting Munich Area} \\[0.3em]
+    +49 163 150 9581 \textbar{} \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \textbar{} \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\[0.3em]
+    \textbf{German: C1 \textbar{} English: C2 \textbar{} Availability: 2 Months}
+\end{minipage}%
+\begin{minipage}[c]{0.28\textwidth}
+    \flushright
+    \includegraphics[width=3.3cm, height=3.3cm, keepaspectratio]{Juan_Cano_Natural_Resume.png} 
+\end{minipage}
 
 % ============================================================ 
-% SUMMARY 
+% EXECUTIVE PROFILE
 % ============================================================ 
 \Section{Executive Profile} 
-\textbf{Technical Program Manager: Global Cloud Governance \& Transformation} \\ 
-10 years experience scaling global digital services, bridging 5 years of distributed cloud governance with 5 years of hardware leadership across the connectivity chain. 
-\begin{itemize} 
-    \item \textbf{Cloud Scaling:} Decomposed legacy monoliths into event-driven architectures (Kafka, AWS) to deliver 99.9\% availability for a 4M+ vehicle fleet; expanded operations from a single team to a five-team Agile Release Train. 
-    \item \textbf{FinOps \& Governance:} Reduced cloud unit-costs by 30\% through architectural optimization while directing multi-team delivery and enforcing GDPR and global regulatory compliance (China RTM, eCall). 
-    \item \textbf{Systems Integration:} Managed the hardware-to-cloud bridge using technical experience in Electronic Control Unit integration, RTOS firmware development (C/C++), and high-availability API design. 
-\end{itemize} 
+Technical Program Manager with 10 years of professional experience, including a 7-year focus on automotive connectivity and cloud governance for global fleets of 10M+ vehicles. Specialist in managing complex infrastructure migrations and steering AI initiatives—including ML-based anomaly detection and pilot LLM implementations—to optimize fleet reliability and organizational efficiency.
 
 % ============================================================ 
 % EXPERIENCE 
 % ============================================================ 
-\Section{Work Experience} 
+\Section{Professional Experience} 
 
-\textbf{CARIAD SE} $|$ \textbf{Technical Program Manager (Senior Product Owner)} \hfill \textit{Wolfsburg, Germany $|$ Nov 2020 -- Aug 2025} 
+\textbf{Sabbatical \& Professional Development} \hfill \textit{Sep 2025 -- Present} 
 \begin{itemize} 
-\item Directed the Service Activation Cluster, managing the end-to-end roadmap and ensuring 99.9\% operational uptime for an ART of five DevOps teams delivering digital services for a 4M+ vehicle fleet. 
-\item Led the transition to an event-driven architecture (Kafka, SNS/SQS), eliminating monolithic dependency bottlenecks to enable asynchronous scaling and platform-wide notification services.
-\item Deployed the technical infrastructure for Functions on Demand (FoD) and custom B2B fleet services for partners like Avis and Sixt, unlocking the commercial launch of pay-per-use digital features for the Volkswagen Group. 
-\item Enforced a multi-year FinOps program achieving a 30\% unit-cost reduction on AWS through architectural redesign of database access patterns and optimized logging/reconciliation frequencies. 
-\item Governed global regulatory constraints, including China’s RTM, EU eCall standards, and architectural separation of physical databases to meet North American sovereignty demands. 
+\item Conducted a 2-month planned sabbatical following a 5-year tenure at CARIAD SE.
+\item Obtained PMP, AWS Solutions Architect Associate, and AWS Machine Learning Associate certifications.
+\item Evaluated MLOps governance and LLM integration patterns for automotive cloud environments to align infrastructure expertise with AI/Data strategy requirements.
+\end{itemize}
+
+\vspace{6pt} 
+\textbf{CARIAD SE (Volkswagen Group)} $|$ \textbf{Technical Program Manager} \hfill \textit{Wolfsburg, DE $|$ Nov 2020 -- Aug 2025} 
+\begin{itemize} 
+\item Led technical direction for a five-team Agile Release Train, executing a large-scale migration from legacy monoliths to a microservice-based, event-driven architecture (Kafka) supporting 10M+ vehicles globally.
+\item Engineered and deployed an ML-based anomaly detection system to identify faulty vehicle communication patterns and proactively deactivated services to prevent battery drain and optimize cloud costs.
+\item Directed multi-cloud migration programs from Azure to AWS and redesigned database access patterns, achieving a 30\% reduction in infrastructure unit-costs while improving platform maintainability.
+\item Spearheaded the technical roadmap for Functions-on-Demand (FoD) and B2B fleet services, establishing the infrastructure for over-the-air feature monetization and enterprise-grade data management.
+\item Enforced architectural separation and data residency requirements for global markets, aligning platform delivery with international regulatory, legal, and safety standards.
 \end{itemize} 
 
-\vspace{8pt} 
-\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead (Connectivity Systems)} \hfill \textit{Barcelona, Spain $|$ Mar 2019 -- Nov 2020} 
+\vspace{6pt} 
+\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead (Connectivity Systems)} \hfill \textit{Barcelona, ES $|$ Mar 2019 -- Nov 2020} 
 \begin{itemize} 
-\item Synchronized hardware and software release cycles for connectivity modules (OCU2 to OCU4), ensuring alignment with series production (SOP) milestones for three major vehicle lines. 
-\item Steered the technical interface with Tier-1 suppliers (LG), prioritizing delivery of critical hardware revisions and development samples for firmware validation. 
-\item Validated 100\% compliance for safety-critical EU eCall regulatory standards, supervising high-stakes crash and homologation test preparations to ensure hardware and data survivability. 
-\item Resolved integration blockers at the Technical Development Centre (CTS) by engineering diagnostic protocols and CAN-message mocking scripts to train cross-functional validation teams. 
+\item Synchronized hardware and software release cycles for connectivity modules, ensuring alignment with series production (SOP) milestones for three major vehicle lines. 
+\item Steered technical interfaces with Tier-1 suppliers to prioritize delivery of hardware revisions and development samples for firmware validation. 
+\item Validated 100\% compliance for safety-critical EU eCall regulatory standards and supervised high-stakes crash and homologation test preparations. 
 \end{itemize} 
 
-\vspace{8pt} 
-\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, Spain $|$ Oct 2015 -- Mar 2019} 
+\vspace{6pt} 
+\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, ES $|$ Oct 2015 -- Mar 2019} 
 \begin{itemize} 
-    \item Architected application logic and firmware for NFC-based IoT wearables and parking systems, managing strict power optimization and real-time constraints for resource-limited battery-powered devices. 
-    \item Developed custom Linux drivers for low-level connectivity modules and engineered hardware emulators (Python/Qt) to accelerate protocol validation workflows. 
-    \item Consulted for SEAT S.A. (6 months), leading software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity units. 
+    \item Architected firmware for NFC-based IoT wearables, managing strict power optimization and real-time execution constraints for battery-powered devices. 
+    \item Developed custom Linux drivers and engineered hardware emulators (Python/Qt) to accelerate communication protocol validation workflows. 
+    \item Led software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity units as a consultant for SEAT S.A.
 \end{itemize} 
 
-\Section{Languages \& Certifications} 
+\Section{Technical Skills \& Certifications} 
 \begin{itemize} 
-\item \textbf{Languages:} Spanish (Native), English (Native Level - C2), German (Professional working proﬁciency - B2  Certified)
-\item \textbf{Certifications:} PMP (2025), SAFe PO/PM (2021) 
+\item \textbf{Strategic Methods:} PMP (2025), SAFe PO/PM, Lean Portfolio Management, FinOps, Agile/DevOps Governance.
+\item \textbf{Technical \& Cloud:} AWS Solutions Architect Associate, AWS Machine Learning Associate, Event-Driven Architecture (Kafka), Cloud Migration (Azure to AWS).
+\item \textbf{Languages:} Spanish (Native), English (C2 - Native Level), German (C1 - Professional Proficiency).
 \end{itemize}
 
 \Section{Education} 
-\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hernández University, Spain | 2015 
+\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hernández University, Spain $|$ 2015 
 
 \end{document}
