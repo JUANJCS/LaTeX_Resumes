@@ -1,107 +1,111 @@
-% CV — JUAN J. CANO-SELLES 
-% Technical Program Manager | Global Cloud Governance 
+% ============================================================
+% CV — JUAN CANO-SELLES
+% Master Baseline | English | No Photo | ATS-Safe
+% Last reconciled: March 2026
+% ============================================================
 
-\documentclass[a4paper,10pt]{article} 
-\usepackage[a4paper,margin=0.4in]{geometry} 
-\usepackage{enumitem} 
-\usepackage[hidelinks]{hyperref} 
-\usepackage{bookmark} 
-\usepackage{iftex} 
-\usepackage[none]{hyphenat} % Disables all hyphenation
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper,margin=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{helvet}
 
-% ---------- Fonts ---------- 
-\ifPDFTeX 
-  \usepackage[T1]{fontenc} 
-  \usepackage[utf8]{inputenc} 
-  \usepackage[scaled]{helvet} 
-  \renewcommand{\familydefault}{\sfdefault} 
-\else 
-  \usepackage{fontspec} 
-  \setmainfont{Helvetica} 
-\fi 
+% Layout & Spacing
+\renewcommand{\familydefault}{\sfdefault}
+\setlist[itemize]{leftmargin=0.18in, itemsep=2pt, topsep=3pt, parsep=1pt, partopsep=0pt}
+\linespread{1.1}
+\setlength{\parindent}{0pt}
 
-% Executive Layout Spacing 
-\setlist[itemize]{leftmargin=0.15in, itemsep=1pt, topsep=4pt, parsep=2pt, partopsep=0pt} 
-\linespread{1.05} 
-\setlength{\parindent}{0pt} 
+\newcommand{\Section}[1]{%
+  \vspace{11pt}%
+  {\large\bfseries\uppercase{#1}}%
+  \vspace{2pt}\par\noindent\hrule height 0.6pt%
+  \vspace{5pt}%
+}
 
-\newcommand{\Section}[1]{% 
-  \vspace{10pt}% 
-  {\large\bfseries\uppercase{#1}}% 
-  \vspace{2pt}\par\noindent\hrule height 0.6pt% 
-  \vspace{6pt}% 
-} 
+\pagestyle{empty}
 
-\pagestyle{empty} 
+\begin{document}
 
-\begin{document} 
+% ============================================================
+% HEADER
+% ============================================================
+{\Huge\bfseries JUAN CANO-SELLES} \\[0.5em]
+{\large\textbf{Technical Program Manager | Cloud Governance \& Platform Strategy}} \\[0.7em]
+Braunschweig, DE \textbar{} \textbf{Open to Relocation} \\[0.3em]
++49 163 150 9581 \textbar{} \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \textbar{} \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\[0.3em]
+\textbf{German: C1 \textbar{} English: C2 \textbar{} Availability: 2 Months}
 
-% ============================================================ 
-% HEADER 
-% ============================================================ 
-\begin{center} 
-    {\Huge\bfseries JUAN J. CANO-SELLES} \\ \vspace{5pt}
-    
-    % Line 2: Legal Status & Location
-    \textbf{Spanish National (EU/EFTA) | Automatic Work Authorization | Relocating to Switzerland} \\ \vspace{3pt}
-    
-    % Line 3: Contact Info (Shortened LinkedIn for space)
-    +49 163 150 9581 | \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} | \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles} \\ \vspace{3pt}
-    
-    % Line 4: The "Value Prop" Line (Languages + Availability)
-    \textbf{English: C2 | German: B2 (Professional working proﬁciency) | Immediate Availability}
-\end{center}
+% ============================================================
+% EXECUTIVE PROFILE
+% ============================================================
+\Section{Executive Profile}
+Technical Program Manager with 10 years of experience, including 7 years leading cloud platform governance and large-scale infrastructure transformation in the automotive sector. Specialist in orchestrating cross-functional delivery across distributed teams, translating business strategy into executable technical roadmaps, and steering platform convergence programs for global fleets of 10M+ connected endpoints. Combines deep cloud and IoT technical fluency with structured program governance and senior stakeholder management.
 
-% ============================================================ 
-% SUMMARY 
-% ============================================================ 
-\Section{Executive Profile} 
-\textbf{Technical Program Manager: Global Cloud Governance \& Transformation} \\ 
-10 years experience scaling global digital services, bridging 5 years of distributed cloud governance with 5 years of hardware leadership across the connectivity chain. 
-\begin{itemize} 
-    \item \textbf{Cloud Scaling:} Decomposed legacy monoliths into event-driven architectures (Kafka, AWS) to deliver 99.9\% availability for a 4M+ vehicle fleet; expanded operations from a single team to a five-team Agile Release Train. 
-    \item \textbf{FinOps \& Governance:} Reduced cloud unit-costs by 30\% through architectural optimization while directing multi-team delivery and enforcing GDPR and global regulatory compliance (China RTM, eCall). 
-    \item \textbf{Systems Integration:} Managed the hardware-to-cloud bridge using technical experience in Electronic Control Unit integration, RTOS firmware development (C/C++), and high-availability API design. 
-\end{itemize} 
+% ============================================================
+% PROFESSIONAL EXPERIENCE
+% ============================================================
+\Section{Professional Experience}
 
-% ============================================================ 
-% EXPERIENCE 
-% ============================================================ 
-\Section{Work Experience} 
-
-\textbf{CARIAD SE} $|$ \textbf{Technical Program Manager (Senior Product Owner)} \hfill \textit{Wolfsburg, Germany $|$ Nov 2020 -- Aug 2025} 
-\begin{itemize} 
-\item Directed the Service Activation Cluster, managing the end-to-end roadmap and ensuring 99.9\% operational uptime for an ART of five DevOps teams delivering digital services for a 4M+ vehicle fleet. 
-\item Led the transition to an event-driven architecture (Kafka, SNS/SQS), eliminating monolithic dependency bottlenecks to enable asynchronous scaling and platform-wide notification services.
-\item Deployed the technical infrastructure for Functions on Demand (FoD) and custom B2B fleet services for partners like Avis and Sixt, unlocking the commercial launch of pay-per-use digital features for the Volkswagen Group. 
-\item Enforced a multi-year FinOps program achieving a 30\% unit-cost reduction on AWS through architectural redesign of database access patterns and optimized logging/reconciliation frequencies. 
-\item Governed global regulatory constraints, including China’s RTM, EU eCall standards, and architectural separation of physical databases to meet North American sovereignty demands. 
-\end{itemize} 
-
-\vspace{8pt} 
-\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead (Connectivity Systems)} \hfill \textit{Barcelona, Spain $|$ Mar 2019 -- Nov 2020} 
-\begin{itemize} 
-\item Synchronized hardware and software release cycles for connectivity modules (OCU2 to OCU4), ensuring alignment with series production (SOP) milestones for three major vehicle lines. 
-\item Steered the technical interface with Tier-1 suppliers (LG), prioritizing delivery of critical hardware revisions and development samples for firmware validation. 
-\item Validated 100\% compliance for safety-critical EU eCall regulatory standards, supervising high-stakes crash and homologation test preparations to ensure hardware and data survivability. 
-\item Resolved integration blockers at the Technical Development Centre (CTS) by engineering diagnostic protocols and CAN-message mocking scripts to train cross-functional validation teams. 
-\end{itemize} 
-
-\vspace{8pt} 
-\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, Spain $|$ Oct 2015 -- Mar 2019} 
-\begin{itemize} 
-    \item Architected application logic and firmware for NFC-based IoT wearables and parking systems, managing strict power optimization and real-time constraints for resource-limited battery-powered devices. 
-    \item Developed custom Linux drivers for low-level connectivity modules and engineered hardware emulators (Python/Qt) to accelerate protocol validation workflows. 
-    \item Consulted for SEAT S.A. (6 months), leading software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity units. 
-\end{itemize} 
-
-\Section{Languages \& Certifications} 
-\begin{itemize} 
-\item \textbf{Languages:} Spanish (Native), English (Native Level - C2), German (Professional working proﬁciency - B2  Certified)
-\item \textbf{Certifications:} PMP (2025), SAFe PO/PM (2021) 
+\textbf{Sabbatical \& Professional Development} \hfill \textit{Braunschweig, DE $|$ Sep 2025 -- Present}
+\begin{itemize}
+\item Conducted a structured sabbatical following a 5-year tenure at CARIAD SE: initial travel phase followed by an intensive certification period covering cloud architecture and AI/ML governance.
+\item Obtained PMP (2025), AWS Solutions Architect Associate SAA-C03 (2026), and AWS Machine Learning Associate MLA-C01 (2026) certifications.
+\item Evaluated MLOps governance patterns and LLM integration frameworks for large-scale cloud environments to formalize expertise in AI-driven platform strategy.
 \end{itemize}
 
-\Section{Education} 
-\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hernández University, Spain | 2015 
+\vspace{6pt}
+\textbf{CARIAD SE (Volkswagen Group)} $|$ \textbf{Technical Program Manager (Senior Product Owner)} \hfill \textit{Wolfsburg, DE $|$ Nov 2020 -- Aug 2025}
+\begin{itemize}
+\item Governed the technical roadmap for an Agile Release Train (ART) of five development teams, ensuring global architectural alignment and regulatory compliance for a 10M+ vehicle connectivity platform across brands and markets.
+\item Orchestrated portfolio delivery across cloud platform, backend services, data pipelines, security, and operations teams, coordinating dependencies and unified tooling adoption within an 8-figure vendor landscape.
+\item Streamlined digital service delivery (Functions-on-Demand activation) by aligning MQTT-based communication protocols and Protobuf definitions between vehicle and cloud backend teams, enabling over-the-air feature monetization for 4M+ connected vehicles.
+\item Led the architectural migration from a monolithic legacy system to a microservice-based, event-driven environment (Kafka), scaling global data ingestion and processing pipelines.
+\item Engineered and deployed an ML-based behavioral anomaly detection system to identify faulty vehicle communication patterns, proactively deactivating services to prevent battery drain and reduce cloud costs.
+\item Enforced a FinOps program achieving a 30\% year-on-year reduction in AWS expenditure through workload migration, resource audits, and refined data access patterns.
+\item Drove a cumulative \textasciitilde{}70\% OPEX reduction on the activation platform through cloud-native redesign, automation, and process optimization over the full platform lifecycle.
+\item Established a cloud-based test automation platform (Gauge/Jira X-Ray) integrating supplier acceptance tests into deployment pipelines, delivering an automated 360-degree release quality view.
+\item Enforced architectural separation and data residency requirements for EU, China, and Canada, ensuring compliance with GDPR and international data sovereignty regulations.
+\item Piloted AI initiatives within the internal transformation team: a RAG-based LLM for departmental onboarding and evaluation of PMO automation tooling to reduce administrative overhead.
+\end{itemize}
+
+\vspace{6pt}
+\textbf{SEAT S.A.} $|$ \textbf{Technical Project Lead} \hfill \textit{Barcelona, ES $|$ Mar 2019 -- Nov 2020}
+\begin{itemize}
+\item Managed the technical development and series-production integration of connectivity units (OCU) for the SEAT Tarraco, SEAT Leon, and Cupra Born.
+\item Steered the end-to-end technical commissioning process, resolving systemic hardware-to-backend authentication (mTLS) bottlenecks to secure vehicle-to-infrastructure connectivity.
+\item Coordinated cross-functional deliveries between Tier-1 suppliers and internal departments, managing hardware/software release cycles, wiring schematics, calibration parameters, and technical documentation.
+\item Validated full compliance with international homologation standards, supervising EU eCall certifications and safety-critical crash-test preparations across 20+ EU markets.
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Akkodis} $|$ \textbf{Systems Integration Engineer} \hfill \textit{Barcelona, ES $|$ Oct 2015 -- Mar 2019}
+\begin{itemize}
+\item Orchestrated technical project coordination and supplier integration for series-production connectivity units as an on-site resident consultant for SEAT S.A.
+\item Architected low-level firmware for NFC-based IoT wearables, optimizing power consumption and resolving real-time execution constraints for battery-powered devices.
+\item Developed custom Linux drivers and engineered hardware emulators (Python/Qt) to automate communication protocol validation and accelerate software testing workflows for embedded systems.
+\item Led software release validation and hardware-in-the-loop (HiL) testing for series-production connectivity units.
+\end{itemize}
+
+% ============================================================
+% TECHNICAL SKILLS & CERTIFICATIONS
+% ============================================================
+\Section{Technical Skills \& Certifications}
+\begin{itemize}
+\item \textbf{Program \& Portfolio Governance:} PMP (2025), SAFe PO/PM (2021), Lean Portfolio Management, Agile/DevOps Governance, PI Planning, Roadmap Development, OKR/KPI Frameworks, FinOps.
+\item \textbf{Cloud \& Platform:} AWS Solutions Architect Associate SAA-C03 (2026), AWS Machine Learning Associate MLA-C01 (2026), Event-Driven Architecture (Kafka), Cloud Migration (Azure to AWS), Microservices, CI/CD, Docker, Kubernetes.
+\item \textbf{IoT \& Integration:} MQTT, Protobuf, mTLS, IoT Connectivity Platforms, Embedded Systems, HiL Testing.
+\item \textbf{Tooling:} Jira (Advanced Roadmaps), Jira X-Ray, Gauge, Confluence, Power BI.
+\item \textbf{Languages:} Spanish (Native), English (C2 -- Native Level), German (C1 -- Professional Proficiency), French (B1).
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\Section{Education}
+\textbf{Master of Science in Telecommunications Engineering} \hfill Miguel Hern\'{a}ndez University, Spain $|$ 2015
 
 \end{document}
