@@ -1,0 +1,442 @@
+% ============================================================
+% Juan_Cano_Master_Inventory.tex
+% MASTER CAREER INVENTORY — NOT AN APPLICATION DOCUMENT
+% No page limit. All bullets, all metrics, all context.
+% Source of truth for all tailored derivatives.
+% Engine: pdfLaTeX | Font: Helvet
+% Last updated: March 2026
+% ============================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[top=1.8cm, bottom=1.8cm, left=2.0cm, right=2.0cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% --- Section heading style ---
+\titleformat{\section}
+  {\normalfont\large\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.8pt}]
+\titlespacing{\section}{0pt}{12pt}{5pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {}{0em}{}
+\titlespacing{\subsection}{0pt}{8pt}{3pt}
+
+% --- List style ---
+\setlist[itemize]{
+  noitemsep,
+  topsep=3pt,
+  parsep=0pt,
+  partopsep=0pt,
+  leftmargin=1.4em,
+  label=\textbullet
+}
+
+\setlist[itemize,2]{
+  noitemsep,
+  topsep=1pt,
+  leftmargin=1.4em,
+  label=--
+}
+
+% --- Hyperlink style ---
+\hypersetup{colorlinks=true, urlcolor=blue, hidelinks}
+
+% --- Notice box ---
+\newmdenv[
+  linecolor=black!40,
+  backgroundcolor=black!5,
+  innerleftmargin=8pt,
+  innerrightmargin=8pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=6pt,
+  skipbelow=6pt
+]{noticebox}
+
+% --- Role entry ---
+\newcommand{\roleentry}[3]{%
+  \vspace{4pt}%
+  \textbf{#1} \hfill \textit{#2}\\%
+  \textit{\small #3}\\[-2pt]%
+}
+
+\begin{document}
+
+% ============================================================
+% NOTICE
+% ============================================================
+\begin{noticebox}
+\textbf{MASTER INVENTORY — DO NOT SUBMIT DIRECTLY.}
+This document is a complete, unfiltered career repository. It contains all roles, all bullet variants,
+all metrics, all context notes, and all inventory items including side projects and partial initiatives.
+Application-specific baselines (\texttt{Juan\_Cano\_Resume.tex}, \texttt{\_Photo\_EN}, \texttt{\_Photo\_DE})
+are distilled from this file. One-page limit applies to those derivatives, not here.
+\end{noticebox}
+
+\vspace{6pt}
+
+% ============================================================
+% IDENTITY
+% ============================================================
+{\LARGE\bfseries JUAN CANO-SELLES}\\[2pt]
+{\normalsize Technical Program Manager $|$ Senior Product Owner $|$ Cloud \& AI Strategy}\\[4pt]
+{\small
+  Braunschweig, Lower Saxony, Germany\\
+  +49 163 150 9581 \quad\textbar\quad
+  \href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \quad\textbar\quad
+  \href{https://linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}\\[2pt]
+  \textbf{German: C1} \quad\textbar\quad
+  \textbf{English: C2} \quad\textbar\quad
+  Spanish: Native \quad\textbar\quad French: B1\\[2pt]
+  Nationality: Spanish — EU citizen, no work permit required\\
+  Availability: 2 months notice
+}
+
+% ============================================================
+% CAREER SUMMARY (raw — rewrite per application)
+% ============================================================
+\section{Career Summary (raw — rewrite per application)}
+
+10 years of professional experience across systems integration, technical project management, and
+senior product ownership in cloud and connectivity. Last 7 years focused on automotive cloud
+infrastructure at scale — governing a 5-team Agile Release Train for a 10M+ vehicle platform.
+Hands-on background in embedded systems, firmware, and Linux (Akkodis/SEAT). Strong cross-functional
+delivery track record in complex, multi-stakeholder environments.
+
+Certifications: PMP (2025), SAFe PO/PM (2021), AWS SAA-C03 (2026), AWS MLA-C01 (in progress).
+
+Target roles: Senior Technical Program Manager, Senior Product Owner, Senior Lead Project Manager.
+Target domains: cloud infrastructure, AI/ML programme governance, platform transformation, tech-forward
+companies in automotive-adjacent, defense tech, fintech, or enterprise software.
+
+Career principle: will not accept roles with accountability that lack corresponding authority/mandate.
+
+% ============================================================
+% PROFESSIONAL EXPERIENCE
+% ============================================================
+\section{Professional Experience}
+
+% ----------------------------------------------------------
+% SABBATICAL
+% ----------------------------------------------------------
+\roleentry{Sabbatical \& Professional Development}
+  {Sep 2025 – Present}
+  {Braunschweig, DE}
+
+\textit{Context:} Structured exit from CARIAD SE on mutual agreement (Aufhebungsvertrag, 06.05.2025,
+effective 31.08.2025). Not a layoff — voluntary exit under CARIAD restructuring 2023–2025.
+Zeugnis grade 2 (gut), clean, ``auf eigenen Wunsch''. Abfindung received Jan 2026.
+
+\begin{itemize}
+  \item Completed three months of planned travel (sabbatical phase).
+  \item Completed PMP certification (PMI, 2025) — intensive exam preparation via Udemy mock simulator.
+  \item Completed AWS Solutions Architect Associate SAA-C03 (2026) — phased study plan, Udemy course + practice tests.
+  \item AWS Machine Learning Engineer Associate MLA-C01 in progress (as of March 2026).
+  \item Conducted active job search targeting Munich area and Switzerland (CH: Senior PO/TPM salary anchor CHF 140k gross/year).
+\end{itemize}
+
+\textit{Aufhebungsvertrag restriction (Ziffer 4):} Cannot rejoin any VW Group entity (§15 AktG)
+on a sozialversicherungspflichtig basis before 31.08.2028 without repaying Abfindung pro-rata.
+Blocked employers: CARIAD, MOIA, MHP, Porsche Consulting, Audi, SEAT, Škoda, VW Nutzfahrzeuge,
+VW Financial Services, all Rivian/VW JVs. Residual liability approx. EUR 112k as of March 2026,
+decreasing by 1/36 per month.
+
+\vspace{8pt}
+
+% ----------------------------------------------------------
+% CARIAD SE
+% ----------------------------------------------------------
+\roleentry{CARIAD SE (Volkswagen Group Company) — Senior Product Owner}
+  {Nov 2020 – Aug 2025}
+  {Wolfsburg, DE}
+
+\textit{Context:} CARIAD SE is the VW Group's software company, created to consolidate automotive
+software across all brands (VW, Audi, SEAT, Škoda, Porsche, Lamborghini, Bentley). Juanjo held
+the title ``Senior Product Owner'' on paper; the scope and accountability were de facto
+Technical Program Manager level — governing a full Agile Release Train, not a single product backlog.
+CARIAD went through major public restructuring 2023–2025 (headcount reductions, leadership changes,
+program scope reductions). This context is documented and explains the ``schwierigen Arbeitsbedingungen''
+referenced in the Zeugnis.
+
+For AI-forward applications, title variant: ``Technical Program Manager $|$ AI Data Strategy \& Cloud Governance''.
+
+\subsection*{Programme Governance \& Platform Scale}
+
+\begin{itemize}
+  \item Governed the technical roadmap for an Agile Release Train (ART) comprising five cross-functional
+        development teams, ensuring architectural alignment and regulatory compliance across all VW brands
+        and markets for a platform serving 10M+ vehicles globally.
+  \item Owned backlog prioritisation, PI Planning, and dependency resolution across the ART,
+        maintaining strategic coherence between engineering constraints and brand-level business requirements.
+  \item Directed quarterly roadmap reviews with senior leadership, translating programme status,
+        risks, and delivery commitments into executive-level communication.
+  \item Managed cross-brand stakeholder relationships — SEAT, Audi, VW Passenger Cars, Škoda —
+        resolving competing priorities across product lines with different market timelines and regulatory landscapes.
+  \item Operated in an environment of sustained organisational ambiguity (restructuring 2023–2025),
+        maintaining programme delivery continuity while team composition and leadership changed repeatedly.
+\end{itemize}
+
+\subsection*{ML \& AI Initiatives (verified, on-paper)}
+
+\begin{itemize}
+  \item \textbf{ML-based behavioral anomaly detection (main initiative):} Governed the ART-level
+        programme for an ML-based system detecting behavioral anomalies across the connected vehicle fleet.
+        Scope included infrastructure delivery, cross-team alignment with data engineering and ML teams,
+        and integration into the fleet reliability pipeline. Programme governance role — not ML
+        engineering. Fleet scope: 10M+ vehicles.
+  \item \textbf{RAG-based LLM pilot (side project, internal transformation team):} Piloted a
+        Retrieval-Augmented Generation LLM for departmental onboarding within the internal transformation
+        team. Defined requirements, coordinated implementation, evaluated adoption metrics.
+        Framing: AI adoption programme management, not ML engineering.
+  \item \textbf{PMO automation tools evaluation (side project, internal transformation team):}
+        Evaluated PMO automation tooling to reduce high-cost administrative overhead. Assessed
+        build-vs-buy, cost/efficiency tradeoffs, and implementation feasibility.
+\end{itemize}
+
+\subsection*{Cloud Architecture \& Cost Governance}
+
+\begin{itemize}
+  \item Led the architectural transformation from a monolithic legacy system to a microservice-based
+        environment, implementing asynchronous communication via Apache Kafka to scale global data
+        ingestion and processing across all connected brands.
+  \item Enforced a FinOps-aligned cost-optimisation strategy that delivered a 30\% year-on-year
+        reduction in AWS cloud expenditure through workload migration and refined data access patterns.
+        \textit{(Only verified quantified cost metric — do not fabricate others.)}
+  \item Governed the cloud migration programme from Azure to AWS, including workload prioritisation,
+        dependency sequencing, and compliance validation across brands.
+  \item Directed the infrastructure programme for Functions-on-Demand (FoD) — over-the-air software
+        feature activation on 4M+ vehicles — including backend platform, billing integration,
+        and B2B fleet monetisation capability.
+  \item Managed data residency compliance requirements for China market operations, coordinating
+        with legal, security, and engineering teams to meet local regulatory constraints.
+\end{itemize}
+
+\subsection*{Connectivity \& Platform Features}
+
+\begin{itemize}
+  \item Governed the programme for real-time vehicle telemetry data pipelines (event-driven,
+        Kafka-based), enabling fleet analytics and connected services for OEM customers.
+  \item Directed backlog for connectivity platform features across multiple vehicle series and
+        brand deployments — managing competing feature requests from SEAT, Audi, and VW
+        Passenger Cars within a shared platform constraint.
+  \item Coordinated integration of MQTT-based communication layers within the vehicle connectivity
+        stack, bridging embedded systems domain knowledge with cloud platform delivery.
+\end{itemize}
+
+\vspace{8pt}
+
+% ----------------------------------------------------------
+% SEAT S.A.
+% ----------------------------------------------------------
+\roleentry{SEAT S.A. — Technical Project Lead (Connectivity Systems)}
+  {Mar 2019 – Nov 2020}
+  {Barcelona, ES}
+
+\textit{Context:} SEAT S.A. is the Spanish brand of the VW Group. Role was embedded in the
+connectivity engineering team, managing Tier-1 supplier relationships and cross-functional
+delivery for production vehicle programs.
+
+\textit{Aufhebungsvertrag note:} SEAT S.A. is a VW Group verbundenes Unternehmen (§15 AktG).
+Cannot return before 31.08.2028 without Abfindung repayment.
+
+\begin{itemize}
+  \item Managed the technical development and integration of connectivity units for three major
+        vehicle series: SEAT Tarraco (SUV), SEAT León (4th gen), and Cupra Born (EV).
+  \item Directed cross-functional deliveries between Tier-1 suppliers (Harman, Continental)
+        and internal SEAT departments, covering technical documentation, wiring schematics,
+        calibration parameters, and hardware/software release cycles.
+  \item Enforced compliance with international homologation standards and internal quality gates,
+        including EU eCall mandatory certification and safety-critical crash-test preparations.
+  \item Coordinated OTA software update validation cycles and managed ECU software versioning
+        across production lines.
+  \item Managed technical risk in supplier contracts — escalation paths, milestone tracking,
+        deviation documentation — under formal project governance.
+\end{itemize}
+
+\vspace{8pt}
+
+% ----------------------------------------------------------
+% AKKODIS (formerly Modis)
+% ----------------------------------------------------------
+\roleentry{Akkodis (formerly Modis) — Systems Integration Engineer}
+  {Oct 2015 – Mar 2019}
+  {Barcelona, ES}
+
+\textit{Context:} On-site resident consultant embedded at SEAT S.A. for the full tenure.
+Akkodis is an engineering consulting firm (Adecco Group). Role combined embedded systems
+engineering with technical project coordination for series-production connectivity programs.
+
+\begin{itemize}
+  \item Steered technical project coordination and supplier integration for series-production
+        connectivity units, serving as on-site resident consultant at SEAT S.A.
+  \item Architected low-level firmware for NFC-based IoT wearables, optimising power consumption
+        and resolving real-time execution constraints for battery-powered devices.
+  \item Developed custom Linux drivers and hardware emulators (Python/Qt) to automate
+        communication protocol validation and accelerate software testing workflows.
+  \item Engineered UART/SPI/I2C protocol validation tooling for embedded connectivity modules,
+        reducing manual test overhead in the ECU integration pipeline.
+  \item Coordinated cross-functional deliveries between hardware, firmware, and software teams
+        during ECU bring-up phases for production connectivity units.
+\end{itemize}
+
+% ============================================================
+% TECHNICAL SKILLS — FULL INVENTORY
+% ============================================================
+\section{Technical Skills — Full Inventory}
+
+\subsection*{Programme \& Project Management}
+\begin{itemize}
+  \item PMP (Project Management Professional) — PMI, 2025
+  \item SAFe PO/PM (Scaled Agile Framework) — 2021
+  \item Lean Portfolio Management
+  \item FinOps — cloud cost governance, workload optimisation, data access pattern refinement
+  \item Agile/DevOps Governance — PI Planning, ART facilitation, dependency management
+  \item Roadmap development — quarterly, annual, multi-year
+  \item Risk management — risk register, mitigation planning, escalation paths
+  \item Stakeholder communication — executive reporting, cross-brand alignment
+  \item OKR definition and tracking
+\end{itemize}
+
+\subsection*{Cloud \& Architecture}
+\begin{itemize}
+  \item AWS Solutions Architect Associate SAA-C03 — 2026
+  \item AWS Machine Learning Engineer Associate MLA-C01 — in progress (March 2026)
+  \item Cloud Migration (Azure to AWS) — programme governance, workload sequencing
+  \item Event-Driven Architecture — Apache Kafka, asynchronous messaging, data pipelines
+  \item Microservice architecture — decomposition strategy, service boundary definition
+  \item Data residency compliance — China regulations, cross-border data governance
+  \item MQTT — vehicle connectivity protocol, IoT messaging
+  \item Kubernetes — conceptual (Coursera, 2025); not hands-on deployment
+\end{itemize}
+
+\subsection*{AI \& Machine Learning (programme governance framing)}
+\begin{itemize}
+  \item ML programme governance — behavioural anomaly detection initiative (CARIAD)
+  \item RAG-based LLM implementation — requirements definition, pilot coordination (CARIAD)
+  \item PMO automation tooling evaluation — build-vs-buy, cost/efficiency (CARIAD)
+  \item AWS MLA-C01 in progress — ML lifecycle, model evaluation concepts, data annotation
+        (theoretical foundation, not hands-on ML engineering)
+  \item AI for Everyone (Coursera, 2025) — completed
+  \item Generative AI fundamentals (Coursera, 2025) — completed
+\end{itemize}
+
+\subsection*{Embedded Systems \& Low-Level (Akkodis/SEAT era)}
+\begin{itemize}
+  \item Firmware development — C, RTOS, NFC, IoT wearables
+  \item Linux driver development — custom kernel modules
+  \item Hardware emulation — Python/Qt, protocol simulators
+  \item Communication protocols — UART, SPI, I2C, CAN, MQTT
+  \item ECU integration — bring-up, validation, calibration
+  \item Python — scripting, test automation, hardware emulators
+\end{itemize}
+
+\subsection*{Tools \& Methodologies}
+\begin{itemize}
+  \item Jira, Confluence — backlog management, programme documentation
+  \item Azure DevOps — sprint tracking, CI/CD pipeline visibility
+  \item MS Project — programme scheduling (older roles)
+  \item SAFe tooling — PI Planning boards, ART metrics
+  \item FinOps tooling — AWS Cost Explorer, billing dashboards
+\end{itemize}
+
+\subsection*{Languages}
+\begin{itemize}
+  \item Spanish — Native
+  \item English — C2 (native level), professional and technical
+  \item German — C1 (professional proficiency), ongoing active learning
+  \item French — B1 (intermediate)
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+\roleentry{Master of Science in Telecommunications Engineering}
+  {2013 – 2015}
+  {Miguel Hernández University (UMH), Elche, Spain}
+
+\begin{itemize}
+  \item Specialisation: embedded systems, signal processing, communications networks.
+  \item Thesis: low-power NFC system design for wearable IoT devices (direct predecessor to Akkodis firmware work).
+\end{itemize}
+
+% ============================================================
+% CERTIFICATIONS — FULL LIST
+% ============================================================
+\section{Certifications}
+
+\begin{itemize}
+  \item \textbf{PMP} — Project Management Professional, PMI, 2025
+  \item \textbf{AWS SAA-C03} — Solutions Architect Associate, Amazon Web Services, 2026
+  \item \textbf{AWS MLA-C01} — Machine Learning Engineer Associate, Amazon Web Services, \textit{in progress} (March 2026)
+  \item \textbf{SAFe PO/PM} — Scaled Agile Framework, 2021
+\end{itemize}
+
+% ============================================================
+% PSYCHOMETRIC / ASSESSMENT RESULTS (for reference)
+% ============================================================
+\section{Assessment Results (internal reference only)}
+
+\textit{BMW Group — ELIGO cognitive assessment (2025, position closed before outcome):}
+\begin{itemize}
+  \item Applied Reasoning: 97th percentile (exceptional)
+  \item Diagram Analysis: 79th percentile (high)
+  \item Problem-Solving Capacity: 71st percentile (medium-high)
+  \item Processing Speed: 54th percentile (median — symbol-based time-pressure tasks)
+\end{itemize}
+
+% ============================================================
+% JOB SEARCH CONTEXT (operational notes)
+% ============================================================
+\section{Job Search Context — March 2026}
+
+\subsection*{Market \& Location}
+\begin{itemize}
+  \item Primary market: Munich area (DE) — active, 3 callbacks from 4 applications within 2 weeks.
+  \item Secondary market: Switzerland (CH) — active, Zurich/Zug primary targets.
+  \item CH salary anchor: CHF 140k gross/year (conservative, 25th–75th percentile CHF 130k–173k for Senior PO/TPM).
+  \item CH application requirements: photo, tailored cover letter, Arbeitszeugnis, EU citizen line mandatory.
+  \item DE application requirements: photo, Anschreiben, Arbeitszeugnis + diplomas.
+\end{itemize}
+
+\subsection*{Target Employers (confirmed watchlist)}
+\begin{itemize}
+  \item Rheinmetall AG — watchlist (employer target due to German rearmament context; current posting below 75\% fit due to defense/space domain gap).
+  \item Apple (Munich) — active application in progress (EPM Annotation \& Evaluation, March 2026).
+\end{itemize}
+
+\subsection*{Blocked Employers (Aufhebungsvertrag Ziffer 4)}
+\begin{itemize}
+  \item All VW Group entities (§15 AktG) until 31.08.2028.
+  \item Explicit list: CARIAD, MOIA, MHP, Porsche Consulting, Audi, SEAT, Škoda,
+        VW Nutzfahrzeuge, VW Financial Services, all Rivian/VW JV entities.
+  \item Residual liability: approx. EUR 112k brutto as of March 2026, decreasing by 1/36 per month.
+\end{itemize}
+
+\subsection*{Application Rules}
+\begin{itemize}
+  \item Minimum fit threshold for active application: 75\%.
+  \item Below 75\%: watchlist or skip. Exceptions only with direct internal contact.
+  \item Resume: one-page target for CH/DE. Never submit master inventory or baselines directly.
+  \item Cover letter: 3 paragraphs, one page strict. No rhetorical flourishes. Acknowledge domain gaps directly.
+  \item Scorecard threshold: overall 7.5+, no dimension below 6.
+\end{itemize}
+
+\end{document}
