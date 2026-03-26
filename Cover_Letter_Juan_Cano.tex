@@ -1,84 +1,73 @@
-%============================================================
-% Juan Cano-Selles — Siemens AI Cover Letter (readable 12pt layout)
-%============================================================
-\documentclass[12pt,a4paper]{moderncv}
+% ============================================================
+% COVER LETTER — JUAN CANO-SELLES
+% Target: Portfolio Product Lead — Building X Applications
+% Siemens Smart Infrastructure | Zug, Switzerland
+% ============================================================
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
 \usepackage[english]{babel}
-\usepackage{graphicx}
-\usepackage{fontspec}
-\usepackage[scale=0.80]{geometry} % a bit more space for 12pt text
+\usepackage{helvet}
+\usepackage{parskip}
 
-\moderncvstyle{classic}
-\moderncvcolor{black}
+% Font
+\renewcommand{\familydefault}{\sfdefault}
 
-% Fonts
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{\IfFontExistsTF{Arial}{\setmainfont{Arial}}{\setmainfont{Noto Sans}}}
+% Spacing
+\setlength{\parskip}{0.9em}
+\setlength{\parindent}{0pt}
+\linespread{1.1}
 
-% Global spacing: keep default line height; paragraphs provide the rhythm
-\linespread{1.12}              % base line spacing
-\setlength{\parskip}{1.5em}    % bigger paragraph separation for readability
-
-\nopagenumbers{}
-\name{Juan}{Cano-Selles}       % metadata only
-
-% Disable moderncv auto title/footer (prevents duplicates/links)
-\makeatletter
-\renewcommand*{\makelettertitle}{}     
-\renewcommand*{\makeletterclosing}{}   
-\makeatother
+\pagestyle{empty}
 
 \begin{document}
 
-% -------- Right-aligned header --------
-\vspace*{-0.5em}
-\begin{flushright}
-{\large \textbf{Juan Cano-Selles}}\\
-Braunschweig, Germany\\
-\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com}\\
-+49 163 150 9581\\
+% ============================================================
+% HEADER
+% ============================================================
+{\Large\bfseries JUAN CANO-SELLES} \\[0.3em]
+{\small
++49 163 150 9581 \quad
+\href{mailto:juan.cano.selles@gmail.com}{juan.cano.selles@gmail.com} \quad
 \href{https://www.linkedin.com/in/jcanoselles}{linkedin.com/in/jcanoselles}
-\end{flushright}
+}
 
-\vspace{1.0cm}
+\vspace{0.1em}
+\noindent\rule{\textwidth}{0.6pt}
 
-\recipient{Hiring Team}{Siemens AG}
-\date{\today}
-\opening{Dear Hiring Team,}
+\vspace{1.2em}
 
-% -------- Body with slightly looser lines --------
-\begingroup
-\setlength{\baselineskip}{1.12\baselineskip}
-\setlength{\parskip}{1.5em}
-\parindent=0pt
+{\small Braunschweig, \today}
+
+\vspace{1.0em}
+
+\textbf{Hiring Team} \\
+\textbf{Siemens Smart Infrastructure} \\
+Zug, Switzerland
+
+\vspace{1.2em}
+
+\textbf{Re: Portfolio Product Lead — Building X Applications}
+
+\vspace{0.8em}
 
 Dear Hiring Team,
 
-I was pleased to find this opening at Siemens, as it aligns closely with the work I have been doing in recent
-years and with the direction in which I want to grow. After leading several large cloud programmes for
-Volkswagen Group, I am looking for a role where building and evolving cloud platforms is central again—
-where there is room for technical depth, long-term product thinking and meaningful impact. Siemens’
-current cloud transformation fits that perfectly.
+I am applying for the Portfolio Product Lead role within Building X because the core challenge it describes — getting independently moving application teams to converge around a shared platform — is work I have done directly. At CARIAD I governed portfolio delivery across five development teams, acted as the single point of contact between the platform and the commercial organisation, and drove the convergence of a 10M+ vehicle IoT connectivity platform across multiple brands and markets. The structural problem is familiar.
 
-In my recent roles at CARIAD, I guided multi-team initiatives focused on backend consolidation, platform
-coherence and cloud service reliability across 10–12 Agile/DevOps teams. My work centred on creating
-structure in complex environments: aligning engineering with product priorities, shaping service evolution
-and ensuring predictable delivery during architectural change. These are the strengths I rely on consistently
-and the perspective I would bring to Siemens.
+I do not have building automation experience. What I bring is seven years at the portfolio layer in a complex, multi-product environment — aligning independent teams around shared standards, translating platform capabilities into commercial propositions, and resolving cross-product conflicts that fragment platform value.
 
-What attracts me especially in this role is the chance to contribute to a platform that supports multiple
-domains, integrates diverse systems and needs to operate at scale. This is the type of environment where
-I work best—connecting strategy with execution, bringing clarity to cross-functional teams and steering
-platform maturity over time.
+I am an EU citizen with no permit requirement and available to relocate to the Zug area upon offer.
 
-I am planning to relocate to Zürich and would welcome the opportunity to contribute to Siemens as you
-continue strengthening your cloud foundations and digital product ecosystem.
+\vspace{0.5em}
 
-\vspace{0.7em}
 Best regards,
 
-\vspace{0.4em}
-\includegraphics[width=5.8cm]{Signature_Juan_Cano.png}
+\vspace{1.8em}
 
-\endgroup
+\textbf{Juan Cano-Selles}
 
 \end{document}
